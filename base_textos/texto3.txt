@@ -1,0 +1,276 @@
+Abstract
+This paper presents a prototype for information visualization
+in an Augmented Reality environment. The prototype allows
+users to perform common tasks in desktop information
+visualization tools, such as data dynamic filters, attribute
+selection, semantic zoom and details on demand. Such tasks
+are seldom available in AR environments. We used a
+customized version of ARToolKit, a software tool that allows
+the insertion of virtual objects in real environments through
+cards with marks. The interactive controls as well as the data
+visualization are projected to the user and manipulated
+through these cards.
+Keywords: augmented reality, information visualization,
+interaction techniques
+1 Introduction
+The ability to evaluate a decision-making process and perform
+rapid and accurate strategic changes is each day more
+important, specially on the fields of industry, economics and
+finances. In order to support theses processes, Data Mining,
+Information Visualization and Intelligent Systems projects are
+getting more and more attention from the research community.
+
+1
+email:bianchi.serique@terra.com.br
+2
+email:aruanda@redeinformatica.com.br
+3email:marcelo@redeinformatica.com.br
+4
+email:rcasseb@ufpa.br
+5
+email:serclay@gmail.com
+6
+email:leofozzy@hotmail.com
+7
+email:piagodinho@gmail.com
+Specifically in the area of Information Visualization, new
+tools and techniques are constantly being developed to cope
+with the growing demand.
+An Information Visualization tool has the purpose of creating
+an interactive visual representation that transforms abstract
+data in a way that may be promptly understood by the user and
+may be used for tasks such as identification, multivariate
+correlation, search, exploration and communication.
+Many current computational systems have tried to get more
+adaptable to human perceptions through more interactive user
+interfaces. This is also an important issue when it comes to
+Information Visualization tools. In this context, Augmented
+Reality (AR) studies new interaction and visualization
+mechanisms and allows a more natural user-to-system and
+user-to-user communication.
+AR creates enriched real environments by merging to this
+predominantly real world objects as geometric models,
+images, sounds and text and improving user perception. AR is
+a multidisciplinary field and may be adopted by Information
+Visualization tools.
+The goal of this paper is to present a Visualization
+Information in Augmented Reality prototype where the user
+may visualize and manipulate information in a real time threedimension environment without the use of devices such as a
+keyboard or mouse and interact simultaneously with other
+users in order to make a decision related to the analyzed data.
+The contribution of this prototype are the new interaction
+mechanisms, the use of interactive menus and the
+implementation of filter techniques that modify the
+environment in real time without modifying all virtual
+objects. This allows the prototype to be more efficient for the
+support of a decision-making process. The prototype uses of
+ARToolKit, a free open-source library for the development of
+augmented reality applications, with the addition of new
+
+391
+functionalities. OpenGL was used for the creation of virtual
+three-dimensional objects.
+2 Information Visualization
+In the different areas of human activities, the arduous task of
+extracting knowledge from data sources is primordial to
+improve the decision-making process. Professionals who are
+responsible for making decisions need efficient tools to help
+them perform their tasks in a very fast, simple and precise way.
+The Information Visualization area fulfills these requirements,
+since Information Visualization is, by definition, the process
+of turning abstract data into a visual shape easily understood
+by the user, making it possible for him/her to generate new
+knowledge about the relations between the data [Spence
+2001].
+According to Carr [Carr 1999], an information visualization
+tool should allow users to perform the following tasks:
+∞ General View: the user needs an overall view of all
+analyzed data, based on the selected parameters for
+the visualization
+∞ Zoom: the zoom technique is important because it
+allows focusing on the analyzed data. Semantic zoom
+also allows the user to visualize more details to the
+visualization.
+∞ Filter: users frequently need to reduce the size of
+data sets by reducing the number of attributes. One
+of the most efficient ways is the use of Dynamic
+Queries, which is basically a technique that allows
+the user to select data without the use of any kind of
+command lines.
+∞ Details on demmand: when users are exploring a data
+set, they’ll need to see details about one item in
+particular.
+∞ Relationship: If the user discovers an item of interest,
+he/she might need to know about other itens with
+similar attributes, so the tool could point out these
+similar itens.
+∞ Historic: the user needs support to undo an action,
+show the steps until that point, etc.
+3 Augmented Reality and ARToolKit
+Augmented Reality’s main characteristic is the creation of
+enriched real environments, adding to this predominantly real
+environment items such as geometric models, images, sound
+and texts and potentializing the utilization of the user’s
+senses for a better perception of the environment. This way,
+Systems in AR generate to the user a combined vision of
+virtual objects generated by computer with real objects
+visualized by the user, enlarging the scene with additional
+information [Vallino 1998].
+Augmented Reality is a particularization a broader area known
+as Mixed Reality, which incorporates “virtual elements to the
+real environment (Augmented Reality) or takes real elements
+to the virtual environment (Augmented Virtuality),
+completing the environments” [Milgram et al. 1994]. One of the
+great advantages of using AR is the possibility for users to
+interact with the virtual and real worlds integrated.
+Developed by HIT Lab and distributed as an open code written
+in C/C++ Language, the ARToolKit is a tool that allows that
+programmers develop applications in AR [Kato et al. 2003].
+This library uses computational vision techniques to
+precisely calculate the position and orientation of a camera
+related to a marker in real time. The programmer can use this
+information to draw 3D objects exactly lined with the real
+ones.
+The construction of objects to be combined to real world can
+be done through applications in OpenGL and VRML. There is
+also a version of ARToolKit written in Java (JARToolKit)
+[Geiger 2005] where JAVA3D can be used [Walsh et al. 2005].
+4 The Prototype
+In this section, the prototype that uses augmented reality to
+implement information visualization techniques is presented.
+Figure 1 presents a general view of the changes or new
+implementations that were made in ARToolKit to develop the
+prototype presented in this paper. Some modules stand out:
+Interaction detection module, where the prototype identifies
+the action the user wants to perform; 3D objects settings
+module, which receives information about an action of the
+user and modifies the 3D objects that will be presented to the
+user; and the database reader module, which is responsible for
+loading the data to the memory so that the prototype can
+manipulate the data.
+Figure 1: Prototype Modules Overview
+4.1 Dataset
+An important pre-requisite in the implementation of the
+visualization technique is the initial treatment applied to the
+database. During this phase, the use of attribute selection
+techniques is recommended to reduce the volume of the existing
+data, using only the attributes that contribute to a good data
+analysis. This preparatory phase demands a high level of
+knowledge of the information that is being worked with to prevent
+important attributes that are initially considered irrelevant from
+being eliminated.
+392
+The prototype used a public domain database containing
+information on Brazilian automobiles. After the preparatory
+phase, the final table consisted of 41 lines (including the name
+and type of attributes) and 10 columns: brand, model, fuel, year,
+color, price, number of doors, type, power and r.p.m. A small
+sample can be seen in Table 1.
+MAKE MODEL FUEL YEAR COLOR PRICE DOOR TYPE POWER RPM
+STRING STRING CADEIA INT STRING REAL INT STRING INT INT
+Fiat Uno gasolina 1993 Prata 6900 4 hatch 55 4000
+Kia Sportage diesel 1995 Prata 40000 4 pickup 120 4000
+Volkswagen Parati gasolina 1993 Branco 9400 2 wagon 99 5600
+Table 1: Brasilian Car Data
+4.2 Visualization Techniques
+The 3D Scatterplot is the main technique used to visualize the
+objects. In this graphic model, the 3D objects are positioned
+according to x, y and z axis.
+Each visualized object has specific characteristics of color, shape
+and size that directly represent data items values, in order to
+magnify the perception of the data. This characterizes the
+implemented technique as multi-dimensional (information of x, y
+and z axis, color, shape and size).
+4.3 Augmented Graphic Interface
+The graphic interface consists of continuous and discrete filter
+controls and 3D scatterplot projected on marks. Each marker
+position was carefully determined to avoid frequent ARToolKit
+manipulation mistakes, such as undesired occlusion of markers.
+During the execution, the user’s interaction with the graphic
+interface of the prototype happens in a direct way, occluding the
+marker where the desired virtual control is projected for a certain
+action to be executed. The interaction by occlusion consists in
+obstructing the capture of a marker by the webcam. The
+obstruction can be done by any kind of material capable of
+overlapping part of a marker symbol. A good suggestion is the use
+of one’s own hands to perform this action.
+4.3.1 Using Filter
+The developed filters were base don the dynamic queries concepts
+and support both discrete and continuous attributes. Dynamic
+queries allow the users to perform queries in a dataset without the
+need for command lines, using exclusively graphic interface
+components [Shneiderman 1994].
+The discrete (or nominal) attributes are usually used as setting
+options such as color, size and shape. Continuous attributes are
+excellent candidates for axis representation. However, every
+continuous attribute has a related interval selection control,
+whether or not it is mapped to one of the axis (Figure 2). The
+prototype presents graphically the filter operations results in real
+time.
+Figure 2: Continuous attribute filter – Power.
+4.3.2 Details on Demand
+There are three forms of representation available: color, shape
+and size, but there is still more information to be analyzed
+about each object. A virtual mechanism was developed to
+select a virtual object and present extra information (Figure 3).
+Figure 3: Retrieving information on an object.
+393
+4.3.3 Semantic Zoom
+The prototype already presents zoom, rotation and translation
+mechanisms. They are available on the menus which are
+appropriate to virtual and augmented reality applications.
+Additionally, the user may analyze the chart freely with the
+marker in his/her hands. Semantic zoom allows the user to
+observe the virtual objects in greater detail as his/her view
+approximates the objects.
+4.3.4 2D Charts
+The 2D charts help the user providing new information on the
+visualized data. There are two types or charts available:
+histogram and pie. The pie chart for the attribute Fuel may be
+seen in Figure 11.
+Figure 11: Pie chart for the attribute Fuel.
+4.3.5 Help
+The help item presents the user in detail the operation of each
+marker. The use of help is very easy. With the use of the virtual
+pointer, the user selects the help option. The user should then
+select one of the menu items and read the available information
+about it. In order to disable the help command, the user selects the
+help item another time (Figure 12).
+5 Final Remarks and Future Work
+This paper presents a prototype for a multidimensional
+information visualization tool in an augmented reality
+environment. The AR environment provides a more intuitive and
+motivated interaction for the user. It also allows the user to
+manipulate the environment while interacting with other users in a
+collaborative fashion. The prototype aims to satisfy the main
+characteristics of a good visualization tool: overview, filter,
+details-on-demand and semantic zoom. The input is currently
+supported as text files but the development was generic enough to
+be adapted to any relational database. Other remarkable aspect is
+the implementation of menus in the mark cards. This allows a
+larger set of functionalities with the use of a lower number of
+markers. It is possible to set in real time axis, color, size and
+shape parameters, generating many views for the same
+environment. The use of dynamic queries allows the user to
+generate any combination of queries and filters without the need
+for command lines. The prototype also allows the use of 2D
+graphics to provide complementary information about visible
+data. Additionally, two implementation aspects contributed to
+make the interaction with the 3D virtual objects a lot easier: the
+virtual pointer and the help about virtual components in the AR
+interface.
+The main difficulties in the development of the prototype were:
+the instability of ARToolKit, specifically in environment
+lightening and marker detection; the comprehension of API such
+as OpenGL, especially when it comes to sequences of
+transformations; and the need for advanced hardware – a 128mb
+video card, for example.
+As future work we intend to refine and optimize the code for
+publication in a website. It is also our intention to use a data glove
+to manipulate the objects and use the marker only to include 3D
+objects on the real scene. Incorporate the support for database
+access and generate multi-user collaborative version are also
+among our future goals. It could be studied the addition of
+another webcam to enlarge the user eye vision using two video
+monitors. Finally, a next step will be to perform usability and
+ergonomics tests comparing with similar desktop tools. 

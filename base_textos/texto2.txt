@@ -1,0 +1,352 @@
+Introduction
+The ideal scenario for testing machine learning algorithms and information visualization techniques is to use real data. However, obtaining the data can be a relevant problem, since data may require a prolonged time to get, have associated costs, and have privacy concerns. In this context, the researchers are compelled to reuse the same, old, or well-known dataset to perform the tests. As an effort to mitigate these issues, researchers are either manually creating synthetic datasets or proposing applications that support this task. The researchers use these applications to have better control of the data characteristics, so they can create datasets to attack specific problems, such as outlier detection, missing values, and noisy information. [1], [2].
+
+Synthetic data applications are commonly referred to as data generators, and they work by manipulating descriptive information of the data through mathematical formulas, probability distribution functions, category sets, and other generators. In some generators, users can easily share a blueprint of the generated dataset by saving a description of generators, which are usually lightweight files, instead of concrete data points.
+
+One of the benefits of having a synthetic dataset generator is controlling data characteristics such as patterns, trends, data type, data format, outliers, dimensions, or missing values [3]. Data generators control data aspects so that their characteristics fit a specific problem, providing a diversity of slightly different datasets to exhaustively test visualization techniques or machine learning algorithms in a controlled manner [4], [5]. For example, in some generators, researchers can analyze not only if the technique is robust to the presence of outliers, but also what threshold of outlier proportion the technique can effectively handle.
+
+However, no perfect data generator application exists. Every tool has its limitations, and as more of them are being created, the harder it becomes to choose one that fits the problem at hand. This difficult happens because the limitations are scattered across many applications, so each one of existent data generators—while able to fills some gaps—leaves others untreated.
+
+Hence, this work presents an application that generates synthetic datasets, providing a hub of functionalities that makes the application flexible enough to fills several gaps in previous approaches. The proposed data generator uses a combination of known distributions—called generators—that includes random distributions, data sequences, correlation functions, and modifiers. This approach enables the creation of data that can be applied in many domains, gradual changes in data characteristics by modifying parameters of generators, and creation of complex data distributions by combining a sequence of known ones.
+
+Additionally, the proposed data generator supports visual feedback-driven design by plotting a sample of the current data model, and a faster way to collaborate and present data by sharing a lightweight description of the data instead of a large dataset file. The application is an open-source project and is available on the authors’ research laboratory website.1
+
+This paper is an extended version of a previous work [6], adding in-depth details about the functionalities and implementations present in the proposed data generator. New generators have been added since then, as well as new built-in visualization techniques. Additionally, a new usage case scenario is also presented to illustrate how researchers can test algorithms and techniques using synthetic datasets in the context of machine learning.
+
+The next sections of this paper introduce the related works (section II), present the proposed system (section III), demonstrate usage scenario for the application (section IV), and conclude the work, providing future research directions (section V).
+
+SECTION II.Related Works
+Generation of synthetic datasets for testing has importance in many areas of computing, such as data visualization, data mining, software engineering, and artificial intelligence. Sran Popić et al. [7] wrote a survey about works in the area of synthetic data generation that focuses on application testing, highlighting the system architectures and the intended usage of the applications, showing the pros and cons of the surveyed techniques. Demillo and Offut [8] have described a failure-based application to generate synthetic data units for performing tests for software modules. Even in the area of evolutionary computing, there are works of genetic algorithms which generate data for software tests [9], [10].
+
+Albuquerque et al. [11] have described a framework to generate multi-dimensional data. The user can build a representation of the desired data by manipulating statistical distributions through the graphical interface. However, [11] is limited to integer and floating numbers, not addressing the generation of categorical data. Moreover, [11] did not mention any way to preview the data, during the statistical distribution setup, to show the possible behavior of the generated data.
+
+Wang et al. [12] have presented an application where it is possible for the user to scribble the distribution for the data manually. Thus, the system creates the data model of the generators based on what the user has drawn. Kwon et al. [13] used a similar approach, making use of design-based interactions to guide the creation of the data visualization with many dimensions according to the user’s level of knowledge.
+
+Liu [14] have created a synthetic data generator for assessing learning rules classification. The work generates learning rules based on the attributes entered by the user to build relationships between these attributes, and the technique used for the data was decision tree algorithms. Other similar works have appeared in the literature proposing data synthesizers for testing in data mining tools [15], [16] [17]. These works generate data for testing in data mining tools since obtaining real data can be very costly or limited by privacy rights. However, there are jobs that produce data for specific problems such as [18] who wrote a paper on the data generation system for health care applications, limiting the generation of new data only for such cases.
+
+García and Millán [19] have created a system to generate synthetic data that can be used by a wide range of scientific areas. The authors compared their application with the tools that already exist in the market and have shown the pros and cons of their generator system. The software is available in a free version.
+
+In some cases, applications generate synthetic data related to network data [20]. For instance, Brodkorb et al. [21] proposed the generation of synthetic network data with geo-location connected to the nodes. In this way, the user can explore the generated network through interaction with the map displayed and adjust the results obtained later.
+
+Kofinas et al. [22] have created a methodology to generate synthetic data for simulating water consumption in two cities. The implemented approach registers the randomness of the daily water consumption by a local residence and validates the data generated by this methodology through validation algorithms which compare several evaluation metrics for real and synthetic data.
+
+Sun et al. [23] have described a Gaussian matrix to model correlations between the weights of a neural network and to perform training and test for it. In addition to real data, they produced and used synthetic data. Kang et al. [24] have made a similar work using synthetic data to generate tasks to perform tests with multi-tasking learning. Ma et al. [25] have presented a trained artificial neural network with both real data and synthetic data, and they highlighted the synthetic data allowed a better investigation of the robustness of the model concerning its initialization and the randomness of the data. However, the generations of synthetic data performed in these last works are specific to their respective problems, and it is not possible a priori to reuse the same data for different applications.
+
+There are few works that generate synthetic data facilitating the manipulation of data characteristics as well as creating complex patterns of data, without the need for programming skills, aiming at testing tools or machine learning algorithms or visualizing the information with a general context.
+
+SECTION III.Proposed Application
+The main goal of this work is to present a data generator application to assist researchers in testing information visualization techniques and machine learning algorithms. The tool allows manipulation of statistical generators to produce synthetic data according to users specification. Thus, the sharing of synthetic datasets can be done through a lightweight descriptive file that other researchers can use to re-create dataset profiles, easing replication of studies. Figure 1 shows a flow chart of the tool usage.
+
+FIGURE 1. - A typical use flow of the application.
+FIGURE 1.
+A typical use flow of the application.
+
+View All
+
+The typical flow of the application consists of three phases: setup, use, and sharing. The creation of a synthetic dataset is an iterative process that starts when the user creates a data model (1). The creation of a data model is the specification and composition of generators to create a description of data behavior (e.g., a correlation between certain dimensions, or the presence of outliers). After any changes in the generators, the application produces a small-size sample dataset (2) for visual feedback of data behavior (3), which allows users to evaluate the used generators and update them if needed (4). It is important to highlight that the data that will be generated in the final file are not the same of the preview: the purpose of the preview is only to quickly show the behavior of the generators that the model will use to produce the final dataset.
+
+After the setup step, users can decide to generate the data to test their applications, or to share the constructed data model for experiment replication. Aside from generating a dataset file that follow the generators of the model, users have a few extra options to create data: generating large volumes of data if necessary (5.1), feeding the tested technique or algorithm through a data generation streaming (5.2), and creating a set of similar datasets with slight differences in its features (5.3).
+
+In this typical data flow, a user could choose to share the model with fellow researchers to reproduce experiments (6). The researchers receiving this data model could generate their own dataset following the same distribution defined by the generators (7). While the underlying randomness of the generation process implies that two datasets created from the same model are not identical, the data points are equivalent as they share the same characteristics and behavior (e.g., same correlations, probabilities, outliers). This way, researchers can easily reproduce experiments (8) even if they are working with massive synthetic datasets, leading to a quick comparison of results (9).
+
+A. System Architecture Overview
+Figure 2 shows an overview of the application architecture: the gray boxes represent the main components, and the blue boxes represent the output type of the generated data. The output can either be a lightweight description of the model, a file with control data points, or a visualization of the data.
+
+
+FIGURE 2.
+An overview of the application architecture.
+
+View All
+
+1) Manager
+The manager module receives requests through the graphical user interface, and it is responsible for forwarding those requests to its submodules. It is a cross-cutting module that coordinates the flow of information through the whole application, intermediating the user interface with the generation logic. The submodules are:
+
+Parameter Iterator:
+
+Configurations:
+
+Saved States:
+
+Data Manager:
+
+Communication Manager:
+
+Visualization Manager:
+
+2) Data Model
+The data model has the responsibility of handling the data dimensions of the dataset and the generators that produce the values. The data model is a representation of a dataset, composed of specifications that describe data behavior. The data models can generate not only the final complete dataset but also data samples, which are small-size datasets (default size of 100 rows) that have the same specified behavior. The data samples enable visual feedback, as they can be quickly visualized to validate if its characteristics match the testing requirements. It is important to highlight that when using the same data model to create more than one dataset (or to create data samples), the resulting data are similar (i.e., has the same behavior), but not necessarily have the same data values.
+
+It is possible to export the data model and share it with fellow researchers, which eases the reproduction of an experiment since the exported data model is often lighter than a massive dataset, thus being easier to store and download.
+
+3) Dimensions
+The data model is composed of dimensions, each containing a chain of generators. The dimensions have the responsibility of holding the rules that drive data generation. Each dimension has four elements: order number, title, data type, and generator chain. The data type of the dimension depends on the generation rules associated with them and can be numerical, categorical, time, or mixed.
+
+4) Generators
+The generators are responsible for creating and modifying values. Several generators can sequentially compose a generator chain, implemented with the Decorator design pattern [26]. Every generator has a reference to its parent and to its child, so the communication through the chain can be bilateral. The results of a generator depends on the result of its children, simulating a cascade system with the data returned by each generator.
+
+Figure 3 shows a general scheme of the generator chain, with its inputs and outputs. For each generator in the chain, the user defines parameters and an operator (⋅ ). The parameters are the arguments that generators need in order to produce values (e.g., mean μ and standard deviation σ in Gaussian generators). The operator combines the value returned by one generator with the value returned by its child, and it can be sum, subtraction, multiplication, division, and modulo.
+
+
+FIGURE 3.
+A general scheme of the generator chain for one dimension d .
+
+View All
+
+Consider that a dataset DS is a set of n entries DS={E1,E2,…,En} , where each entry Ei|1⩽i⩽n is a set of m values Ei={v(i,1),v(i,2),…,v(i,m)} , and each value v(i,j)|1⩽j⩽m is related to a data dimension. Besides, each data dimension has a chain of generators Gj={g(j,1),g(j,2),…,g(j,ω)} , which is responsible to generate the values {v(1,j),v(2,j),…,v(n,j)} .
+
+In order to create a value v(i,j) , the generators recursively operate their results as follows:
+rk=r1=g(j,k)⋅rk−1,g(j,1)
+View SourceRight-click on figure for MathML and additional features.
+
+Being r1 the initial step, and rω=v(i,j) , which is the result of the recursion when it reaches the last generator g(j,ω) .
+
+The current version of the application has 36 different generators; each one has a unique behavior to generate data, which may change depending on its child generator. Hence, each generator in the chain is a building block to design a customized data distribution. There are five major types of generators: Random, Geometric, Accessory, Function, and Sequence.
+
+a: The Random Generators
+produce each new value independently and randomly following a probability density or rule. For example, the Gaussian generator creates values based on a predefined mean μ and standard deviation σ , while the Uniform generator creates values between a minimum min and maximum max values with the same probability to any value in the range. Random generators can be composed using the user-defined operations to create new distributions (e.g., a uniform distribution might be summed up with a Gaussian distribution).
+
+Table 1 shows the list of Random generators currently available in the application. The params are constants that can be of type real R or categorical C . The output column shows illustrations of the probability density functions that drives value generation.
+
+TABLE 1 The List of Random Generators
+Table 1
+b: The Geometric Generators
+create numerical data following geometrical primitives. The user specifies parameters of shapes in a space R2 , and the generator produces data points following the specified pattern.
+
+Since geometrical shapes are specified on the space R2 , a single data dimension can not represent the values: the output is not a value on , but actually an ordered pair (on1,on2) . In order to generate such 2-dimensional information, an extra data dimension is also needed.
+
+When associating a Geometric generator to the generator chain of a certain dimension, the generator only returns the first element on1 of the ordered pair. If users want to generate the other element on2 of the pair, they need to add a new dimension to the data model and use a particular generator called Get Extra; the subsection on Accessory generators details the behavior of the particular generator.
+
+Table 2 shows the list of Geometric generators. The params are constants (a1,a2,a3) of type real R that describe the behavior of the shapes, such as control points. The output column illustrates how each generator distributes data points through the specified shape.
+
+TABLE 2 The list of Geometric Generators
+Table 2
+The Figure 4 illustrates how to use the geometric generators. The Cubic Bezier Stroke generator is assigned to dimension D1, which corresponds to the first element on1 of the pair. A Get Extra Accessory then gets the second element on2 and associates it with dimension D2. The user can create different chains for each dimension, for instance, adding noise only to dimension D2.
+
+FIGURE 4. - Using the Geometric generators and Get Extra Acessory.
+FIGURE 4.
+Using the Geometric generators and Get Extra Acessory.
+
+View All
+
+c: The Accessory Generators
+are responsible for modifying the values returned by other generators. For example, the Missing Value Accessory generator is responsible for randomly transforming the values generated from the child generator into missing values; the user may choose the percentage amount of missing values. The output on can be deterministic (e.g., MinMax, Linear Scale), or probabilistic (e.g., Constant Noises, Missing Values).
+
+Since generators can only create a single value at a time, generators are not able to return data in the format of a n-tuple (a1,a2,…,an) , thus returning only the first element a1 . In order to access the other elements, a Get Extra Accessory enables retrieving a specific element from a returned tuple. Consequently, to access all values of an n-tuple generator, n−1 extra dimensions must be created, each one with a Get Extra Accessory.
+
+Table 3 shows all Accessory generators and their respective parameters and outputs. The params are constants (a1,a2,a3) that can be of type real R , probability P , or natural N . In the case of random noise, an additional parameter is the probability distribution r(α) of the noise (e.g., Gaussian or uniform). If an accessory receives a value that does not fit its constraints (e.g., Range Filter receives a value outside the range) the value is invalidated, and the accessory makes another call to the child ch(A) to obtain a new value.
+
+TABLE 3 The list of Accessory Generators
+Table 3
+d: The Function Generators
+transform the values generated in a previous dimension into new ones, enabling the creation of correlated dimensions. To use a Function generator, the user need to specify the dimension d that provides the values to be transformed (i.e., the domain of the function). Function generators can be linear, logarithmic, exponential, sinusoidal, quadratic, polynomial, categorical, numerical piecewise, and time piecewise. For instance, the user can make one dimension be inversely correlated to another by using a linear function generator that has a negative slope.
+
+Table 4 shows the list of Function generators currently available in the application. The params can be of type real R , or time T . Function generators modify values generated in another dimension d , so the output on always depends on the value dn . Hence, the value dn coming from another dimension is the domain of the function, and the output on is the image.
+
+TABLE 4 The List of Function Generators
+Table 4
+The Categorical, Piecewise Time, and Piecewise generators act as a switch-case function, where each case has a particular chain of generators. Thus, being z the number of cases in the switch-case, the Function generator ramifies the chain into z children ch1,ch2,…,chz . The children used to generate the output on depends on the value dn of another dimension.
+
+e: The Sequence Generators
+create values according to an algorithm guided by parameters (a1,a2,…,az ), the data index (n ), and the previous value (on−1 ). The sequences can be arithmetic, geometric, or recursive and can have characteristics such as: being an increasing or decreasing sequence, have convergent values, or bounded ranges.
+
+Table 5 shows the list of Sequence generators currently available in the application. The params can be of type mixed M , real R , time T , categorical C , or natural N . Additionally, the Poisson Time Sequence Generator requires the parameter λ of the Poisson distribution.
+
+TABLE 5 The List of Sequence Generators
+Table 5
+When a sequence requires a previous output on−1 , it needs an initial step for the first value generated o1 . The Sinusoidal generator depends on previous angles cn instead of outputs, so the initial value is given by c1 .
+
+In the Custom Sequence generator, the user defines the custom sequence logic through a textual rule that specifies the values of each on using arithmetic operations (e.g., sum, multiplication, subtraction, and division), the previous value x=on−1 and data index n . For instance, the user can create a counter sequence typing ‘n ’ as the text rule, so the values are equal to the index.
+
+5) Output Data
+After finishing the data model, the user has a few options on how to export it: export data points, export data model specification, stream data through web service, and export a data model diagram.
+
+If the data model is ready to create the final dataset, users can start the generation process to save data points into the file system. Alternatively, the system can generate a stream of data through a Web Service, in which data is generated and served upon URL (Uniform Resource Locator) requests.
+
+If the user wants to export only the data model instead of the complete dataset, the system can generate a JSON (JavaScript Object Notation) file of the model. This JSON file saves the whole model in a lightweight hierarchical structure that preserves generators, operators, and parameters, so it can be later imported to the system to restore the data model. Another way to export the data model is through a DOT file, which can be loaded into GraphViz [27] to produce a human-readable diagram of the model.
+
+B. User Interface
+Figure 5 shows the graphical user interface highlighting seven parts: Menu Bar (A), Opened Models Tabs (B), Model Setup Panel (C), Generator Properties (D), Dimension Properties (E), Data Preview (F), and Generate Button (G).
+
+FIGURE 5. - The main graphical interface of the application.
+FIGURE 5.
+The main graphical interface of the application.
+
+View All
+
+Figure 5 (A) shows the application’s menu bar with the menus File, Edit, Data Model, Visualize, and Help.
+
+The File menu presents the functions New model, New dimension, Open model, Save model, Save model as, and Import Dataset. The Edit menu has two options Undo and Redo. In the Visualize menu, the user can choose from several visualization techniques to see the data samples of the current model; the currently implemented techniques are [28], [29]: bar chart, histogram, scatterplot matrix, beeswarm plot, treemap, sunburst, parallel coordinates, and bundled parallel coordinates [30]. The Model menu has the options Rename, Delete, Export.DOT File, Copy Model ID, Copy URI Web Service, Toggle Web Service, Open Web Service.
+
+Figure 5 (B) shows the tabs of opened models. Each tab contains a data model specification in a setup panel (C), that includes the title and data type of dimensions, the generator chains, and utility buttons such as filter, add generator, delete generator, and delete dimension. Users can add a new dimension to the model through the + button at the bottom-right of the panel. Additionally, it is also possible to add, remove, and change the position of generators. The user can also filter out dimensions, so they are omitted from both data preview and final dataset. When users select a generator, information is displayed about its associated dimension (E) and its own properties (D).
+
+The generator properties panel (D) is where the user defines the generator type, and inputs its parameters and operators. After any changes in the model, the Data Preview panel (F) updates a parallel coordinates visualization that shows the data samples, allowing for quick visual feedback of data behavior.
+
+The blue button “generate” (G) at the bottom-right of the window opens the dialog for creating the final dataset, in which users configure name, path, and number of lines. Clicking the gear button displays a new window to configure the Parameter Iterator which generates a sequence of datasets varying some parameters iteratively.
+
+Besides the Preview Panel, the system has a built-in visualization analysis tool to show the data samples of the model (Menu > Visualize). This feature becomes essential because the user can visually verify in real time if the data model is generating data according to the expectations.
+
+In the visualization window—which can be a different window from the main one—users can choose the visualizations they prefer to use. Figure 6 shows that the visualization window has a flexible layout, allowing the user to resize each visualization by dragging the dotted line, as well as split an area to add new ones. The visualizations are coordinated through the colors, filters, and selections, so it is easier to relate data items from different views.
+
+FIGURE 6. - The visualization window shows sample data of the model, the red lines show the coordinated brushing between them.
+FIGURE 6.
+The visualization window shows sample data of the model, the red lines show the coordinated brushing between them.
+
+View All
+
+Also, the user can open more than one window at a time to see them on different screens if needed.
+
+SECTION IV.Usage Scenarios - Generating Datasets for Machine Learning Classification
+This scenario is an example of how to generate a test dataset for machine learning with variation in specific data characteristics. To this end, the proposed tool will generate datasets varying the number of outliers, class separation, amount of missing values, class imbalance, amount of bad features, and amount of classes [31]–[32][33][34][35][36][37].
+
+The variations are specified on top of a default dataset, which has the following characteristics:
+
+1.000 entries
+
+No outliers
+
+No missing values
+
+Two dimensions (one relevant feature and one class, no bad features)
+
+80% Class separation
+
+Two Classes
+
+No Class Imbalance
+
+Figure 7 shows how the system generates this default dataset. A Categorical Function act as the switch-case that correlates the class dimension (Dimension 1) with the feature dimension (Dimension 2). The chains in Dimension 2 contain a Uniform generator whose parameters depend on the value of Dimension 1: for class A1 the parameters are Min=0 and Max=1.2 , and for class A2 they are Min=1 and Max=2 . These parameters create an 20% overlap in the feature dimension, so only 80% of the classes are separated.
+
+FIGURE 7. - The generators that builds the default dataset.
+FIGURE 7.
+The generators that builds the default dataset.
+
+View All
+
+Thus, six types of datasets were generated, one for each of the six characteristics in the default dataset. In each type of dataset, the system generated four datasets with slight differences in the associated characteristic. For instance, to vary the effect of the number of outliers, the system created datasets with 10%, 20%, 30%, and 40% of outliers, without changing the other characteristics. The variations of the characteristics are the following:
+
+Amount of outliers: [10%, 20%, 30%, 40%]
+
+Class separation: [90%, 80%, 70%, 60%]
+
+Amount of missing values: [10%, 20%, 30%, 40%]
+
+Class imbalance: [50%-50%, 40%-60%, 30%-70%, 20%-80%]
+
+Bad features: [1-1, 1-3, 1-5, 1-7]
+
+Amount of classes: [2, 12, 22, 32]
+
+A. Amount of Outliers
+The Amount of Outliers is the proportion of outliers in the data. Figure 8 shows how the Noise Generator can be used to produce the outliers. The noise generator was configured to change the original value adding it with a gaussian noise (mean 0 and standard deviation 1) multiplied by 20 (force parameter) and occurring in a certain percentage (varied from 10% to 40%) using the uniform distribution.
+
+FIGURE 8. - Adding noise generators to the uniform distributions creates outliers.
+FIGURE 8.
+Adding noise generators to the uniform distributions creates outliers.
+
+View All
+
+Figure 9 shows the generated datasets varying the number of outliers. The beeswarm plot shows the majority of the data around 0 and 1.8 and some outliers above and below. By visualizing the sequence of charts from 10% to 40%, it is evident that as the ‘Prob’ parameter (see Figure 8 in box Noise) increases, the number of outliers increases.
+
+FIGURE 9. - The accuracy of the models with varying amount of outliers.
+FIGURE 9.
+The accuracy of the models with varying amount of outliers.
+
+View All
+
+B. Class Separation
+The Class Separation characteristic refers to the amount of overlap in the distributions of each class. Figure 10 shows how the parameters (‘Min’ and ‘Max’) of the Uniform generators can be changed to create an overlap between distributions. For instance, to create a class separation of 60%, 40% of the dimension range should be shared by the Uniform Generators (e.g., C1: Min=0 and Max=1.4 ; C2: Min=0.6 and Max=2 ; the interval [0.6, 1.4] is shared by both generators).
+
+FIGURE 10. - Sliding the interval of the uniform distribution of one class increases or decreases the class separation.
+FIGURE 10.
+Sliding the interval of the uniform distribution of one class increases or decreases the class separation.
+
+View All
+
+Figure 11 shows the amount of separation between classes. The Histogram presents accumulated value for each class of the dataset, with a clear separation in the 0.96 mark for 90% separation. From there, the overlap of the distributions of each class increases. These datasets could be used to test how the accuracy of classifiers decreases as the overlap between classes increases.
+
+FIGURE 11. - The distribution of values with varying class separation.
+FIGURE 11.
+The distribution of values with varying class separation.
+
+View All
+
+C. Amount of Missing Values
+The amount of missing values is the proportion of empty values in the data. Figure 12 shows how the MCAR (Missing Completely at Random) generator produces this characteristic. This generator gets the value generated by another generator (in this case, a Uniform generator) and changes it to a missing value according to a probability, the parameter ‘Prob.’
+
+FIGURE 12. - Adding an MCAR accessory before the uniform distributions create missing values randomly according to a probability.
+FIGURE 12.
+Adding an MCAR accessory before the uniform distributions create missing values randomly according to a probability.
+
+View All
+
+Figure 13 presents the missing values of datasets. The red color is used to map the missing values, and the ratio of change from 10% to 40% is shown in Dimension 2 as the red increases, as the class remains unchanged, being the desired scenario to evaluate the classification approaches with missing values. An opacity value of 0.2 is used on the red color to not clutter the visualizations.
+
+FIGURE 13. - The amounts of missing value by its probability.
+FIGURE 13.
+The amounts of missing value by its probability.
+
+View All
+
+The datasets generated in this case could be used to test the robustness of a classifier when there are missing values in the features. Other types of missing values could be generated by the presented system, such as the MAR (Missing at Random). It could also be used to test the imputation algorithms.
+
+D. Class Imbalance
+The Class Imbalance is the proportion of each class in the dataset. The class imbalance presents a list of challenges that could be tested with new approaches in classification [38]. Figure 14 shows how the Weighted Categorical generator produces this characteristic, with the weight (or likelihood) of each category being the proportion it appears in the dataset.
+
+FIGURE 14. - Changing the categorical generator to weighted categorical allows the generation of class-imbalanced datasets.
+FIGURE 14.
+Changing the categorical generator to weighted categorical allows the generation of class-imbalanced datasets.
+
+View All
+
+Figure 15 shows the class imbalance on beeswarm plots. On the balanced plot, the thickness of both plots are equal, but as the imbalance starts, the thickness of both distributions start to change. At the end (20%-80%) the thickness of A1 is drastically reduced, and the thickness of A2 grew.
+
+FIGURE 15. - Imbalance of classes on beeswarm plots.
+FIGURE 15.
+Imbalance of classes on beeswarm plots.
+
+View All
+
+E. Bad Features
+The Bad Features characteristic refers to the number of features that are unrelated to the class, e.g., there is no correlation between the class and the feature, being ‘bad’ for classification. Figure 16 show that adding dimensions with Uniform Generators is enough, as the dimensions are unrelated by default.
+
+FIGURE 16. - Adding dimensions without categorical functions creates bad features unrelated to the class.
+FIGURE 16.
+Adding dimensions without categorical functions creates bad features unrelated to the class.
+
+View All
+
+Figure 17 shows the bad features on a Parallel Coordinates. The visual distinction of the good feature presents is clear, and the values of the bad features are shown with clutter and irrelevant patterns. These datasets could be used to test whether a classifier well separates the good features of useless features.
+
+FIGURE 17. - Parallel Coordinates showing bad features.
+FIGURE 17.
+Parallel Coordinates showing bad features.
+
+View All
+
+F. Amount of Classes
+The amount of classes refers to the number of different categories in the class dimension. Figure 18 shows how the Categorical Generator can accept many categories as parameters, and how they impact the switch case (the Categorical Function) in the feature dimension.
+
+FIGURE 18. - Adding categories to the Categorical Generator increases the number of classes.
+FIGURE 18.
+Adding categories to the Categorical Generator increases the number of classes.
+
+View All
+
+Figure 19 shows the number of classes on a beeswarm plot binned by class. The color labels each class along with the position. The size of the class plots gets very small from 22 classes onward, but the distribution of data presents the separation of different classes. These datasets could be used to test which classifiers are robust when classifying many classes, also test if the accuracy of classifiers remains balanced between classes.
+
+FIGURE 19. - The accuracy of the models with varying amount of classes.
+FIGURE 19.
+The accuracy of the models with varying amount of classes.
+
+View All
+
+SECTION V.Conclusion
+This work presented a synthetic data generator for the evaluation of information visualization techniques and machine learning systems. The application is flexible and gives the user the freedom to create custom generation profiles by composing several data distribution primitives, such as uniform and normal distributions. It also contains accessories, functions, sequences, and geometric generators that allow highly customizable datasets.
+
+The descriptive model file can be exported and imported, favoring the reproducibility of research tests and experiments. The application also offers a data stream web service to ease the interoperability of the system and its generated data in external applications.
+
+This article also presents how the application can be used in the context of evaluating machine learning algorithms. It showed how different datasets could be generated, allowing control of the system over common problems on machine learning tasks. The visualizations built for each scenario show the consistency of the tool on validating each situation. The datasets created for this article are freely available in the IEEE DataPort under the following link: http://dx.doi.org/10.21227/5aeq-rr34.
+
+As future works, the extraction of generators from real data can be explored. The modeling language that describes how to compose a chain of generators can be used as an idiom to understand how real data behaves. Breaking through this problem would open possibilities to edit real data, changing the parameters that drive their distributions to create synthetic data from real ones. Another option is the use of machine learning techniques to make the generated synthetic data more realistic by adding noises that are common in real data without severely changing the underlying distribution.
+
+Additionally, the authors intend to add: more types of generators, new ways to display generators to facilitate the understanding of the model’s design, a constant seed to enable the generation of a unique dataset, new visualizations for data validation, and new interaction possibilities, such as zoom in/out, filter, and re-ordering. Another extension to future work could add a verification or comparison component either visually or using a quantitative metric. Besides that, another increment to the system will be the usage of real-world data to generate new synthetic data with corresponding characteristics where the user could compare both each other.

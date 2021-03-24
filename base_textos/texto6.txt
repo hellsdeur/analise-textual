@@ -1,0 +1,349 @@
+In 1998, WHO launched a new, high profile campaign to
+Roll Back Malaria, with the stated goal to halve malaria
+deaths worldwide by 2010.1 Achieving that goal requires
+preventive interventions (eg, insecticide-treated bednets,
+household insecticide spraying), but the main difference
+between life and death for malaria patients hinges on
+appropriate treatments. Simply, each malaria case must
+be promptly and accurately diagnosed, and treated with
+an effective malaria drug.
+However, with nearly half the time to the 2010 deadline
+now past, progress on effective treatment is so inadequate
+that Roll Back Malaria is failing to reach its targets. Far
+from being on track to halve malaria deaths, WHO
+acknowledges that “RBM [Roll Back Malaria] is acting
+against a background of increasing malaria burden”.2
+Of the several reasons that could cause malaria deaths to
+increase, one stands out most prominently: drug resistance
+in the deadly species of malaria, Plasmodium falciparum.
+WHO now writes of “global malaria control . . . being
+threatened on an unprecedented scale” by continued use of
+outdated drugs such as chloroquine, which is ineffective in
+most parts of Africa, and sulfadoxine-pyrimethamine, which
+is becoming so.3 For example, in East Africa, surveillance
+and clinical trial data show that up to 64% of patients given
+chloroquine and 45% given sulfadoxine-pyrimethamine will
+fail treatment, and those figures are climbing.4,5
+When treatment failure becomes so frequent, malaria
+deaths rise greatly, especially in children. In West Africa
+(Senegal), results of a 12-year community-based study6
+showed that the onset of chloroquine resistance at least
+Lancet 2004; 363: 237–40
+Royal Institute of International Affairs, London, UK (A Attaran LLB);
+Division of Pharmacology, University of Cape Town, Republic of
+South Africa (K I Barnes MD); Department of Infectious and Tropical
+Diseases, London School of Hygiene and Tropical Medicine, UK
+(C Curtis PhD, C I Fanello PhD); Department of Parasitology, Prince
+Leopold Institute of Tropical Medicine, Antwerp, Belgium
+(U D’Alessandro MD); Malaria Foundation International, Atlanta, GA,
+USA (M R Galinski PhD); Faculty of Pharmacy, University of Nairobi,
+Kenya (G Kokwaro PhD); Faculty of Tropical Medicine, Mahidol
+University, Bangkok, Thailand (S Looareesuwan MD); Kenya Medical
+Research Institute-Wellcome Trust Research Programme, Kenya
+(M Makanga MBChB); East African Network for Monitoring
+Antimalarial Treatment (EANMAT), Tanga, Tanzania
+(T K Mutabingwa MD); Epidemiological Surveillance Division,
+Ministry of Health, Kampala, Uganda (A Talisuna PhD); Institut de
+Recherche pour le Développement, Dakar, Sénégal (J-F Trape MD);
+Department of Pharmacology and Therapeutics, University of
+Liverpool, UK (W M Watkins PhD)
+Correspondence to: Dr Amir Attaran
+(e-mail: aattaran@riia.org)
+doubled childhood malaria death risk, and in some sites,
+increased it up to 11-fold in the youngest children. In East
+and southern Africa, the proportion of children dying
+from malaria doubled as chloroquine and later
+sulfadoxine-pyrimethamine resistance took hold from the
+1980s to the 1990s, even as deaths from other causes
+declined.7 Elsewhere in Africa, chloroquine resistance
+increased the proportion of admissions to hospital and
+deaths from malaria by two-fold to four-fold.8
+These links between drug resistance, treatment failure,
+and finally death are not controversial. WHO concurs that
+chloroquine resistance is a “very likely” reason why
+childhood malaria deaths in Africa are increasing, and that
+chloroquine “has become useless in most malaria-endemic
+areas”.2,9 WHO further agrees that resistance to
+sulfadoxine-pyrimethamine, which is often the replacement
+for chloroquine, “is also widespread and its use [too] will
+soon have to be discontinued”.9 That is borne out in
+Kenya, where a decision 5 years ago (1998) to switch from
+chloroquine to sulfadoxine-pyrimethamine treatment is
+already faltering because sulfadoxine-pyrimethamine
+treatment failure quickly reached dangerous levels.4,10
+The demise of chloroquine and sulfadoxinepyrimethamine leave artemisinin-class combination
+therapies (ACT) as the best treatment option. The main
+reason for treating malaria with combination therapy is
+the same as for AIDS, tuberculosis, and leprosy, in which
+it is standard practice: patients given two (or more) robust
+and highly effective drugs are less likely to encounter drug
+resistance and fail treatment—which brings both clinical
+and public-health benefits. These benefits have now been
+shown in a large meta-analysis11 of nearly 6000 patients,
+which shows that combining existing malaria drugs with
+an artemisinin both reduces patients’ risk of treatment
+failure (by 75%), while lessening the pool of infectious
+parasites (gametocytes) that transmit the disease to
+others. In studies done on nearly every continent,12–19 ACT
+successfully treats 90% or more of patients. That level of
+success can probably be maintained for a very long time,
+since artemisinins have been used as Chinese traditional
+medicines for 2000 years, with no observed resistance.20,21
+The superiority of ACT is now so established that of the
+five treatments WHO recommends for drug resistant
+P falciparum malaria, four are ACTs (the other is a “shortterm solution” for countries that cannot use ACT
+immediately).3 ACT is now the preferred policy for WHO
+and the Roll Back Malaria campaign as a whole:
+“Recently WHO has formulated policy that elevates
+combination drug therapy to preferred first therapy for all
+malaria infections in areas where P falciparum is the
+predominant infecting species of malaria. Combination
+therapy (CT) with formulations containing an artemisinin
+compound (ACT) is the policy standard . . .”22
+WHO, the Global Fund, and medical malpractice in malaria
+treatment
+Amir Attaran, Karen I Barnes, Christopher Curtis, Umberto d’Alessandro, Caterina I Fanello, Mary R Galinski,
+Gilbert Kokwaro, Sornchai Looareesuwan, Michael Makanga, Theonest K Mutabingwa, Ambrose Talisuna,
+Jean François Trape, William M Watkins
+Viewpoint
+THE LANCET • Vol 363 • January 17, 2004 • www.thelancet.com 237
+For personal use. Only reproduce with permission from The Lancet.
+However, WHO violates its own policy standard
+regularly. Most African countries reluctantly cling to
+chloroquine, sulfadoxine-pyrimethamine, or the insignificantly better combination of chloroquine and sulfadoxinepyrimethamine, because ACT is ten times more expensive
+and, therefore, unaffordable to them.2,23 When those same
+countries seek financial aid from the Global Fund for
+AIDS, Tuberculosis, and Malaria (GFATM) to purchase
+ACT, they are forcefully pressured out of it by governments such as the USA, whose aid officials say that ACT
+is too expensive and “not ready for prime time”.24 WHO
+acquiesces to this pressure to cut costs, and despite a
+policy that names ACT as the gold standard of treatment,
+WHO signs its approval when GFATM funds cheap but
+ineffective chloroquine or sulfadoxine-pyrimethamine to
+treat P falciparum malaria.
+This series of errors is illustrated by several projects
+currently supported by GFATM. Although GFATM
+claims it supports only projects that use “proven and
+effective interventions” and “interventions that work”, in
+Africa in 2003, it allocated more funds to purchasing of
+chloroquine and sulfadoxine-pyrimethamine than to
+ACT.25 In January, 2003 (funding round 2), Africa was
+allocated US$16⋅1 million for ACT, $27·7 million for
+chloroquine, and $10·8 million for sulfadoxinepyrimethamine (round 2). The corresponding amounts
+for October, 2003 (funding round 3), were $2·2 million,
+$2·4 million, and $0·5 million.26
+These budgetary differences are not insignificant. The
+unit price differences between chloroquine ($0·13),
+sulfadoxine-pyrimethamine ($0·14), and ACT ($1·00–
+3·00) mean that patients given chloroquine and
+sulfadoxine-pyrimethamine will outnumber those given
+ACT by at least ten to one.2 Since GFATM plans this
+budget for countries where chloroquine and sulfadoxinepyrimethamine resistance in P falciparum is well advanced
+(table), many patients with malaria will fail treatment—
+and sometimes die.27
+Senegal has switched in 2003 from chloroquine to
+combination therapy for malaria treatment, but until this
+change GFATM agreed to continue chloroquine
+treatment, despite the known increase in child mortality
+(two-fold to 11-fold) that it causes.6 In Kenya, GFATM
+rejected the government’s request to finance ACT, but later
+agreed to finance sulfadoxine-pyrimethamine, despite
+evidence that sulfadoxine-pyrimethamine treatment failure
+exceeds 50% in some districts (eg, Kibwezi).4,28 In Ethiopia
+and Uganda, GFATM agreed to finance the combination
+treatment of chloroquine and sulfadoxinepyrimethamine—a pairing that WHO describes as “not
+recommended”—while falsely insisting that its action is
+“consistent with current treatment guidelines of WHO”.29,30
+These are very obvious errors of scientific and medical
+judgment; and although WHO might be expected to
+spearhead a corrective intervention, the evidence suggests
+that it instead exacerbated the errors. In Kenya, Ethiopia,
+and Uganda, WHO’s country representatives reviewed the
+funding proposals in which inappropriate drugs were
+sought—and signed their approval. Those signatures
+follow a declaration that WHO “has participated
+throughout the . . . process” of developing the proposal to
+GFATM, and that it “reviewed the final proposal and [is]
+happy to support it”.31–33
+These decisions are indefensible. For WHO and
+GFATM to provide chloroquine and sulfadoxinepyrimethamine treatments in the countries we cite as
+examples at least wastes precious international aid money,
+and at most, kills patients who have malaria. If one takes
+the measured increase in childhood malaria mortality that
+follows P falciparum drug resistance (two-fold to 11-fold)
+and extrapolates it to populations in which GFATM is
+funding chloroquine or sulfadoxine-pyrimethamine
+despite resistance (more than 100 million people in the
+four countries we name), then at least tens of thousands of
+children die every year as a direct result. Those patients
+who survive will often become much sicker and require
+retreatment, at some further expense of time and money.
+We do not exaggerate to state that, based on the
+outcomes, there is no ethical or legal difference that
+separates them from conduct otherwise condemned as
+medical malpractice (compare the case in which a doctor
+or pharmacist who, like these institutions, knowingly
+furnished treatments that failed perhaps 80% of the time,
+while withholding the alternatives as “too expensive”).
+These problems might be discounted as aberrations,
+but for the evidence that they recur systematically. In
+addition to the four countries we name here, a WHO
+memorandum names five others where GFATM funded
+chloroquine and where, less than 2 years later, governments must already re-evaluate and move toward ACT.3
+Accordingly, there is often a disconnection between
+official policy, which favours ACT, and the reality created
+by WHO and GFATM, who routinely approve and
+finance inferior drugs. It is essential to understand why
+this has happened to repair the situation.
+To begin with, WHO has failed to define the medical
+norms for malaria treatment. Although there are carefully
+crafted WHO model treatment guidelines for HIV/AIDS
+and tuberculosis (the latter are in their third edition), to
+date for malaria, recommendations are found only in
+scattered WHO reports, rather than in official,
+comprehensive WHO malaria treatment guidelines.34,35
+The lack of any such norms handicaps poor countries,
+who naturally hesitate to change their treatment policies
+and request funding for ACT when that displeases the
+powerful donor governments who warn them—usually in
+private—that ACT is too expensive.2,24 The same lack of
+norms also causes WHO to miss opportunities to
+intervene and recommend ACT. That is probably why
+WHO country representatives, poorly informed by
+Geneva, gave approval to GFATM applications for
+ineffective drugs that violate WHO policy.
+In theory, the GFATM’s Technical Review Panel should
+block proposals like this, but as the evidence shows, it often
+approves ineffective drugs for funding. For example, the
+panel approved Uganda’s GFATM proposal with praise
+for “strategies based on best practices”, when in fact the
+malaria treatment proposed (chloroquine and sulfadoxinepyrimethamine) is very plainly “not recommended” by
+WHO’s experts.29,36 Such decisions seem puzzling, until one
+realises that the Technical Review Panel is not actually a
+“technical” review panel. The four malaria reviewers on the
+Technical Review Panel are selected by a points-based
+system, in which “technical knowledge . . . and ability to
+judge whether proposals are . . . scientifically sound” count
+for only 22% of that decision.37 By contrast, “familiarity
+VIEWPOINT
+238 THE LANCET • Vol 363 • January 17, 2004 • www.thelancet.com
+Parasitological failure (%) Clinical failure (%)
+Chloroquine Sulfadoxine- Chloroquine Sulfadoxinepyrimethamine pyrimethamine
+Ethiopia 88 (82–94) ·· 79 (51–93) ··
+Kenya 71* 23 (13–38) 64 (32–87) 8 (0–52)
+Senegal 42 (24–59) 0 13 (10–16) ··
+Uganda 41 (10–96) 17 (0–73) 28 (9–89) 10 (0–25)
+Data are median (range). See reference 24 for original data sources and
+methods, which vary. *Range not available.
+Parasitological and clinical failure rates for P falciparum
+malaria in some African countries, 1996–2002
+For personal use. Only reproduce with permission from The Lancet.
+with international processes and . . . partnerships” and
+“familiarity with multisectoral approaches” count for twice
+as much (44%), even though it is hard to know what those
+criteria really mean.
+The evidence therefore shows that the current practices
+of WHO and GFATM are not adequate to safeguard the
+best interests of patients with malaria. We offer several
+recommendations for improvement.
+Above all, WHO should publish malaria treatment
+guidelines that countries can depend on as authoritative
+norms. Those guidelines should consolidate and broaden
+the knowledge in various WHO reports, in a single,
+systematic presentation that is reviewed every year, and
+that addresses clinical algorithms, diagnostic methods,
+malaria case definitions, standard treatment regimens,
+definitions of cure, and so on.29,38 WHO can do this for
+malaria by copying its own actions on HIV/AIDS: first,
+WHO convened treatment specialists to debate and write
+the AIDS treatment guidelines, and second, it set the
+campaign goal of treating 3 million AIDS patients in
+developing countries by 2005.34,39 Importantly, that is the
+opposite sequence to Roll Back Malaria, which, in 2003
+still does not have the treatment guidelines to reach the
+1998 pledge of halving malaria mortality in this decade.
+Next, once they exist, WHO treatment guidelines
+should be used to judge each proposal for malaria
+treatment, so that only effective drugs receive GFATM
+funding. Although this recommendation seems obvious,
+neither WHO nor GFATM believe it is within their
+mandate. Both agencies emphasise their roles as mere
+advisers or funders, while emphasising that selection of
+malaria treatments is properly done by countries—who, in
+our experience, are often pressurised by aid donors.28 The
+fact that neither agency believes it has the obligation to
+intervene and ensure that lives and money are not wasted
+is proof that a new entity is necessary.
+We recommend that a new review committee be
+created, which is composed of independent malaria
+treatment experts, convened by WHO, and tasked by
+GFATM to review each proposal seeking finance for
+malaria drugs. This Green Light Committee (so called
+because it controls the green light that lets a drug be
+financed and supplied) has an exact precedent in
+tuberculosis. In 2000, outside experts created a Green
+Light Committee, with WHO support, to review countries’
+proposals to fund drugs for multidrug-resistant
+tuberculosis.40 Later, this Green Light Committee and the
+GFATM integrated their procedures, and today, countries
+wanting drugs for multidrug-resistant tuberculosis submit
+applications to both the Green Light Committee and
+GFATM in a single envelope, so that the technical and
+financial decisions affecting treatment happen together.
+The need for a similar malaria Green Light Committee is
+undeniable, since multidrug resistance in malaria is much
+more common than in tuberculosis.
+Once the WHO treatment guidelines exist and the
+malaria Green Light Committee is operational, its first task
+should be to retrospectively review all GFATM-funded
+countries in view of the guidelines. To let the full (usually 5
+year) duration of financing run without updating the
+standard of care, where justified by the evidence, would be
+unethical. This retrospective review will be easiest for
+countries where GFATM funding has been approved but
+not yet disbursed (eg, Uganda), although it should also be
+done for countries where disbursement is underway. If a
+retrospective review finds that a country cannot use
+chloroquine or sulfadoxine-pyrimethamine safely, and
+instead requires costlier ACT, then GFATM should
+entertain a supplemental funding proposal.
+Finally, to ensure equally wrong-headed decisions do
+not affect any intervention or disease again, GFATM
+should return to its original principles—and make the
+technical review panel a truly technical entity. Panelists
+should be selected on the basis of 100% technical and
+scientific knowledge, not 22%, as is true now.
+None of these recommendations imply new implementation challenges for WHO and GFATM. Most have clear
+precedents in the HIV/AIDS or tuberculosis field, which
+means that equal treatment for malaria must be possible.
+The scientific community must now watch future
+developments closely, because numerous earlier warnings
+have been ignored. In 1999, several authors wrote in
+The Lancet to warn of an impending “malaria disaster”,
+which is now apparent in rising malaria deaths.20 In 2000,
+one of the authors (AA) reported that aid agencies were
+funding ineffective malaria drugs, but the agencies denied
+that accusation and forcefully opposed a proposal to link
+technical review to funding decisions.41,42 Similarly, our
+recommendation to create a malaria Green Light
+Committee has not been answered, either affirmatively or
+negatively, by WHO and GFATM in several months.
+Rather, WHO has reiterated its earlier policy statements
+favouring ACT—the same statements that were not
+heeded through these many errors—and established a new
+unit responsible for addressing tuberculosis and HIV drug
+resistance—but not malaria.3,43
+The weight of evidence leads us to conclude that a crisis
+exists, characterised by institutional inadequacies that
+result in good policies for malaria control not being
+fulfilled. Although the inadequacies are easily rectified, a
+risk exists that if WHO and GFATM do not act with
+celerity, the reputations of both will be tainted such that
+rich governments lose confidence and cease funding them.
+That would deal a tragic blow not only to malaria
+treatment, but also to the spectrum of efforts against
+malaria, tuberculosis, and AIDS, which require and
+deserve billions of dollars wisely spent. The evidence now
+proves that money is often unwisely spent—very
+dangerous evidence indeed—and no delay is tolerable in
+fixing that.

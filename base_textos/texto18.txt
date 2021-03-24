@@ -1,0 +1,91 @@
+Abstract
+Objectives
+Big data analysis is receiving increasing attention in many industries, including healthcare. Visualization plays an important role not only in intuitively showing the results of data analysis but also in the whole process of collecting, cleaning, analyzing, and sharing data. This paper presents a procedure for the interactive visualization and analysis of healthcare data using Tableau as a business intelligence tool.
+
+Methods
+Starting with installation of the Tableau Desktop Personal version 10.3, this paper describes the process of understanding and visualizing healthcare data using an example. The example data of colon cancer patients were obtained from health insurance claims in years 2012 and 2013, provided by the Health Insurance Review and Assessment Service.
+
+Results
+To explore the visualization of healthcare data using Tableau for beginners, this paper describes the creation of a simple view for the average length of stay of colon cancer patients. Since Tableau provides various visualizations and customizations, the level of analysis can be increased with small multiples, view filtering, mark cards, and Tableau charts.
+
+Conclusions
+Tableau is a software that can help users explore and understand their data by creating interactive visualizations. The software has the advantages that it can be used in conjunction with almost any database, and it is easy to use by dragging and dropping to create an interactive visualization expressing the desired format.
+
+Keywords: Data Display, Statistics as Topic, Information Storage and Retrieval, Artificial Intelligence
+Go to:
+I. Introduction
+Data visualization is an intuitive way for users to easily read and understand data, especially in big data analyses. It helps to improve the quality of policies or services by presenting an integrated view and evidence for making healthcare decisions [1,2]. Tableau connects users with a variety of data sources and enables them to create data visualizations by making charts, maps, dashboards, and stories through a simple drag and drop interface. Although Tableau has received some attention in the healthcare field [3], Tableau is still not widely used in the healthcare industry. Therefore, this paper introduces Tableau and presents the procedure of using Tableau for the interactive visualization and analysis of healthcare data to encourage its widespread use.
+
+Go to:
+II. Methods
+1. Installing Tableau
+Tableau provides three versions of Tableau Desktop [4]. The Public version is free but the Personal and Professional versions are available with a fee or free 14-day trial. However, Tableau provides a 1-year free product key with support for students and instructors in academic programs. This tutorial reflects the Tableau Desktop Personal version 10.3 (64-bit).
+
+To install Tableau, an e-mail address is required for the user to set up an account [5]. Downloads can be accessed through the addresses shown in Figure 1. The user enters the e-mail address and clicks the ‘Download’ button. Then a download will be begin automatically. The 32-bit and Mac versions can be downloaded via the link “Need a different version?” If the user uses 32-bit OS, it can be downloaded with 32-bit version automatically.
+
+An external file that holds a picture, illustration, etc.
+Object name is hir-23-349-g001.jpg
+Figure 1
+Downloading a trial of Tableau Desktop (https://www.tableau.com/products/desktop/download).
+When the user runs a downloaded file, user agreement to the terms and conditions is required before installation. The user must confirm that agreement is checked and click the installation button. Installation will proceed and Tableau will be run automatically. When a Tableau activation window pops up, the user can click a trial or product key buttons. This procedure description is for a trial of Tableau Desktop.
+
+To download a free product, Tableau Public, the user can click the ‘Download’ button of the Public version [4]. The download and installation process is the same as that for the Tableau Personal version.
+
+To obtain a 1-year free product key, the user can apply for the Academic Programs supported by Tableau [6]. Procedures can be followed by accessing the pertinent points (i.e., students, instructors, and administration). For example, a user who has access to students should click on the ‘GET TABLEAU FOR FREE’ button to enter his or her user information on the entry screen. One can receive a 1-year free product key by sending roof papers by email according to the procedure shown in Tableau.
+
+2. Connecting to Sample Data
+The sample in this example procedure description includes the height and weight data of colon cancer patients from health insurance claims during the years 2012 and 2013, provided by the Health Insurance Review and Assessment Service (HIRA) [7]. Once the data is ready, various files (Excel, text, Access, and so on) and a server (MS SQL, MySQL, etc.) can be connected via the Connections section to the left of the Tableau window.
+
+This sample is Excel formatted data, so Excel is selected to import the data. The attached datasets appear in the upper left corner, and the sheets are listed at the bottom of the datasets. These consist of 2012 and 2013 sheets. If the 2012 sheet is selected and dragged to the ‘Drag sheets here’ section, the 2012 sheet will be added to the section, and the data will be displayed below. To merge the 2012 and 2013 sheets, the 2013 sheet is dragged to ‘Union’ as shown on the 2012 sheet. Then, the worksheet is clicked next to the bottom data source to create a new worksheet. The Tableau workspace consists of the following items and functions (see Figure 2):
+
+An external file that holds a picture, illustration, etc.
+Object name is hir-23-349-g002.jpg
+Open in a separate window
+Figure 2
+Interface of workspace in Tableau Desktop.
+Menus: files, data, worksheets, dashboards, stories, etc.
+
+Toolbar: undo, redo, swap rows and columns, show me, etc.
+
+Data Pane: Tableau assigns data fields of the connected dataset in the left section. ‘Formatting’ and ‘Analytics’ panes are also available.
+
+‘Dimensions’ in the upper section include discrete categorical data such as type or date.
+
+‘Measures’ in the lower section contain continuous data.
+
+Shelves and Cards: page shelf, filter shelf, mark cards, and top space with row and column shelves
+
+View: The right space to create a view (table, graph) by adding fields
+
+Sheet Tabs: Create or move to created worksheets, dashboards, and stories
+
+Go to:
+III. Results
+1. Basic View
+To start with a basic view for comparing the lengths of stay (LOSs) of male and female colon cancer patients, ‘gender’ in the Dimensions is dragged and dropped into the ‘columns’ shelf. The gender field is displayed in blue. Then, “LOS” in the Measures is dragged to the ‘rows’ shelf. The LOS field is displayed in green. The continuous field is automatically calculated as a total ‘sum’ and appears as a bar graph. This shows that the total LOS of male patients was larger than that of female patients. By selecting the LOS field that has changed to a total sum, it is possible to change it to different formats, such as average. The total LOS of male patients was larger than that of female patients, but there was no difference between the average LOSs of male and female patients (Figure 3).
+
+An external file that holds a picture, illustration, etc.
+Object name is hir-23-349-g003.jpg
+Figure 3
+Getting started with a basic view.
+2. Increasing the Level of Details with Small Multiples
+To increase the level of detail, an additional field, such as cancer stage, can be added to the previous basic view. Then, the LOSs can be compared by gender and final stage. The ‘final stage’ field of the Dimensions is dragged to the rows shelf and placed in front of the LOS field. The same results can be obtained by dragging the final stage field to the left average LOS axis of the view.
+
+3. Filtering the View and Using the Mark Cards
+After creating a basic view using rows and columns shelves, mark cards and filters can be used to create a higher level of views. Explicitly, the view can be filtered to focus exploration, and mark cards can be used to add depth to the analysis. To compare the LOSs by gender and final stage after filtering C180, C19, and C20 of the ‘main code’, the main code field of the Dimensions is dragged to the ‘filter’ shelf. The filter [Main code] pop-up window appears. In the ‘general’ tab, C180, C19, and C20 are checked, and then the ‘OK’ button is pressed. The view is updated with filtered data. Next, the main code field is dragged into the ‘color’ of the mark cards. The filtered main code is updated to indicate the gender and the average LOS according to the final stage combined with the generation of the color legend (Figure 4).
+
+An external file that holds a picture, illustration, etc.
+Object name is hir-23-349-g004.jpg
+Figure 4
+Example of filtering views and using mark cards.
+4. Building a Tableau Chart (Treemap)
+Although the stacked bar chart is created automatically, it is possible for Tableau to change various graphs in the ‘Show Me’ section [8]. For example, to change the graph to ‘Treemap’ on the toolbar, one should click Show Me in the upper-right corner, and then select Treemap. It appears as a changed tree map automatically. The size and color of the rectangle in the Treemap is determined according to the average LOS. The longer the average LOS, the darker the color and the larger the size of the rectangle. The main code field is dragged and dropped to the color of the mark cards. Depending on the values of the previously filtered main code field, the color of the rectangle changes. The ‘weight’ field in the Measures is dragged to the color of the mark cards, and the sum is changed to the average of the weight field. Then, the color can be edited the color. ‘Red-Blue-White Diverging’ is selected, ‘Reversed’ is checked, and then the OK button is clicked. The average LOS determines the size of the rectangle, and the average weight determines the color of the rectangle (Figure 5).
+
+An external file that holds a picture, illustration, etc.
+Object name is hir-23-349-g005.jpg
+Open in a separate window
+Figure 5
+Example of a Tableau chart, Treemap.
+Go to:
+IV. Discussion
+By following the procedure described in this paper, it is possible to create a simple view to explore sample data using Tableau for beginners. Tableau provides various visualizations, such as tables, heatmaps, maps, bar charts, treemaps, line charts, bubble charts, and so on as well as customizations, such as radar charts with user intention. Users can also create interactive visualizations that express the desired format using filters, drop-down lists, the calculated field, and so on. This procedure is intended for beginner level, so indepth functions and detailed options for intermediate and advanced users will be covered in the forthcoming paper.

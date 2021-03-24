@@ -1,0 +1,317 @@
+Abstract— Current Electronic Medical Records (EMR)
+systems contain large amounts of texts and various
+tables, to show numerous health data. This type of
+presentation limits people from promptly determining
+medical conditions or quickly finding desired information
+given the large volume of texts that needs to be read.
+We aim to tackle this as information visualization and
+extraction problems by creation of easy and intuitive
+user interfaces for visualizing medical information. We
+present both a novel graphical interface for visualizing
+a summary of medical information and an information
+extraction system that is able to extract and visualize
+the patient’s medical information from structured clinical
+notes. The graphical interface allows spatial-position
+based representations of medical information on human
+body images (front and back views) and temporaltime based representation of it through interconnected
+time axes. Medical histories are classified into several
+event categories and 6 physiological systems to enable
+efficient browsing of selected information. To extract
+visual tags from a given clinical note, we use natural
+language processing. We employ Metamap of 2014AA
+knowledge source for medical information extraction.
+We trained 1294 English clinical notes with a TimeEntity Detection model by Apache OpenNLP to abstract
+the time expressions. Extracted location of illness is
+assigned into one of 6 physiological systems is displayed
+in spatial interface while the related data are denoted on
+a horizontal timeline of temporal interface.
+Keywords—Information Extraction, MetaMap, Information Visualization, EMR, Tag of Medical Information,
+Pictorial User Interface
+I. INTRODUCTION
+Medical records serve as a central repository of
+patients’ medical histories and play an essential role
+in patient care. A report from the Centers for Medicare
+and Medicaid Services (CMS) indicated that approximately 80% of eligible hospitals and more than 50% of
+professionals have adopted EMRs. Nevertheless, their
+acceptance in clinical practice continues to lag behind
+their potential and expected outcomes because the medical data that accompany EMRs are often voluminous,
+complex, disorganized [1] and difficult to integrate.
+Given the alarming rate at which the volume of medical
+records is growing, important information is constantly
+difficult to obtain, thereby seriously hampering a physician’s diagnostic reasoning and the efficiency with
+which he/she works. Because of the limited time that
+healthcare professionals can devote to receiving data,
+reviewing and extracting the records that they need in
+a few minutes are challenging tasks.
+Current EMR systems have not realized their full
+potential as digital information sources where medical
+data can be structured to maximize the convenient
+extraction of target information. EMR systems should
+enable physicians to quickly incorporate or retrieve various types of medical information, such as symptoms,
+diagnosis, lab tests, treatments, medications and so
+on. Information visualization (InfoVis) is one method
+by which the value of electronically available medical
+data can be maximized[2]. Given that InfoVis presents
+medical data in intuitive, understandable, recognizable,
+navigable, and manageable formats, users can rapidly
+understand and extract useful information from large
+978-1-5386-4618-2/18/$31.00 ©2018 IEEE
+amount of records.
+Popular commercial EMR systems, such as EpicCare [3], Allscripts [4], and eClinicalWorks [5], offer
+functionality for problem lists, electronic prescriptions,
+allergy checks, medication management, order management and billing. These systems therefore contain
+various texts, such as documents, orders and notes. A
+frequent mode of visualization in commercial EMR
+systems is the flowsheet, which is widely used in
+intensive care units (ICUs). It contains key medical
+variables for a single patient over a given period and
+thus emphasizes trends and abnormal values. Numerous
+other systems, such as IBM Watson Health [6] and
+Oracle Health Sciences[7], often include automated
+analysis techniques that are based on machine learning
+and data mining. Substantial medical information is
+classified in ways that fail to satisfy physicians’ requirements for quick review of a patient’s medical history.
+Current EMR systems facilitate the rapid incorporation
+and collection of medical data but lack necessary functionalities for temporal queries and exploratory analysis
+tasks.
+Fig. 1. Medical Information Extraction and Pictorial Visualization
+System
+In this paper, we address a medical record summary
+system that enables users to require the patient’s medical data which are visualized spatially and temporarily
+based on categorization. The overall system is shown
+in Fig. 1.
+II. RELATED WORKS
+A. Medical Data Extraction & Visualization
+Patient’s medical records contains valuable information. Extracting, visualizing and presenting these
+crucial medical data for diagnosis processing is necessary. Data extraction is important and the first step.
+By building the logistic regression models trained by
+manually annotated information, Zeng et al. [8] extract
+medical data that doctors are interested in. Sabra, et al.
+[9] established on semantic extraction from text-based
+records. Similar to [8], by preparing the feature vector,
+a classifier and an extractor are trained by machine
+learning.
+In addition, to realize medical data visualization and
+presentation, in this paper [10], Michael et al. designed
+3D medical graphical avatar(MGA), which has the
+ability to explore web-based delivery of different type
+of medical information, such as images, videos, and
+text-based data.
+B. UMLS and Metamap
+The Unified Medical Language System[11] (UMLS)
+is a compendium of many controlled vocabularies in
+the biomedical sciences (created 1986). UMLS contains three tools (Metathesaurus, Semantic Network,
+SPECIALIST). The Metathesaurus is a very large,
+multipurpose, and multi-lingual vocabulary database
+that contains information about biomedical and health
+related concepts, their various names, and the relationships among them. It transcends the specific thesauri,
+vocabularies, and classifications it encompasses. The
+Metathesaurus is organized by concept or meaning.
+It links alternative names and views of the same
+concept and identifies useful relationships between
+different concepts. Furthermore, the Metathesaurus is
+linked to the other UMLS Knowledge Sources the
+Semantic Network and the SPECIALIST Lexicon. All
+concepts in the Metathesaurus are assigned to at least
+one Semantic Type from the Semantic Network. This
+provides the consistent categorization of all concepts
+in the Metathesaurus at the relatively general level
+represented in the Semantic Network.
+Metamap developed by Dr. Alan (Lan) Aronson at
+the National Library of Medicine(NLM)[12] is a powerful tool to recognize UMLS concepts in clinical notes.
+It has the ability to map biomedical text to UMLS
+Metathesaurus or, equivalently, to discover Metathesaurus concepts referred to in text. In our system, we
+use Metamap 2014AA and its corresponding Java Api
+to implement information extraction.
+III. PICTORIAL VISUALIZATION OF
+MEDICAL INFORMATION
+The medical records are categorized into multiple
+classes to be visualized in two given interfaces, one for
+spatial interface which is position based representation
+and the other for temporal interface which is time-based
+representation of medical information.
+A. Spatial - Position based representation
+In a spatial medical record, illness or diseases location is organized in accordance with its physiological
+systems. We categorized 6 physiological systems and
+combine its relevant images with font and back views
+(Fig.2);
+• Musculoskeletal/Dermatological
+• Cardiovascular/Respiratory
+• Gastrointestinal
+• Nervous
+• Immune/Endocrine
+• Genitourinary.
+As long as the illness and human body part information extracted, the data would be spatially presented
+over its corresponding location with a circle on its
+relevant physiological system image (Fig. 3). The colors indicate which physiological system it belongs to.
+Black circles means symptom where a physiological
+system is still unknown. In addition, a whole-bodyproblem image would be used (marked as (A) in Fig. 3)
+if the illness has no a specific location, like Myasthenia
+Gravis.
+B. Temporal-Time based representation
+Temporal medical records deal with time related
+data, where medical histories are displayed like a
+data sheet enabling visualization of information and
+evolution of health on time. A temporal summary can
+serve as the entire medical record, but details can
+only be accessed separately. The categories are such
+as visit, medical imaging, medication, lab test and
+treatment. They are presented on the timeline with
+different icons. Fig.4 shows a sample of Temporal-Time
+based representation.
+IV. METHODOLOGY FOR INFORMATION
+EXTRACTION
+The spatial and temporal interfaces are classified
+medical information visualization for summary of medFig. 2. Display of physiological systems in front and back views.
+The diseases are partitioned into 6 physiological systems[13] that
+the information can be easily accessed on the basis of disease
+groups.
+Fig. 3. Spatial Interface - Position-based medical information on a
+2D representation of the human body. The colored circle shows the
+location of symptom and diagnosis of specific physiological system.
+e.g. red circle means the diagnosis belongs to musculoskeletal
+system. Whole-body problem is indicated separated in (A).
+ical notes. Therefore we require our classified information extracted from an existing clinical note to
+display it on our interface. We employ Metamap for
+medical information extraction. First we convert the
+text plain notes to XML format as a pre-processing.
+Apache OpenNLP[14] is applied for training the entity
+detection model with 1294 clinical notes from i2b2.
+Fig. 1 illustrates how the system works.
+In many clinics and hospitals, most of the paperbased clinical notes are structured in a regular and
+general pattern in forms with titles and subtitles. Fig.
+5 shows an example of structured clinical notes. Currently, our system mainly focuses on structured data
+extraction.
+Fig. 4. Information timeline display. The horizontal line denotes
+time information, and the icons represent different medical events.
+The button at the bottom show duration timelines and major
+diseases.
+Fig. 5. A structured clinical notes sample
+A. Format Conversion Preprocessing
+We applied the regular regression and keywords
+detection as shown in Fig. 6, to detect titles, for section
+boundaries segmentation. The segmented text plain
+notes are then converted to XML format for next further
+processing. A XML format is shown in figure 7.
+Fig. 6. Keywords of titles and boundaries detection and corresponding XML annotations. ( | and & represent logic operations)
+B. Tokenization
+Tokenization plays an important role in Natural Language Processing. Words tokenization and sentences
+tokenization convert a sequence of characters into a
+sequence of words and sentences separately. Apache
+OpenNLP which contains several pre-trained tokenizer
+Fig. 7. XML format notes from Fig. 5.
+models has the abilities to achieve this task. We employ en-token.bin[15] and en-sent.bin for words and
+sentences tokenization respectively in our system.
+C. Stopwords Removement
+In computing, stop words are words which are filtered out before or after processing of natural language
+data[16]. In the English language, stop words generally
+refers to the most function words, such as the, am, is, a
+and so on. A set of comprehensive English stopwords
+lists[17] is available on the Internet and we use one to
+filter the clinical notes for the further process.
+D. Metamap Setting
+We applied the Metamap with 2014AA knowledge
+source and its corresponding JAVA API for extracting
+medical information such as discharge and admission
+medications, past and present illness, future treatments
+and even physical examinations. For different medical
+data extraction, Metamap has different set-up options
+as shown in Fig. 8.
+Fig. 8. Metamap option settings of the medical information
+In the medication extraction part, the extracted specific semantic types are clnd[18] and orch, which
+are represented by Clinical Drug and Organic Chemical separately. The CHV and NLMSubsyn vocabulary
+sources, meanwhile, are excluded in this part.
+E. Recognition of Time-Entity Expression
+Named-entity recognition (NER) (also known as entity identification, entity chunking and entity extraction)
+is a subtask of information extraction that seeks to locate and classify named entities in text into pre-defined
+categories. The information of time is crucial for the
+caregivers to know about the patient’s past and present
+situation. By using Apache OpenNLP with manually
+labelled sentences collected from 1294 clinical notes
+from i2b2, we trained a Time-Entity Expression model
+to detect time information. The following shows the
+labelled data.
+• On <START:time> 6/28 <END> the patient was
+seen in the MFM practice and a wound hematoma
+• he patient has had numerous intubations and an
+ICU stay from <START:time> March <END>
+to <START:time> August 2005 <END> due to
+• He was taken to the Charl Lubspi Hospital by
+EMS on <START:time> 8/7/2007 <END>, and
+the patient
+V. RESULTS AND ANALYSIS
+We manually labeled 1980 sentences with time expressions from 1294 clinical notes. Among them, 1386
+sentences were used to train Time- Entity Detection
+model. By detecting the boundaries of titles, the notes
+are segmented and converted to XML format with
+hierarchical information. Metamap has a strong ability
+to recognize UMLS concept for extracting medical information. The following is an example of the extracted
+results by employing Metamap.
+Input Notes:
+Mrs. Wxxxx is a 45-year-old woman with multiple familial cavernous hemangiomas. She is righthanded. She was in her usual state of health until one
+and a half weeks prior to admission. She developed
+an ear ache, for which she saw her primary care
+physician, Evelyn was prescribed cortisone drops.
+A few days later she complained of dizziness. This
+was mostly described as feeling unsteady on her
+feet. She stated that she had trouble knowing if her
+feet were touching the ground. She was seen again
+by primary care physician, Roderick since she had
+complaints of dizziness, as well as a new complaint
+of decreased hearing and the sensation of static in
+her ears, meniere ’s disease was considered. She
+was given an oral prednisone taper. This unsteady
+gait progressed, and then she subsequently started to
+develop a pins and needle feeling in the face, hands
+and feet bilaterally. Her hearing got progressively
+worse and the sound of static increased. She was very
+fatigued. At an outside hospital, head CT revealed a
+1.5 cm diameter hyperdense mass in the pons, slightly
+off center to the right. She was transferred here for
+further care
+Output Data:
+Diagnostic Procedure:
+MRS (magnetic resonance spectroscopic imaging)
+Body Part,Organ, or Organ Component:
+right handed (Structure of right hand)
+Body Part, Organ, or Organ Component:
+Feet (Foot)
+Disease or Syndrome:
+Hearing Decrease
+Sign or Symptom: Ear ache (Earache)
+Disease or Syndrome: Meniere Disease
+Body Location or Region: FACE (Face)
+Diagnostic Procedure:
+Head CT (CAT scan of head)
+Body Part, Organ, or Organ Component:
+Pons (Pontine structure)
+Time information is also extracted as shown in Fig.
+9 and all extracted medical information is transmitted
+to the pictorial visualization system for presenting data.
+Fig. 9. The output extracted medical data with its relevant time
+expression.
+VI. CONCLUSION AND FUTURE WORK
+We developed a clinical notes information visualization system where medical data are extracted from plain
+text clinical notes and described over the pictorial-based
+interface. Thanks to Metamap, the patient’s medical
+data are extracted from text notes. The Time-Entity
+Expression model that we trained by Apache OpenNLP
+help us detect time-related data and its relevant date
+information. In the part of pictorial visualization of extracted medical data, illnesses or diseases are presented
+on its corresponding physiological system image. Simultaneously, the information associated with time is
+summarized on a timeline by chronological order. In
+a nutshell, our system helps users rapidly access and
+understand the patient’s history and present medical
+information.
+There are a plenty of unstructured clinical notes
+which contains the patient’s important information.
+Since unstructured notes do not follow any predefined
+structure, they are not easily interpreted by the software
+program to do further processing. However different
+sections still describe specific features. For example,
+one area has a plenty of clinical drugs and chemical
+substance and we consider it as medication section.
+Also, names of human body parts and human organs
+show up in physical examination part. Applying deep
+learning on unstructured clinical notes is our ongoing
+work.

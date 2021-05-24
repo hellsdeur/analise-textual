@@ -28,7 +28,7 @@ class Catalogo {
 			while ((d = readdir(p)) != NULL) {
 				if ((strcmp(d->d_name, ".") != 0) && (strcmp(d->d_name, "..") != 0)) {
 					std::string nome_arquivo(d->d_name);
-					nomes_arquivos[i] = nome_arquivo;
+					nomes_arquivos[i] = caminho + nome_arquivo;
 					i++;
 				}
 			}

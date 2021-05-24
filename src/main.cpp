@@ -19,8 +19,9 @@ int main() {
 
 		while (std::getline(arquivos[i], s)) {
 			std::regex r(R"([^\W_]+(?:['_-][^\W_]+)*)");
-			for(
-				std::sregex_iterator i = std::sregex_iterator(s.begin(), s.end(), r);
+			std::sregex_iterator i;
+
+			for(i = std::sregex_iterator(s.begin(), s.end(), r);
 				i != std::sregex_iterator();
 				++i) {
     			std::smatch m = *i;

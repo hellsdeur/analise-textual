@@ -1,5 +1,5 @@
 all: main
 
-%.o: %.c
-%: %.c
+%.o: %.cpp
+%: %.cpp
 	g++ -std:c++17 -o $@ $<

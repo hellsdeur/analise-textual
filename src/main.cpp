@@ -21,7 +21,7 @@ int main() {
 			std::regex r(R"([^\W_]+(?:['_-][^\W_]+)*)");
 			std::sregex_iterator i;
 
-			for(i = std::sregex_iterator(s.begin(), s.end(), r);
+			for (i = std::sregex_iterator(s.begin(), s.end(), r);
 				i != std::sregex_iterator();
 				++i) {
     			std::smatch m = *i;

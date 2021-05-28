@@ -40,6 +40,8 @@ class Catalogo {
 			preencher_nomes_arquivos();
 		}
 
+		Catalogo() {}
+
 		std::string get_nome(int i) {
 			return this->nomes_arquivos[i];
 		}

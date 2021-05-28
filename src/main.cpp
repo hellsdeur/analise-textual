@@ -18,7 +18,7 @@ int main() {
 		arquivos[i].open(cat.get_nome(i));
 
 		while (std::getline(arquivos[i], s)) {
-			std::regex r(R"([^\W_]+(?:['_-][^\W_]+)*)");
+			std::regex r(R"([a-zA-Z_]+(?:['_-][a-zA-Z_]+)*)");
 			std::sregex_iterator i;
 
 			for (i = std::sregex_iterator(s.begin(), s.end(), r);

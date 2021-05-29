@@ -6,6 +6,7 @@
 #include <utility>
 #include <iostream>
 #include <list>
+#include<algorithm>
 
 class Analisador {
 	private:
@@ -61,9 +62,21 @@ class Analisador {
 		    std::unordered_map<std::string, int>::const_iterator it;
             for(it = dicionario.begin(); it != dicionario.end(); it++){
                 lista.push_back(*it);
-                std::cout << lista.back().first << std::endl;
             }
 
+            auto sortRuleLambda = [] (std::pair<std::string, int> const& s1, std::pair<std::string, int> const& s2) -> bool
+            {
+                return s1.second > s2.second;
+            };
+
+            lista.sort(sortRuleLambda);
+            std::list<std::pair<std::string, int>>::const_iterator it2;
+            int cnt = 0;
+            for(it2 = lista.begin(); it2 != lista.end(); it2++){
+                cnt++;
+                std::cout << (*it2).first << "-" << (*it2).second << std::endl;
+                if(cnt > 20) break;
+            }
 		}
 
 };

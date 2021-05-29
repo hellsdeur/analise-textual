@@ -5,12 +5,14 @@
 #include <regex>
 #include <utility>
 #include <iostream>
+#include <list>
 
 class Analisador {
 	private:
 		Catalogo c;
 		std::unordered_map<std::string, int> dicionario;
-	
+		std::list<std::pair<std::string, int>> lista;
+
 	public:
 		Analisador(Catalogo c) {
 			this->c = c;
@@ -27,7 +29,7 @@ class Analisador {
 				while (std::getline(arquivos[i], s)) {
 					std::regex r(R"([a-zA-Z_]+(?:['_-][a-zA-Z_]+)*)");
 					std::sregex_iterator i;
-					
+
 					for (i = std::sregex_iterator(s.begin(), s.end(), r);
 					i != std::sregex_iterator();
 					++i) {
@@ -43,15 +45,25 @@ class Analisador {
 							std::pair<std::string, int> palavra(m.str(), contador+1);
 							this->dicionario.insert(palavra);
 						}
-						
+
 					}
 				}
 			}
 		}
 
-		void print() {
+        void print() {
 			for (auto i: this->dicionario) {
 				std::cout << i.first << ": " << i.second << '\n';
 			}
 		}
+
+		void ranking(){
+		    std::unordered_map<std::string, int>::const_iterator it;
+            for(it = dicionario.begin(); it != dicionario.end(); it++){
+                lista.push_back(*it);
+                std::cout << lista.back().first << std::endl;
+            }
+
+		}
+
 };

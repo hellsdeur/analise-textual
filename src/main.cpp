@@ -9,7 +9,9 @@ int main() {
 
 	Analisador analisador(cat);
 
-	analisador.ranking();
+	//analisador.ranking();
 
+	analisador.print_stop_words();
 	//analisador.print();
+
 }

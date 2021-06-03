@@ -59,22 +59,43 @@ class Analisador {
 					++it1) {
     					std::smatch m = *it1;
 						std::unordered_map<std::string, int>::const_iterator it = this->dicionario.find(m.str());
-						bool is_stopword = false;
+
+						if (it == this->dicionario.end()) {
+								std::pair<std::string, int> palavra(m.str(), 1);
+								this->dicionario.insert(palavra);
+                        }
+							// palavra estiver inclusa no dicionário
+                        else {
+								//int contador = it->second;
+								this->dicionario[m.str()]++;
+								//this->dicionario.erase(m.str());
+								//std::pair<std::string, int> palavra(m.str(), contador+1);
+								//this->dicionario.insert(palavra);
+                        }
+
+						//bool is_stopword = false;
 
 						// verifica se a palavra é stop word
-						std::list<std::string>::const_iterator it2; // lista
-						for (it2 = this->stop_words.begin();
-							 it2 != this->stop_words.end();
-							 it2++) {
-								 std::cout << m.str() << " | " << *it2 << '\n';
-								 if (m.str() == *it2) {
-									std::cout << "ENTROU!!!!!!!!!!" << '\n';
-									is_stopword = true;
-									break;
-								 }
-							 }
-
-						//for (int j = 0; j < 200; j++) {								
+//						std::list<std::string>::const_iterator it2; // lista
+//						for (it2 = this->stop_words.begin();
+//							 it2 != this->stop_words.end();
+//							 it2++) {
+//								 std::cout << m.str() << " | " << *it2 << '\n';
+//								 if (m.str() == *it2) {
+//									std::cout << "ENTROU!!!!!!!!!!" << '\n';
+//									is_stopword = true;
+//									break;
+//								 }
+//							 }
+//                        for(auto it2: this->stop_words){
+//                            std::cout << m.str() << " | " << it2 << '\n';
+//							if (m.str() == it2) {
+//							std::cout << "ENTROU!!!!!!!!!!" << '\n';
+//							is_stopword = true;
+//							break;
+//                            }
+//                        }
+						//for (int j = 0; j < 200; j++) {
 						//	if (m.str() != arr[j]) {
 						//		if (it == this->dicionario.end()) {
 						//			std::pair<std::string, int> palavra(m.str(), 1);
@@ -90,21 +111,21 @@ class Analisador {
 						//	}
 						//}
 
-						if (!is_stopword) {
-							// palavra não inclusa no dicionário
-							if (it == this->dicionario.end()) {
-								std::pair<std::string, int> palavra(m.str(), 1);
-								this->dicionario.insert(palavra);
-							}
-							// palavra estiver inclusa no dicionário
-							else {
-								//int contador = it->second;
-								this->dicionario[m.str()]++;
-								//this->dicionario.erase(m.str());
-								//std::pair<std::string, int> palavra(m.str(), contador+1);
-								//this->dicionario.insert(palavra);
-							}
-						}
+//						if (!is_stopword) {
+//							// palavra não inclusa no dicionário
+//							if (it == this->dicionario.end()) {
+//								std::pair<std::string, int> palavra(m.str(), 1);
+//								this->dicionario.insert(palavra);
+//							}
+//							// palavra estiver inclusa no dicionário
+//							else {
+//								//int contador = it->second;
+//								this->dicionario[m.str()]++;
+//								//this->dicionario.erase(m.str());
+//								//std::pair<std::string, int> palavra(m.str(), contador+1);
+//								//this->dicionario.insert(palavra);
+//							}
+//						}
 
 					}
 				}
@@ -117,10 +138,17 @@ class Analisador {
 			}
 		}
 
+		bool verificarStopWords(std::string s){
+            for(auto i: this->stop_words){
+                if(s == i) return true;
+            }
+            return false;
+		}
+
 		void ranking(){
 		    std::unordered_map<std::string, int>::const_iterator it;
             for(it = dicionario.begin(); it != dicionario.end(); it++){
-                lista.push_back(*it);
+                if(!verificarStopWords((*it).first)) lista.push_back(*it);
             }
 
             auto sortRuleLambda = [] (std::pair<std::string, int> const& s1, std::pair<std::string, int> const& s2) -> bool

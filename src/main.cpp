@@ -9,5 +9,5 @@ int main() {
 
 	Analisador analisador(cat);
 
-	analisador.ranking(20);
+	analisador.ranking(50);
 }

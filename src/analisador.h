@@ -3,9 +3,9 @@
 #include <string>
 #include <unordered_map>
 #include <regex>
-#include <utility>
 #include <iostream>
 #include <list>
+#include <utility>
 
 class Analisador {
 	private:
@@ -15,6 +15,7 @@ class Analisador {
 		std::list<std::string> stop_words;
 
 		void preencher_stop_words();
+		bool is_stopword(std::string);
 		void analisar();
 
 	public:
@@ -38,45 +39,51 @@ inline void Analisador::preencher_stop_words() {
 	}
 }
 
+inline bool Analisador::is_stopword(std::string s) {
+	std::list<std::string>::const_iterator it_sw;
+
+	for (it_sw = this->stop_words.begin(); it_sw != this->stop_words.end(); it_sw++) {
+		if (s == *it_sw) return true;
+	}
+	return false;
+}
+
 inline void Analisador::analisar() {
 	std::ifstream arquivos[30];
 
 	// varre e abre os 30 arquivos
 	for (int i = 0; i < 30; i++) {
 		std::string s;
+
 		arquivos[i].open(this->catalogo.get_nome(i));
-			// para cada arquivo, ler as linhas na string s
+
+		// para cada linha, aplica regex para quebrar palavras por espaços
 		while (std::getline(arquivos[i], s)) {
 			std::regex r(R"([a-zA-Z_]+(?:['_-][a-zA-Z_]+)*)");
-			std::sregex_iterator it1; // regex
+			std::sregex_iterator it_re;
 			
-			// aplica a regex e verifica se a palavra não é stop word
-			for (it1 = std::sregex_iterator(s.begin(), s.end(), r); it1 != std::sregex_iterator(); it1++) {
-  				std::smatch m = *it1;
-				std::unordered_map<std::string, int>::const_iterator it = this->dicionario.find(m.str());
-				bool is_stopword = false;
+			// iterando sobre cada padrão da regex
+			for (it_re = std::sregex_iterator(s.begin(), s.end(), r); it_re != std::sregex_iterator(); it_re++) {
+  				std::smatch match;
+				std::string palavra;
+				std::unordered_map<std::string, int>::const_iterator it_di;
 
-				// verifica se a palavra é stop word
-				std::list<std::string>::const_iterator it2; // iterador da lista de stop_words
-				for (it2 = this->stop_words.begin(); it2 != this->stop_words.end(); it2++) {
-					if (m.str() == *it2) {
-						is_stopword = true;
-						break;
-					}
-				}
-                       
-				if (!is_stopword) {
+				// divide com regex e cast para string
+				match = *it_re;
+				palavra = match.str();
+
+				// se palavra não for stop word, insira no dicionário
+				if (!is_stopword(palavra)) {
+					// procura palavra no dicionário
+					it_di = this->dicionario.find(palavra);
+
 					// palavra não inclusa no dicionário
-					if (it == this->dicionario.end()) {
-						std::pair<std::string, int> palavra(m.str(), 1);
-						this->dicionario.insert(palavra);
-					}
-					// palavra estiver inclusa no dicionário
-					else {
-						this->dicionario[m.str()]++;
-					}
+					if (it_di == this->dicionario.end())
+						this->dicionario.insert(std::make_pair<std::string, int>(palavra.c_str(), 1));
+					// palavra inclusa no dicionário
+					else
+						this->dicionario[palavra]++;
 				}
-
 			}
 		}
 	}

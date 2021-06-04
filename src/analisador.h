@@ -31,13 +31,6 @@ class Analisador {
 			}
 		}
 
-		void print_stop_words() {
-			std::cout << "Largura da lista de stop words = " << this->stop_words.size() << '\n';
-			for (auto i: this->stop_words) {
-				std::cout << i << '\n';
-			}
-		}
-
 		void analisar() {
 			std::ifstream arquivos[30];
 
@@ -58,72 +51,28 @@ class Analisador {
     					std::smatch m = *it1;
 						std::unordered_map<std::string, int>::const_iterator it = this->dicionario.find(m.str());
 
-						if (it == this->dicionario.end()) {
-								std::pair<std::string, int> palavra(m.str(), 1);
-								this->dicionario.insert(palavra);
-                        }
-							// palavra estiver inclusa no dicionário
-                        else {
-								//int contador = it->second;
-								this->dicionario[m.str()]++;
-								//this->dicionario.erase(m.str());
-								//std::pair<std::string, int> palavra(m.str(), contador+1);
-								//this->dicionario.insert(palavra);
-                        }
-
-						//bool is_stopword = false;
+						bool is_stopword = false;
 
 						// verifica se a palavra é stop word
-//						std::list<std::string>::const_iterator it2; // lista
-//						for (it2 = this->stop_words.begin();
-//							 it2 != this->stop_words.end();
-//							 it2++) {
-//								 std::cout << m.str() << " | " << *it2 << '\n';
-//								 if (m.str() == *it2) {
-//									std::cout << "ENTROU!!!!!!!!!!" << '\n';
-//									is_stopword = true;
-//									break;
-//								 }
-//							 }
-//                        for(auto it2: this->stop_words){
-//                            std::cout << m.str() << " | " << it2 << '\n';
-//							if (m.str() == it2) {
-//							std::cout << "ENTROU!!!!!!!!!!" << '\n';
-//							is_stopword = true;
-//							break;
-//                            }
-//                        }
-						//for (int j = 0; j < 200; j++) {
-						//	if (m.str() != arr[j]) {
-						//		if (it == this->dicionario.end()) {
-						//			std::pair<std::string, int> palavra(m.str(), 1);
-						//			this->dicionario.insert(palavra);
-						//		}
-						//		// palavra estiver inclusa no dicionário
-						//		else {
-						//			int contador = it->second;
-						//			this->dicionario.erase(m.str());
-						//			std::pair<std::string, int> palavra(m.str(), contador+1);
-						//			this->dicionario.insert(palavra);
-						//		}
-						//	}
-						//}
-
-//						if (!is_stopword) {
-//							// palavra não inclusa no dicionário
-//							if (it == this->dicionario.end()) {
-//								std::pair<std::string, int> palavra(m.str(), 1);
-//								this->dicionario.insert(palavra);
-//							}
-//							// palavra estiver inclusa no dicionário
-//							else {
-//								//int contador = it->second;
-//								this->dicionario[m.str()]++;
-//								//this->dicionario.erase(m.str());
-//								//std::pair<std::string, int> palavra(m.str(), contador+1);
-//								//this->dicionario.insert(palavra);
-//							}
-//						}
+						std::list<std::string>::const_iterator it2; // iterador da lista de stop_words
+						for (it2 = this->stop_words.begin(); it2 != this->stop_words.end(); it2++) {
+							if (m.str() == *it2) {
+								is_stopword = true;
+								break;
+							}
+						}
+                       
+						if (!is_stopword) {
+							// palavra não inclusa no dicionário
+							if (it == this->dicionario.end()) {
+								std::pair<std::string, int> palavra(m.str(), 1);
+								this->dicionario.insert(palavra);
+							}
+							// palavra estiver inclusa no dicionário
+							else {
+								this->dicionario[m.str()]++;
+							}
+						}
 
 					}
 				}
@@ -136,17 +85,12 @@ class Analisador {
 			}
 		}
 
-		bool verificarStopWords(std::string s){
-            for(auto i: this->stop_words){
-                if(s == i) return true;
-            }
-            return false;
-		}
+		
 
-		void ranking(){
+		void ranking() {
 		    std::unordered_map<std::string, int>::const_iterator it;
-            for(it = dicionario.begin(); it != dicionario.end(); it++){
-                if(!verificarStopWords((*it).first)) lista.push_back(*it);
+            for(it = dicionario.begin(); it != dicionario.end(); it++) {
+                lista.push_back(*it);
             }
 
             auto sortRuleLambda = [] (std::pair<std::string, int> const& s1, std::pair<std::string, int> const& s2) -> bool

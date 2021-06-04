@@ -23,7 +23,7 @@ class Analisador {
 
 		void preencher_stop_words() {
 			std::ifstream arquivo;
-			arquivo.open("stop_words.txt");
+			arquivo.open("../recursos/stop_words.txt");
 			std::string s;
 
 			while (std::getline(arquivo, s)) {

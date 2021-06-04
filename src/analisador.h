@@ -1,4 +1,6 @@
 #include "catalogo.h"
+#include <algorithm>
+#include <cctype>
 #include <fstream>
 #include <string>
 #include <unordered_map>
@@ -34,17 +36,15 @@ inline void Analisador::preencher_stop_words() {
 	arquivo.open("../recursos/stop_words.txt");
 	std::string s;
 
-	while (std::getline(arquivo, s)) {
+	while (std::getline(arquivo, s))
 		this->stop_words.push_back(s);
-	}
 }
 
 inline bool Analisador::is_stopword(std::string s) {
 	std::list<std::string>::const_iterator it_sw;
 
-	for (it_sw = this->stop_words.begin(); it_sw != this->stop_words.end(); it_sw++) {
+	for (it_sw = this->stop_words.begin(); it_sw != this->stop_words.end(); it_sw++)
 		if (s == *it_sw) return true;
-	}
 	return false;
 }
 
@@ -68,9 +68,12 @@ inline void Analisador::analisar() {
 				std::string palavra;
 				std::unordered_map<std::string, int>::const_iterator it_di;
 
-				// divide com regex e cast para string
+				// extrai o match da regex, cast para string e troca letras para minúsculas
 				match = *it_re;
 				palavra = match.str();
+				std::for_each(palavra.begin(), palavra.end(), [](char &c) {
+					c = ::tolower(c);
+				});
 
 				// se palavra não for stop word, insira no dicionário
 				if (!is_stopword(palavra)) {

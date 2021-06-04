@@ -2,7 +2,7 @@
 Projeto de análise de arquivos de texto utilizando estruturas de dados
 
 ## Descrição
-Dada uma base de textos, é requerida a análise semântica e sintática dos mesmos, junto a tarefas de compressão e busca. Esse projeto foi criado para avaliação em um curso de Estruturas de Dados e Algoritmos, ofertado pela Faculdade de Computação, Universidade Feral do Pará, no período 2021-1.
+Dada uma base de textos, é requerida a análise semântica e sintática dos mesmos, junto a tarefas de compressão e busca. Esse projeto foi criado para avaliação em um curso de Estruturas de Dados e Algoritmos, ofertado pela Faculdade de Computação, Universidade Federal do Pará, no período 2021-1.
 
 ## Objetivos
 

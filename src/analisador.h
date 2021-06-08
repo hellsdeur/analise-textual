@@ -15,6 +15,7 @@ class Analisador {
 		std::unordered_map<std::string, int> dicionario, arr_dicionario[30];
 		std::list<std::pair<std::string, int>> lista;
 		std::list<std::string> stop_words;
+		std::string lista_nomes[30];
 
 		void preencher_stop_words();
 		bool is_stopword(std::string);
@@ -31,11 +32,13 @@ class Analisador {
 			// analisar();
             analisar_cada_texto();
             analisar_todos_textos();
+			ranking();
 		}
 
-		void ranking(int);
+		void ranking();
 		void print(int i);
 		void print_geral();
+		void exportar_dados(int q_palavras);
 };
 
 // --------------------------- MÉTODOS PRIVADOS ---------------------------
@@ -149,6 +152,7 @@ inline void Analisador::analisar_cada_texto() {
     // varre e abre os 30 arquivos
 	for (int i = 0; i < 30; i++) {
         this->arr_dicionario[i] = processar(this->catalogo.get_nome(i), this->arr_dicionario[i]);
+		this->lista_nomes[i] = this->catalogo.get_nome(i);
     }
 }
 
@@ -165,7 +169,7 @@ inline void Analisador::analisar_todos_textos() {
 
 // --------------------------- MÉTODOS PÚBLICOS ---------------------------
 
-inline void Analisador::ranking(int count) {
+inline void Analisador::ranking() {
 	std::unordered_map<std::string, int>::const_iterator it;
 	std::list<std::pair<std::string, int>>::const_iterator it2;
 
@@ -179,11 +183,11 @@ inline void Analisador::ranking(int count) {
 
 	lista.sort(sortRuleLambda);
 
-	for (it2 = lista.begin(); it2 != lista.end(); it2++) {
-		std::cout << (*it2).first << "-" << (*it2).second << std::endl;
-		count--;
-		if (count == 0) break;
-    }
+	// for (it2 = lista.begin(); it2 != lista.end(); it2++) {
+	// 	std::cout << (*it2).first << "-" << (*it2).second << std::endl;
+	// 	count--;
+	// 	if (count == 0) break;
+    // }
 }
 
 inline void Analisador::print(int i) {
@@ -196,4 +200,42 @@ inline void Analisador::print_geral() {
 	for (auto i: this->dicionario) {
 		std::cout << i.first << ": " << i.second << '\n';
 	}
+}
+
+inline void Analisador::exportar_dados(int q_palavras) {
+	std::fstream csv;
+	int n = q_palavras;
+
+	// TODO apagar csv já existente
+
+	csv.open("../resultados/dados_extraidos.csv", std::ios::out | std::ios::app);
+
+	csv << ", ";
+	
+	std::list<std::pair<std::string, int>>::const_iterator it;
+	for (it = this->lista.begin(); it != this->lista.end(); it++) {
+		csv << it->first << ", ";
+		if (n == 0) break;
+		n--;
+	}
+	
+	csv << '\n';
+
+	for (int i = 0; i < 30; i++) {
+		csv << this->lista_nomes[i].substr(15) << ", ";
+
+		n = q_palavras;
+	
+		std::list<std::pair<std::string, int>>::const_iterator it2;
+		for (it2 = this->lista.begin(); it2 != this->lista.end(); it2++) {
+			csv << this->arr_dicionario[i][it2->first] << ", ";
+			if (n == 0) break;
+			n--;
+		}
+
+		csv << '\n';
+
+	}
+
+	csv.close();
 }

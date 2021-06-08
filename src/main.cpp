@@ -9,8 +9,5 @@ int main() {
 
 	Analisador analisador(cat);
 
-	analisador.ranking(50);
-
-	// analisador.print(0);
-	// analisador.print(0);
+	analisador.exportar_dados(10);
 }

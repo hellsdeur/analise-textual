@@ -1,13 +1,9 @@
 #include "catalogo.h"
-#include <algorithm>
-#include <cctype>
-#include <fstream>
-#include <string>
 #include <unordered_map>
-#include <regex>
-#include <iostream>
 #include <list>
-#include <utility>
+#include <regex>
+#include <fstream>
+#include <iostream>
 
 class Analisador {
 	private:

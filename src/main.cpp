@@ -1,5 +1,4 @@
 #include "analisador.h"
-#include <string>
 #include <regex>
 #include <iostream>
 

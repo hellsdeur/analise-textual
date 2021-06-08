@@ -28,8 +28,8 @@ class Analisador {
 		Analisador(Catalogo catalogo) {
 			this->catalogo = catalogo;
 			preencher_stop_words();
-            analisar_cada_texto();
-            analisar_todos_textos();
+			analisar_cada_texto();
+			analisar_todos_textos();
 			ranking();
 		}
 
@@ -43,7 +43,7 @@ class Analisador {
 
 inline void Analisador::preencher_stop_words() {
 	std::ifstream arquivo;
-	arquivo.open("../recursos/stop_words_improved.txt");
+	arquivo.open("../recursos/stop_words.txt");
 	std::string s;
 
 	while (std::getline(arquivo, s))
@@ -58,7 +58,7 @@ inline bool Analisador::is_stopword(std::string s) {
 	return false;
 }
 
-inline std::unordered_map<std::string, int> Analisador::processar(std::string caminho_arquivo, std::unordered_map<std::string, int> dicionario){
+inline std::unordered_map<std::string, int> Analisador::processar(std::string caminho_arquivo, std::unordered_map<std::string, int> dicionario) {
 
     std::ifstream arquivo;
     std::string s;

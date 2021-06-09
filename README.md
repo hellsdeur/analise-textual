@@ -10,7 +10,7 @@ Seis tarefas a serem executadas neste projeto:
 
 - [x] Verificar palavras comuns a todos os textos
 
-- [ ] Encontrar palavras que agrupam os textos em "clusters"
+- [x] Encontrar palavras que agrupam os textos em "clusters"
 
 - [ ] Testar outros textos nas palavras que classificam para verificar a qual dos grupos encontrados esse novo texto deve pertencer
 

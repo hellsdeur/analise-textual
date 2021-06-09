@@ -149,12 +149,12 @@ inline void Analisador::print_geral() {
 inline void Analisador::exportar_dados(int q_palavras) {
 	std::fstream csv;
 	int n = q_palavras;
-
-	// TODO apagar csv já existente
+	
+	std::remove("../resultados/dados_extraidos.csv");
 
 	csv.open("../resultados/dados_extraidos.csv", std::ios::out | std::ios::app);
 
-	csv << ", ";
+	csv << "Nome, ";
 	
 	std::list<std::pair<std::string, int>>::const_iterator it;
 	for (it = this->lista.begin(); it != this->lista.end(); it++) {

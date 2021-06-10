@@ -2,7 +2,7 @@
 
 int main() {
 
-	Catalogo cat("../base_textos/");
+	Catalogo cat("../resultados/base_textos/");
 
 	Analisador analisador(cat);
 

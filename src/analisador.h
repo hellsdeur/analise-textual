@@ -1,20 +1,20 @@
-#include "catalogo.h"
 #include <unordered_map>
 #include <list>
 #include <regex>
 #include <fstream>
 #include <iostream>
+#include <vector>
+#include "catalogo.h"
+#include "stopwords.h"
 
 class Analisador {
 	private:
 		Catalogo catalogo;
+		Stop_Words stop_words;
 		std::unordered_map<std::string, int> dicionario, arr_dicionario[30];
 		std::list<std::pair<std::string, int>> lista;
-		std::list<std::string> stop_words;
 		std::string lista_nomes[30];
 
-		void preencher_stop_words();
-		bool is_stopword(std::string);
 		std::unordered_map<std::string, int> processar(std::string caminho_arquivo, std::unordered_map<std::string, int> dicionario);
 		void analisar_cada_texto();
 		void analisar_todos_textos();
@@ -23,7 +23,6 @@ class Analisador {
 	public:
 		Analisador(Catalogo catalogo) {
 			this->catalogo = catalogo;
-			preencher_stop_words();
 			analisar_cada_texto();
 			analisar_todos_textos();
 			ranking();
@@ -36,23 +35,6 @@ class Analisador {
 };
 
 // --------------------------- MÉTODOS PRIVADOS ---------------------------
-
-inline void Analisador::preencher_stop_words() {
-	std::ifstream arquivo;
-	arquivo.open("../recursos/stop_words.txt");
-	std::string s;
-
-	while (std::getline(arquivo, s))
-		this->stop_words.push_back(s);
-}
-
-inline bool Analisador::is_stopword(std::string s) {
-	std::list<std::string>::const_iterator it_sw;
-
-	for (it_sw = this->stop_words.begin(); it_sw != this->stop_words.end(); it_sw++)
-		if (s == *it_sw) return true;
-	return false;
-}
 
 inline std::unordered_map<std::string, int> Analisador::processar(std::string caminho_arquivo, std::unordered_map<std::string, int> dicionario) {
 
@@ -81,7 +63,7 @@ inline std::unordered_map<std::string, int> Analisador::processar(std::string ca
 				});
 
 				// se palavra não for stop word, insira no dicionário
-				if (!is_stopword(palavra)) {
+				if (!stop_words.is_stopword(palavra)) {
 					// procura palavra no dicionário
 					it_di = dicionario.find(palavra);
 

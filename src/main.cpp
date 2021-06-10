@@ -1,4 +1,6 @@
 #include "analisador.h"
+#include <map>
+#include <string>
 
 int main() {
 

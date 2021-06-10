@@ -14,7 +14,6 @@ class Analisador {
 		Stop_Words stop_words;				// manipulador de stop words
 		Dicionario dic;						// dic geral, todas as pal
 		std::vector<Dicionario> vec_dic;	// vec de dics, pal de cada texto
-		std::list<std::pair<std::string, int>> lista;
 
 		Dicionario processar(std::string, Dicionario);
 		void analisar_cada_texto();
@@ -25,10 +24,8 @@ class Analisador {
 			this->catalogo = catalogo;
 			analisar_cada_texto();
 			analisar_todos_textos();
-			ranking();
 		}
 
-		void ranking();
 		void print(int i);
 		void print_geral();
 		void exportar_dados(int);
@@ -90,70 +87,51 @@ inline void Analisador::analisar_todos_textos() {
 
 // --------------------------- MÉTODOS PÚBLICOS ---------------------------
 
-inline void Analisador::ranking() {
-	std::unordered_map<std::string, int>::const_iterator it;
-	std::list<std::pair<std::string, int>>::const_iterator it2;
-
-	std::unordered_map<std::string, int> d = this->dic.get_mapa();
-
-	for (it = d.begin(); it != d.end(); it++) {
-		this->lista.push_back(*it);
+inline void Analisador::print(int i) {
+	for (auto i: this->vec_dic[i].get_mapa()) {
+		std::cout << i.first << ": " << i.second << '\n';
 	}
-
-	auto sortRuleLambda = [] (std::pair<std::string, int> const& s1, std::pair<std::string, int> const& s2) -> bool {
-		return s1.second > s2.second;
-	};
-
-	this->lista.sort(sortRuleLambda);
 }
 
-// inline void Analisador::print(int i) {
-// 	for (auto i: this->vec_dic[i].get_mapa()) {
-// 		std::cout << i.first << ": " << i.second << '\n';
-// 	}
-// }
+inline void Analisador::print_geral() {
+	for (auto i: this->dic.get_mapa()) {
+		std::cout << i.first << ": " << i.second << '\n';
+	}
+}
 
-// inline void Analisador::print_geral() {
-// 	for (auto i: this->dic.get_mapa()) {
-// 		std::cout << i.first << ": " << i.second << '\n';
-// 	}
-// }
-
-inline void Analisador::exportar_dados(int q_palavras) {
+inline void Analisador::exportar_dados(int max_comuns) {
 	std::fstream csv;
-	int n = q_palavras;
+	std::vector<std::pair<std::string, int>> ranking;
+	int n = 0;
+
+	ranking = this->dic.rankear();
 	
 	std::remove("../resultados/dados_extraidos.csv");
 
 	csv.open("../resultados/dados_extraidos.csv", std::ios::out | std::ios::app);
 
 	csv << "Nome, ";
-	
-	std::list<std::pair<std::string, int>>::const_iterator it;
-	for (it = this->lista.begin(); it != this->lista.end(); it++) {
+	std::vector<std::pair<std::string, int>>::const_iterator it;
+	for (it = ranking.begin(); it != ranking.end(); it++) {
 		csv << it->first;
-		if (n != 0) csv << ", ";
-		if (n == 0) break;
-		n--;
+		if (n < max_comuns) csv << ", ";
+		else break;
+		n++;
 	}
-	
 	csv << '\n';
 
 	for (int i = 0; i < 30; i++) {
-		csv << this->vec_dic[i].get_nome_arquivo().substr(15) << ", ";
+		csv << this->vec_dic[i].get_nome_arquivo().substr(24) << ", ";
 
-		n = q_palavras;
-	
-		std::list<std::pair<std::string, int>>::const_iterator it2;
-		for (it2 = this->lista.begin(); it2 != this->lista.end(); it2++) {
+		n = 0;
+		std::vector<std::pair<std::string, int>>::const_iterator it2;
+		for (it2 = ranking.begin(); it2 != ranking.end(); it2++) {
 			csv << this->vec_dic[i].get_mapa()[it2->first];
-			if (n != 0) csv << ", ";
-			if (n == 0) break;
-			n--;
+			if (n < max_comuns) csv << ", ";
+			else break;
+			n++;
 		}
-
 		csv << '\n';
-
 	}
 
 	csv.close();

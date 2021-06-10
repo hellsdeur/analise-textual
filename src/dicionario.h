@@ -1,6 +1,9 @@
 #include <string>
 #include <unordered_map>
+#include <algorithm>
 #include <utility>
+#include <vector>
+
 class Dicionario {
 	private:
 		std::string nome_arquivo;
@@ -18,6 +21,7 @@ class Dicionario {
 		void inserir(std::string);
 		std::string get_nome_arquivo();
 		std::unordered_map<std::string, int> get_mapa();
+		std::vector<std::pair<std::string, int>> rankear();
 };
 
 inline void Dicionario::inserir(std::string palavra) {
@@ -40,4 +44,21 @@ inline std::string Dicionario::get_nome_arquivo() {
 
 inline std::unordered_map<std::string, int> Dicionario::get_mapa() {
 	return this->mapa;
+}
+
+inline std::vector<std::pair<std::string, int>> Dicionario::rankear() {
+	std::vector<std::pair<std::string, int>> ranking;
+	std::unordered_map<std::string, int>::const_iterator it;
+
+	for (it = this->mapa.begin(); it != this->mapa.end(); it++) {
+		ranking.push_back(*it);
+	}
+
+	auto sortRuleLambda = [] (std::pair<std::string, int> const& s1, std::pair<std::string, int> const& s2) -> bool {
+		return s1.second > s2.second;
+	};
+
+	std::sort(ranking.begin(), ranking.end(), sortRuleLambda);
+
+	return ranking;
 }

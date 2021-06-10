@@ -29,6 +29,7 @@ class Analisador {
 		void print(int i);
 		void print_geral();
 		void exportar_dados(int);
+		void inserir_texto(std::string, int);
 };
 
 // --------------------------- MÉTODOS PRIVADOS ---------------------------
@@ -124,6 +125,33 @@ inline void Analisador::exportar_dados(int max_comuns) {
 		csv << this->vec_dic[i].get_nome_arquivo().substr(24) << ", ";
 
 		n = 0;
+		std::vector<std::pair<std::string, int>>::const_iterator it2;
+		for (it2 = ranking.begin(); it2 != ranking.end(); it2++) {
+			csv << this->vec_dic[i].get_mapa()[it2->first];
+			if (n < max_comuns) csv << ", ";
+			else break;
+			n++;
+		}
+		csv << '\n';
+	}
+
+	csv.close();
+}
+
+inline void Analisador::inserir_texto(std::string caminho_arquivo, int max_comuns) {
+	Dicionario d;
+	std::fstream csv;
+	std::vector<std::pair<std::string, int>> ranking;
+
+	d = processar(caminho_arquivo, d);
+	this->vec_dic.push_back(d);
+	ranking = this->dic.rankear();
+
+	csv.open("../resultados/dados_extraidos.csv", std::ios::out | std::ios::app);
+	for (int i = 0; i < 30; i++) {
+		csv << d.get_nome_arquivo() << ", ";
+
+		int n = 0;
 		std::vector<std::pair<std::string, int>>::const_iterator it2;
 		for (it2 = ranking.begin(); it2 != ranking.end(); it2++) {
 			csv << this->vec_dic[i].get_mapa()[it2->first];

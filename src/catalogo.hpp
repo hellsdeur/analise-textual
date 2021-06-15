@@ -1,25 +1,25 @@
-#include <string>		// std::string
-#include <cstring>		// strcmp
-#include <dirent.h>		// dirent
+#include <string>
+#include <cstring>
+#include <dirent.h>
 
 #define MAX_N 30
 
 class Catalogo {
-	private:
-		std::string caminho;
-		std::string nomes_arquivos[MAX_N];
+private:
+	std::string caminho;
+	std::string nomes_arquivos[MAX_N];
 
-		void preencher_nomes_arquivos();
+	void preencher_nomes_arquivos();
 
-	public:
-		Catalogo(std::string caminho) {
-			this->caminho = caminho;
-			preencher_nomes_arquivos();
-		}
+public:
+	Catalogo(std::string caminho) {
+		this->caminho = caminho;
+		preencher_nomes_arquivos();
+	}
 
-		Catalogo() {}
+	Catalogo() {}
 
-		std::string get_nome(int);
+	std::string get_nome(int);
 };
 
 inline void Catalogo::preencher_nomes_arquivos() {
@@ -37,7 +37,7 @@ inline void Catalogo::preencher_nomes_arquivos() {
 	
 	i = 0;
 	while ((d = readdir(p)) != NULL) {
-		if ((strcmp(d->d_name, ".") != 0) && (strcmp(d->d_name, "..") != 0)) {
+		if (d->d_type == DT_REG) {
 			std::string nome_arquivo(d->d_name);
 			nomes_arquivos[i] = caminho + nome_arquivo;
 			i++;

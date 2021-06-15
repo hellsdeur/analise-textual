@@ -40,7 +40,7 @@ inline Dicionario Analisador::processar(std::string caminho_arquivo, Dicionario 
     std::string s;
 
     arquivo.open(caminho_arquivo);
-	
+
     // para cada linha, aplica regex para quebrar palavras por espaços
     while (std::getline(arquivo, s)) {
 			std::regex r(R"([a-zA-Z_]+(?:['_-][a-zA-Z_]+)*)");
@@ -106,7 +106,7 @@ inline void Analisador::exportar_dados(int max_comuns) {
 	int n = 0;
 
 	ranking = this->dic.rankear();
-	
+
 	std::remove("../resultados/dados_extraidos.csv");
 
 	csv.open("../resultados/dados_extraidos.csv", std::ios::out | std::ios::app);

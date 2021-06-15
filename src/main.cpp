@@ -1,4 +1,5 @@
 #include "analisador.h"
+#include "cronometro.h"
 #include <map>
 #include <string>
 
@@ -13,4 +14,5 @@ int main() {
 	analisador.exportar_dados(max_comuns);
 
 	// analisador.inserir_texto("../textos/exemplo/01.txt", max_comuns);
+
 }

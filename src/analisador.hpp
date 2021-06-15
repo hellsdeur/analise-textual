@@ -22,6 +22,7 @@ private:
 	Dicionario processar(std::string, Dicionario);
 	void analisar_cada_texto();
 	void analisar_todos_textos();
+	void escrever_linha(std::fstream&, Dicionario);
 
 public:
 	Analisador(Catalogo catalogo, int max_comuns) {
@@ -107,68 +108,61 @@ inline void Analisador::print_geral() {
 }
 
 inline void Analisador::exportar_dados() {
-	std::fstream palavras_comuns, contagem_comuns;
+	std::fstream fpalavras, fcontagem;
 	int n = 0;
 
 	std::remove("../resultados/palavras_comuns.txt");
 	std::remove("../resultados/contagem_comuns.csv");
 
-	palavras_comuns.open("../resultados/palavras_comuns.txt", std::ios::out | std::ios::app);
-	contagem_comuns.open("../resultados/contagem_comuns.csv", std::ios::out | std::ios::app);
+	fpalavras.open("../resultados/palavras_comuns.txt", std::ios::out | std::ios::app);
+	fcontagem.open("../resultados/contagem_comuns.csv", std::ios::out | std::ios::app);
 
-	contagem_comuns << "Nome, ";
+	fcontagem << "ARQUIVO, ";
 	std::vector<std::pair<std::string, int>>::const_iterator it;
 	for (it = this->ranking.begin(); it != this->ranking.end(); it++) {
-		palavras_comuns << it->first;
-		contagem_comuns << it->first;
+		fpalavras << it->first;
+		fcontagem << it->first;
 		if (n < this->max_comuns) {
-			palavras_comuns << '\n';
-			contagem_comuns << ", ";
+			fpalavras << '\n';
+			fcontagem << ", ";
 		}
 		else break;
 		n++;
 	}
-	palavras_comuns.close();
-	contagem_comuns << '\n';
+	fpalavras.close();
+	fcontagem << '\n';
 
 	for (int i = 0; i < 30; i++) {
-		contagem_comuns << this->vec_dic[i].get_nome_arquivo().substr(24) << ", ";
-
-		n = 0;
-		std::vector<std::pair<std::string, int>>::const_iterator it2;
-		for (it2 = this->ranking.begin(); it2 != this->ranking.end(); it2++) {
-			contagem_comuns << this->vec_dic[i].get_mapa()[it2->first];
-			if (n < this->max_comuns) contagem_comuns << ", ";
-			else break;
-			n++;
-		}
-		contagem_comuns << '\n';
+		escrever_linha(fcontagem, this->vec_dic[i]);	
 	}
 
-	contagem_comuns.close();
+	fcontagem.close();
 }
 
 inline void Analisador::inserir_texto(std::string caminho_arquivo) {
 	Dicionario d;
-	std::fstream contagem_comuns;
+	std::fstream fcontagem;
 
 	d = processar(caminho_arquivo, d);
-	this->vec_dic.push_back(d);
 
-	contagem_comuns.open("../resultados/dados_extraidos.csv", std::ios::out | std::ios::app);
-	for (int i = 0; i < 30; i++) {
-		contagem_comuns << d.get_nome_arquivo() << ", ";
+	fcontagem.open("../resultados/contagem_comuns.csv", std::ios::out | std::ios::app);
+	
+	escrever_linha(fcontagem, d);
 
-		int n = 0;
-		std::vector<std::pair<std::string, int>>::const_iterator it2;
-		for (it2 = this->ranking.begin(); it2 != this->ranking.end(); it2++) {
-			contagem_comuns << this->vec_dic[i].get_mapa()[it2->first];
-			if (n < this->max_comuns) contagem_comuns << ", ";
-			else break;
-			n++;
-		}
-		contagem_comuns << '\n';
+	fcontagem.close();
+}
+
+inline void Analisador::escrever_linha(std::fstream &fcontagem, Dicionario d) {
+	int n = 0;
+	fcontagem << d.get_nome_arquivo().substr(24) << ", ";
+
+	std::vector<std::pair<std::string, int>>::const_iterator it;
+	for (it = this->ranking.begin(); it != this->ranking.end(); it++) {
+		fcontagem << d.get_mapa()[it->first];
+		if (n < this->max_comuns)
+			fcontagem << ", ";
+		else break;
+		n++;
 	}
-
-	contagem_comuns.close();
+	fcontagem << '\n';
 }

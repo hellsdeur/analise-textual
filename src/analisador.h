@@ -3,6 +3,8 @@
 #include <regex>
 #include <fstream>
 #include <iostream>
+#include <unordered_map>
+#include <utility>
 #include <vector>
 #include "catalogo.h"
 #include "stopwords.h"
@@ -13,7 +15,7 @@ class Analisador {
 		Catalogo catalogo;					// caminhos para os arquivos da base
 		Stop_Words stop_words;				// manipulador de stop words
 		Dicionario dic;						// dic geral, todas as pal
-		std::vector<Dicionario> vec_dic;	// vec de dics, pal de cada texto
+		std::vector<Dicionario> vec_dic;	// vetor de dics, pal de cada texto
 
 		Dicionario processar(std::string, Dicionario);
 		void analisar_cada_texto();

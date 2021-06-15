@@ -6,9 +6,9 @@
 #include <unordered_map>
 #include <utility>
 #include <vector>
-#include "catalogo.h"
-#include "stopwords.h"
-#include "dicionario.h"
+#include "catalogo.hpp"
+#include "stopwords.hpp"
+#include "dicionario.hpp"
 
 class Analisador {
 	private:

@@ -1,4 +1,4 @@
-#include "analisador.h"
+#include "analisador.hpp"
 
 int main() {
 

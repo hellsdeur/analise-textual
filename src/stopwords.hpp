@@ -1,7 +1,5 @@
 #include <fstream>
-#include <vector>
-#include <string>
-#include "trie.h"
+#include "trie.hpp"
 
 class Stop_Words {
 private:

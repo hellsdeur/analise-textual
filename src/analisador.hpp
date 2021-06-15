@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include <string>
 #include <list>
 #include <regex>
@@ -18,6 +19,7 @@ private:
 	Dicionario dic;						// dic geral, todas as pal
 	std::vector<Dicionario> vec_dic;	// vetor de dics, pal de cada texto
 	std::vector<std::pair<std::string, int>> ranking;
+	std::unordered_map<unsigned char, int> frequencias;
 
 	Dicionario processar(std::string, Dicionario);
 	void analisar_cada_texto();
@@ -37,6 +39,7 @@ public:
 	void print_geral();
 	void exportar_dados();
 	void inserir_texto(std::string);
+	std::unordered_map<unsigned char, int> get_frequencias();
 };
 
 // --------------------------- MÉTODOS PRIVADOS ---------------------------
@@ -45,30 +48,44 @@ inline Dicionario Analisador::processar(std::string caminho_arquivo, Dicionario 
 
     std::ifstream arquivo;
     std::string s;
+	bool catalogado = this->catalogo.buscar(caminho_arquivo);
 
     arquivo.open(caminho_arquivo);
 	
-    // para cada linha, aplica regex para quebrar palavras por espaços
+	// para cada linha no arquivo
     while (std::getline(arquivo, s)) {
-			std::regex r(R"([a-zA-Z_]+(?:['_-][a-zA-Z_]+)*)");
-			std::sregex_iterator it_re;
+		// se catalogado, registra cada unsigned char no umap de frequencias
+		if (catalogado) {
+			std::unordered_map<unsigned char, int>::const_iterator it_umap;
+			for (int i = 0; i < s.size(); i++) {
+				it_umap = this->frequencias.find(s[i]);
 
-			// iterando sobre cada padrão da regex
-			for (it_re = std::sregex_iterator(s.begin(), s.end(), r); it_re != std::sregex_iterator(); it_re++) {
-  				std::smatch match;
-				std::string palavra;
-
-				// extrai o match da regex, cast para string e troca letras para minúsculas
-				match = *it_re;
-				palavra = match.str();
-				std::for_each(palavra.begin(), palavra.end(), [](char &c) {
-					c = ::tolower(c);
-				});
-
-				// se palavra não for stop word, insira no dicionário
-				if (!stop_words.is_stopword(palavra))
-					dicionario.inserir(palavra);
+				if (it_umap == this->frequencias.end())
+					this->frequencias.insert(std::make_pair(s[i], 1));
+				else
+					this->frequencias[s[i]]++;
 			}
+		}
+    	// aplica regex para quebrar palavras por espaços
+		std::regex r(R"([a-zA-Z_]+(?:['_-][a-zA-Z_]+)*)");
+		std::sregex_iterator it_re;
+
+		// iterando sobre cada padrão da regex
+		for (it_re = std::sregex_iterator(s.begin(), s.end(), r); it_re != std::sregex_iterator(); it_re++) {
+  			std::smatch match;
+			std::string palavra;
+
+			// extrai o match da regex, cast para string e troca letras para minúsculas
+			match = *it_re;
+			palavra = match.str();
+			std::for_each(palavra.begin(), palavra.end(), [](char &c) {
+				c = ::tolower(c);
+			});
+			
+			// se palavra não for stop word, insira no dicionário
+			if (!stop_words.is_stopword(palavra))
+				dicionario.inserir(palavra);
+		}
     }
 	arquivo.close();
 
@@ -143,10 +160,10 @@ inline void Analisador::inserir_texto(std::string caminho_arquivo) {
 	Dicionario d;
 	std::fstream fcontagem;
 
-	d = processar(caminho_arquivo, d);
-
 	fcontagem.open("../resultados/contagem_comuns.csv", std::ios::out | std::ios::app);
 	
+	d = processar(caminho_arquivo, d);
+
 	escrever_linha(fcontagem, d);
 
 	fcontagem.close();
@@ -165,4 +182,8 @@ inline void Analisador::escrever_linha(std::fstream &fcontagem, Dicionario d) {
 		n++;
 	}
 	fcontagem << '\n';
+}
+
+inline std::unordered_map<unsigned char, int> Analisador::get_frequencias() {
+	return this->frequencias;
 }

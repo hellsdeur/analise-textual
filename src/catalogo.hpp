@@ -1,6 +1,7 @@
 #include <string>
 #include <cstring>
 #include <dirent.h>
+#include <iostream>
 
 #define MAX_N 30
 
@@ -20,6 +21,7 @@ public:
 	Catalogo() {}
 
 	std::string get_nome(int);
+	bool buscar(std::string);
 };
 
 inline void Catalogo::preencher_nomes_arquivos() {
@@ -47,4 +49,14 @@ inline void Catalogo::preencher_nomes_arquivos() {
 
 inline std::string Catalogo::get_nome(int i) {
 	return this->nomes_arquivos[i];
+}
+
+inline bool Catalogo::buscar(std::string caminho) {
+	for (int i = 0; i < MAX_N; i++) {
+		if (this->nomes_arquivos[i] == caminho) {
+			std::cout << this->nomes_arquivos[i] << " = " << caminho << '\n';
+			return true;
+		}
+	}
+	return false;
 }

@@ -2,13 +2,11 @@
 
 int main() {
 
-	Catalogo cat("../recursos/base_textos/");
+	Catalogo catalogo("../recursos/base_textos/");
 
-	Analisador analisador(cat);
+	Analisador analisador(catalogo, 100);
 
-	int max_comuns = 50;
-
-	analisador.exportar_dados(max_comuns);
+	analisador.exportar_dados();
 
 	// analisador.inserir_texto("../textos/exemplo/01.txt", max_comuns);
 }

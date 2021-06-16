@@ -1,5 +1,5 @@
 #include <fstream>
-#include "../estruturas-algoritmos/trie.hpp"
+#include "../estruturas-de-dados/trie.hpp"
 
 class Stop_Words {
 private:

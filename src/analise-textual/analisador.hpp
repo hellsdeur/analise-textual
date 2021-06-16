@@ -163,10 +163,6 @@ inline void Analisador::inserir_texto(fs::path caminho) {
 	
 	d = processar(caminho, d);
 
-	// for (auto i : d.get_mapa()) {
-	// 	std::cout << i.first << " : " << i.second << '\n';
-	// }
-
 	escrever_linha(fcontagem, d);
 
 	fcontagem.close();

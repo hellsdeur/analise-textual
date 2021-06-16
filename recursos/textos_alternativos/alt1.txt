@@ -1,0 +1,2174 @@
+Geospatial Health 5(2), 2011, pp. 151-168
+
+The use of remotely sensed environmental data in the study of
+malaria
+Vanessa Machault1,2,3, Cécile Vignolles3, François Borchi4, Penelope Vounatsou5,6, Frédéric
+Pages1, Sébastien Briolant1, Jean-Pierre Lacaux2, Christophe Rogier1,7
+1
+
+Département d’Infectiologie de Terrain – Equipe 7 “Maladies Emergentes et Moustiques” Unité de Recherche sur
+les Maladies Infectieuses et Tropicales Emergentes (URMITE) UMR6236, Institut de Recherche Biomédicale des
+Armées, Allée du Médecin Colonel Jamot, 13262 Marseille Cedex 07, France; 2Observatoire Midi-Pyrénées,
+Laboratoire d’Aérologie, Centre National de le Recherche Scientifique, Université Paul Sabatier, 31400 Toulouse,
+France; 3Centre National d’Etudes Spatiales, Service Applications et Valorisation, 31401 Toulouse Cedex 9,
+France; 4METEO-France, Direction de la Climatologie, 31100 Toulouse, France; 5Department of Public Health
+and Epidemiology, Swiss Tropical and Public Health Institute, P.O. Box, CH-4002 Basel, Switzerland; 6University
+of Basel, P.O. Box, CH-4003 Basel, Switzerland; 7Institut Pasteur de Madagascar, 101 Antananarivo, Madagascar
+Abstract. Mapping and anticipating risk is a major issue in the fight against malaria, a disease causing an estimated one million deaths each year. Approximately half the world’s population is at risk and it is of prime importance to evaluate the burden of malaria at the spatial as well as the temporal level. The role of the environment with regard to the determinants of
+transmission and burden of the disease are described followed by a discussion of special issues such as urban malaria, human
+population mapping and the detection of changes at the temporal scale. Risk maps at appropriate scales can provide valuable information for targeted control and the present review discusses the essentials of principles, methods, advantages and
+limitations of remote sensing along with a presentation of ecological, meteorological and climatologic data which rule the
+distribution of malaria. The panel of commonly used analytic methods is examined and the methodological limitations are
+highlighted. A review of the literature details the increasing interest in the use of remotely sensed data in the study of malaria, by mapping or modeling several malariometric indices such as prevalence, morbidity and mortality, which are discussed
+with reference to vector breeding, vector density and entomological inoculation rate, estimates of which constitute the foundation for understanding endemicity and epidemics.
+Keywords: malaria, urban malaria, indicators, environment, remote sensing, satellites, statistics.
+
+Introduction
+Malaria is an infectious disease caused by parasites
+of the genus Plasmodium, transmitted to humans by
+the bites of infected female mosquitoes of the genus
+Anopheles. With more than 200 million of cases and
+about one million of deaths each year, the disease is a
+major public health problem (WHO, 2010). Indeed,
+although efforts have been made to collect and centralise existing entomological, parasitological and epidemiological data in Africa (MARA/ARMA, 1998;
+Coetzee et al., 2000; Hay et al., 2000; Hay and Snow,
+2006), a high degree of uncertainty still exists regarding the annual number of malarial cases and their geographical distribution (Sullivan, 2010). Insufficient
+Corresponding author:
+Vanessa Machault
+Observatoire Midi Pyrénées, Laboratoire d’Aérologie
+14, avenue Edouard Belin, 31400 Toulouse, France
+Tel. +33 561 33 27 22 ; Fax : +33 561 33 27 90
+E-mail: vanessamachault@yahoo.com.br
+
+epidemiological or parasitological data are the rule in
+many endemic countries, while entomological data are
+rarely collected continuously in a given area, and
+when field studies are undertaken, they provide only a
+snapshot of a continuous phenomenon.
+At the local scale, the concept of transmission units,
+focused on the Anopheles breeding sites, can be
+described as a system promoting targeted interventions
+as more effective than random control measures (Carter
+et al., 2000). A focus on the most productive breeding
+sites can lead to significant reductions, not only in adult
+mosquito productivity but also of the incidence and
+prevalence of malaria (Gu and Novak, 2005), and dedicated risk maps at appropriate scales can provide valuable information for selective malaria control.
+Anticipating future risk and incidence is critical to
+success in the fight against malaria. The history of
+malaria early warning systems (EWS) goes back to 1921
+when the intensity and distribution of epidemics in
+India were forecasted based on absence of the disease in
+the previous 5 years, rainfall anomalies from July to
+
+152
+
+V. Machault et al. - Geospatial Health 5(2), 2011, pp. 151-168
+
+August, and the local price of wheat used as a proxy for
+people’s nutritional status (Gill, 1923). In the 1950s, the
+introduction of insecticides led some to the false belief
+that the launch of the Global Malaria Eradication
+Program (WHO, 1955) would eventually be successful
+and would make any EWS unnecessary.
+Due to the vector-dependent transmission of malaria, the environment plays an important role in determining vector distribution and malaria biodiversity
+(Guthmann et al., 2002; Ernst et al., 2009). Climate
+seasonality, rainfall patterns, temperature, humidity
+and the presence of vegetation and surface water all
+are directly related to the malaria transmission cycle.
+In addition, human activities such as agriculture, irrigation, deforestation, urbanisation, population movements, dam/road constructions and wars, are also connected to transmission levels and malaria epidemiology (Thomson et al., 1996; Beck et al., 2000; Bergquist,
+2001; Patz et al., 2004; Ceccato et al., 2005).
+Malariometric indices include the presence and persistence of Anopheles breeding sites, larval densities,
+aggressiveness or the human biting rate (HBR), the
+mosquito prevalence of Plasmodium infection, the
+entomological inoculation rate (EIR) as well as malaria prevalence, morbidity and mortality in the human
+population.
+Remote sensing (RS) refers to the collection of data
+by instruments measuring physical and biological
+characteristics of some objects without direct contact.
+For example, sensors on board satellites record electromagnetic radiation reflected or emitted by the
+Earth surface. Passive sensors record natural radiation, whereas active RS, such as radar, emits signals
+and measures the radiation that is reflected or
+backscattered from the target. Even if satellite sensors
+are not dedicated to recording data regarding infectious diseases, remotely sensed information can provide useful indirect information, e.g. geo-climatic, ecological and anthropogenic factors related to malaria
+transmission levels and patterns. Thus, since the first
+studies in the 1970s and 1980s (Cline, 1970; Hayes et
+al., 1985), public health has benefited from the growing availability of remotely sensed data. Forty years
+later, we are at a junction when RS has come into its
+own and is ready to assist epidemiological research on
+malaria at all levels, as well as disease control.
+Determinants of malaria burden
+The completion of the malaria life cycle depends
+critically on the mosquito developmental cycle that
+can only be completed under favourable conditions.
+
+Surface water collections, whose availability is mainly
+driven by land use/land cover characteristics and rainfall are a must but water bodies can only harbour
+Anopheles mosquito larvae if conditions (salinity, turbidity, sunlight, temperature, etc.), are acceptable.
+Determinants of presence of larvae and larval density
+depend on the mosquito species, e.g. An. gambiae s.l.
+usually breeds in small, temporary, clear and shallow
+water collections with small amounts of organic matter and surface vegetation (Gillies and Coetzee, 1987),
+but it can also adapt to polluted water (Awolola et al.,
+2007). Under laboratory conditions, the rate of development of An. gambiae s.s. from one immature stage
+to the next increases at higher temperatures to a peak
+around 28 °C, after which it declines. The range of
+optimum adult emergence is between 22 °C and 26 °C
+with complete inhibition below 18 °C or above 34 °C
+(Bayoh and Lindsay, 2003). The adult mosquito survival rate, another key factor in malaria transmission,
+is driven by climatic factors, such as temperature and
+relative humidity as well as land use and land cover
+characteristics. Depending on the conditions, vectors
+can survive from a few days to several months.
+Dispersal or flight range is also an important determinant of malaria patterns (Killeen et al., 2003). Land
+use and land cover characteristics impact dispersal,
+which is generally lower (<300 m from the breeding
+site) in highly-populated urban settings (Sabatinelli et
+al., 1986; Trape et al., 1992; Manga et al., 1993;
+Robert et al., 1993) than in open rural areas, where it
+can reach several km for some species (Charlwood and
+Alecrim, 1989).
+The duration of the gonotrophic cycle, i.e. the time
+between two ovipositions, is a physiological process
+that depends on mosquito species and air temperature.
+It usually ranges from 2 to 3 days in tropical regions
+(Mouchet et al., 2004). The duration of the
+gonotrophic cycle regulates the mosquito population
+and, thus, also the HBR. The duration of the sporogonic cycle, the process that produces the Plasmodium
+sporozoites which can be inoculated during the mosquito bite, depends on the parasite species and the air
+temperature. Depending on the Anopheles species, at
+25 °C, the duration can be about 10 days for P. vivax,
+13 days for P. falciparum and 18-20 days for P. ovale
+and P. malariae (Mouchet et al., 2004). Slightly higher temperatures lead to shorter cycles. Malaria epidemiology is also strongly related to the vector species
+which can have various vector competence, i.e. ability
+of Anopheles to transmit the parasites.
+The relationship between ecological factors and the
+malariometric indices is strong but it is weighed by
+
+V. Machault et al. - Geospatial Health 5(2), 2011, pp. 151-168
+
+several biotic factors. For example, immunity moderates the link between environment and malaria transmission and human-vector contact can be decreased
+thanks to insecticide-impregnated bednets, one of the
+major tools used in current malaria control.
+Remote sensing
+Satellite-based imagery is characterised by spatial
+and temporal resolutions. On one hand, various
+Earth-observing satellites, e.g. WorldView (http://
+www.digitalglobe.com/index.php/88/WorldView-2),
+Quickbird (http://www.digitalglobe.com/index.php/
+85/QuickBird), Ikonos (http://www.geoeye.com/
+CorpSite/products-and-services/imagery-sources/) or
+SPOT-5 (http://www.spotimage.com/web/en/172-spotimages.php), are equipped with instruments providing
+high or very high spatial resolution images (down to
+<1 m). On the other hand, their temporal resolution
+can be low and the revisit time can reach several days
+or weeks. The same goes for the radar platforms, such
+as TerraSAR-X (http://www.infoterra.de/terrasar-xsatellite) and RADARSAT-2 (www.radarsat2.info/
+about/features_benefits.asp). In contrast, low-resolution platforms, such as Meteosat (http://www.eumetsat.int/Home/Main/Satellites/MeteosatSecondGenerati
+on/index.htm?l=en), the Geostationary Operational
+Environmental Satellites (GEOS) (http://www.oso.
+noaa.gov/goes/), the Moderate Resolution Imaging
+Spectroradiometer (MODIS) (http://modis.gsfc.nasa.
+gov/), onboard the Terra and Aqua spacecrafts, or the
+National
+Oceanographic
+and
+Atmospheric
+Administration Advanced Very High Resolution
+Radiometer (NOAA AVHRR) (http://noaasis.noaa.
+gov/NOAASIS/ml/avhrr.html), can provide images of
+the same place once or several times a day. As a consequence, environmental indicators necessitating precise spatial measurements can be derived from the
+high-resolution sensors, while indicators that require
+temporal evaluation, such as vegetation or rainfall,
+can be derived from the low-spatial resolution satellites. In the latter case, studies would cover a whole
+country or even a continent but the spatial resolution
+could be insufficient for local applications (Beck et al.,
+2000). Images are also characterised by their spectral
+resolution, i.e. the range of wavelengths that can be
+recorded, which will condition their ability to detect
+various objects at the Earth surface. Thus, the choice
+of images depends on the study objectives and on the
+spectral, temporal and spatial resolution criteria needed. In general, low-spatial resolution imagery is free or
+inexpensive, in contrast to high resolution images. A
+
+153
+
+detailed list of past and present orbiting satellites is
+provided by the Geospatial Data Service Centre
+(GDSC) at http://gdsc.nlr.nl/gdsc/information/earth_
+observation/satellite_database.
+In order to produce a thematic representation of an
+area on the ground, the images can be subjected to
+classification (http://www.ccrs.nrcan.gc.ca/glossary
+/index_e.php?id=47). This can either be “supervised”,
+meaning that that the user guides the image processing
+software to classify certain features by using vector
+layer containing training polygons, or “unsupervised”
+where the software does most of the processing. The
+latter approach generally results in more categories
+than needed and the user has to decide which categories can be grouped together into a single land use
+or land cover category. New forms of classification
+have been developed based on object-oriented techniques (as opposed to pixel representation) that are
+particularly well adapted for very high-spatial resolution image analysis. This approach allows incorporation of information of the spatial neighbourhood and
+it does not only rely on information from a single pixel
+(Corcoran et al., 2010; Zhang et al., 2010). In addition, some mathematical operations can be undertaken on images to combine the values of different spectral bands of the same pixel in order to calculate ecological indices, e.g. vegetation or humidity. Some satellite products already contain processed information
+such as rainfall quantities or temperature values.
+Other images are delivered in raw format and their
+pixels contain radiance data in different spectral bands
+in which case, they must be processed with appropriate software such as ENVI (http://www.ittvis.com
+/ProductServices/ENVI.aspx) or ERDAS IMAGINE
+(http://erdas.com). Geographical information systems
+(GIS) represent a general way of integrating spatial
+data (satellite-based or not) as layers (overlays) that
+can be visualised by a computer. Within the GIS, data
+can be comprehensively displayed and a wide range of
+analyses, including one or more layers, can be performed to highlight relationships, patterns or trends.
+Data can also be extracted from the GIS and processed
+by statistical software to fit models that can, for example, be used for producing risk maps.
+Remotely sensed environmental malaria indicators
+Temperature
+Temperature is one of the main indicators as it influences all parts of the malaria transmission cycle. Land
+surface temperature (LST) can be estimated from ther-
+
+154
+
+V. Machault et al. - Geospatial Health 5(2), 2011, pp. 151-168
+
+mal infrared (IR) sensors. MODIS-Terra (https://
+wist.echo.nasa.gov/api/), Meteosat, GEOS and
+AVHRR provide both day and night temperatures.
+LST correlates well with the prevailing temperature of
+the air, but land cover, humidity, atmospheric conditions and the period of the day can introduce aberrations (Connor et al., 1997; Cresswell et al., 1999;
+Colombi et al., 2007; Vancutsem et al., 2010).
+However, a study comparing remotely sensed LST
+with ground data interpolated from meteorological
+stations concluded that the annual mean LST corresponds to the air temperature in Africa within a range
+of +/- 4 °C (Hay and Lennon, 1999). Another article
+reports a significant correlation between the LST and
+ground observations both in Africa and Europe, with
+root mean square errors of around 2 °C (Green and
+Hay, 2002). Thus, the raw LST data are useful but
+conclusions should be drawn with care.
+Rainfall
+Rainfall has a spatio-temporal influence on breeding
+sites and can also improve adult survival by creating a
+favourable humid microclimate for the adult mosquito.
+It can be directly measured but also evaluated by indirect methods. The cold cloud duration (CCD) can be
+derived from Meteosat thermal IR imaging (Dugdale
+et al., 1991) and provides rainfall estimates based on
+the length of time a cloud top is below a threshold
+temperature. The Tropical Rainfall Measuring
+Mission (TRMM; http://trmm.gsfc.nasa.gov/) satellite
+provides near-real-time direct measurement of rainfall
+in tropical areas based on passive microwave and
+active radar sensors, which closely matches ground
+rain gage observations (Sharma et al., 2007; Han et
+al., 2010), even in urban areas (Hand and Shepherd,
+2009). Nevertheless, the influence of location, climate,
+topography, time period, cloud types and rainfall types
+can affect accuracy (Barros et al., 2000). In addition,
+TRMM rainfall data can overestimate rainfall during
+the pre-monsoon season, and in arid regions, but
+underestimate it during the monsoon season, and in
+humid regions (Islam and Uyeda, 2007).
+Elevation
+Elevation generally correlates positively with precipitation and negatively with temperature and can be used
+as surrogate indicator. Several digital elevation models
+(DEMs) give information at different resolutions, e.g.
+gtopo30 provides a worldwide, 30 arc-second (about 1
+km) DEM (http://eros.usgs.gov/#/Find_Data/Products_
+
+and_Data_Available/gtopo30_info), while the Shuttle
+Radar Topography Mission (SRTM) supplies maps at
+90 m resolution (http://www2.jpl.nasa.gov/srtm/). In
+addition to elevation, other information, e.g. wetness
+index (soil moisture), curvature and heat load index
+(solar radiation) can be extracted from DEMs (Li et al.,
+2006). Curvature measures the convexity or concavity
+of the land surface and is an indicator for the possible
+accumulation of water.
+Land use and land cover (LULC)
+The LULC is related to the natural environment and
+to the impact of human activities on the landscape.
+Despite their differences, land cover and land use are
+often mapped together. Land cover refers to characteristics of the biophysical Earth surface (e.g. water, vegetation, bare soil, artificial structures) (Sarma et al.,
+2008), while land use reflects human activities such as
+agriculture, forestry and urban development. The
+LULC is directly related to the malaria burden
+through its impact on breeding sites and on the adult
+mosquito survival rate and dispersal. LULC maps can
+result from any classification process of images and
+some are directly available thanks to various global
+mapping projects, such as the Corine Land Cover
+(http://www.eea.europa.eu/themes/landuse/interactive/clc-download).
+Surface water and soil moisture
+Surface water and humidity appears on optical
+images but microwave sensors have a high potential
+for detection. The breeding sites can be described as
+specific objects based on their ecological characteristics after the water bodies have been detected (Lacaux
+et al., 2006; Vignolles et al., 2009). Soil moisture
+measurements can be used as surrogate values if direct
+detection of breeding sites is impossible when they are
+too small or covered by surface vegetation. The near
+infrared (NIR) and short wave infrared (SWIR) bands
+are of particular interest for water and moisture mapping as they are very sensitive to the humidity contained in vegetation and soils. Several satellites, such
+as SPOT-5 or Landsat (http://www.landsat.gsfc.nasa.
+gov/), contain spectral information in these wavelengths that can be used independently, or in combination with other bands to calculate indices such as
+the normalized difference water index (NDWI) for
+which different versions exist: NDWI Gao (Gao,
+1996), NDWI McFeeters (McFeeters, 1996) and
+NDWI modified (Xu, 2006).
+
+V. Machault et al. - Geospatial Health 5(2), 2011, pp. 151-168
+
+Humidity
+The relative air humidity has a primary impact on
+the presence and persistence of breeding sites and on
+adult mosquito survival rate. This indicator can be
+extracted from other meteorological factors as
+detailed in Beugnet et al. (2009), but it should be used
+with care. Indeed, air humidity is a function of air
+temperature, so it can change significantly over the
+course of the day. It also strongly depends on elevation.
+Vegetation
+Vegetation plays an important role for vector larval
+development and improves adult mosquito survival by
+providing resting sites. The normalized difference vegetation index (NDVI), defined in 1970 (Rouse et al.,
+1973; Tucker, 1979), is the most commonly used index
+for human health applications. It integrates the effects
+of temperature, humidity, rainfall, sunshine, altitude
+and LULC (Britch et al., 2008). It can be used as surrogate for precipitation in certain periods and areas
+(Justice et al., 1991). The NDVI varies from -1 to +1
+based on the vegetation optimum absorbance in the
+red wavelengths (R) and maximum reflection
+of
+near infrared radiation (NIR), i.e. NDVI =
+(NIR -R)/(NIR + R). Since NDVI not only depends on
+land cover but also on atmospheric conditions, there is
+no strict threshold for vegetation detection.
+Nevertheless, a value superior to 0.2 usually corresponds to an area covered by vegetation and negative
+values correspond to water, general infrastructures or
+asphalt. Several low-resolution instruments, e.g.
+MODIS and AVHRR, provide NDVI values but it can
+also be calculated by combining the appropriate spectral bands of any high-resolution image.
+“Inventive use” of satellite indicators
+As mentioned above, satellite imagery can serve as
+proxy for environmental factors when direct detection
+is not possible. It can also be used as proxy for other
+types of characteristics, e.g. socio-economic factors,
+housing type or quality, which can indirectly relate to
+the level of access to antivectorial protective devices or
+to health care. For example, the brightness of remotely sensed night time lights data has been showed to be
+a robust proxy for assessing poverty in Africa, which
+in turn relates closely to health status (Noor et al.,
+2008). With respect to malaria, a study in South
+Africa, used the distance to the Mozambique border as
+
+155
+
+proxy for migration from that country, i.e. importation of malaria cases (Kleinschmidt et al., 2001).
+Analytical techniques
+Once all relevant spatial information has been
+extracted into a GIS, analyses can be carried out to
+evaluate the associations between various environmental factors and malariometric indices. For example, principal component analysis (PCA) (Jolliffe,
+1986) is a useful approach for transforming a large
+number of possibly-correlated variables into a reduced
+number. As environmental variables are often correlated, PCA includes all variables thereby avoiding the
+risk of losing part of the information (Lawpoolsri et
+al., 2010). Then, algorithms such as hierarchical classification or “K-means clustering” can generate environmental classes based on those principal components (Chamaille et al., 2010). Because the principal
+components are linear combinations of initial variables, the interpretation of groups is easy and intuitive.
+Discriminant analysis is effective in the field of spatial epidemiology (Beck et al., 1994, 1997). It relates
+closely to PCA but has the advantage of permitting the
+prediction of new observations. Partial least square
+(PLS) regression (Wold et al., 1984) can also be considered when using collinear variables. Ecological
+niche factor analysis (ENFA), which introduces habitat suitability (Hirzel et al., 2002), can be calculated
+with Biomapper (http://www2.unil.ch/biomapper
+/index.html) and is a “presenceonly” model to be used
+when no “absence data” are available. Also other
+“presence-only” models exist, such as maximum
+entropy or genetic algorithms (De Meyer et al., 2010),
+and these are of interest since they do not require independence of covariates.
+Statistical models such as linear, logistic, Poisson or
+negative binomial regressions model the relationships
+between environmental factors and malariometric
+indices. The choice of regression depends on the type
+of data to model (dichotomous or continuous outcome, proportion or rate), each implying different
+mathematical formulas to link the environmental factors and malariometric indicators. The advantage of
+these analyses lies in their prediction possibilities.
+Indeed, once a model is fitted, the results can be
+extrapolated to predict the outcome for unsampled
+observations by inversion of the regression formula
+within the range of the values of the fitted data.
+The basic requirement for using classical statistics is
+the independence of observations. In a spatial context,
+
+156
+
+V. Machault et al. - Geospatial Health 5(2), 2011, pp. 151-168
+
+this prerequisite is not always fulfilled because the
+observations that are close in space can be more similar than those that are distant. Neglecting this spatial
+autocorrelation in the analysis may produce underestimation of the standard deviations resulting in overestimation of the strength of the associations that may
+lead to spurious correlations (Thomson and Connor,
+2000). Indeed, there are actually fewer independent
+observations in real life than might be assumed. For
+example, 87% of the variability in tsetse densities
+studies in Kenya was explained by RS but, after
+accounting for the spatial autocorrelation, these
+results were no longer significant (Kitron et al., 1996).
+Spatial autocorrelation among outcomes means
+presence of a systematic pattern in the spatial distribution of the variable, something that can be assessed
+using Moran’s I (Moran, 1950) or Geary’s C statistics
+(Geary, 1954). Moran’s I is a global indicator, whereas the Geary coefficient is more sensitive to differences
+in small neighbourhoods. The spatial variations can
+also be investigated by nonparametric D statistics
+(point pattern analysis), which is defined as the average absolute difference in data ranks over all possible
+pairs of adjacent spatial units. Because weighting
+favours pairs of areas in close proximity, a low
+D value implies the presence of spatial correlation
+(Walter, 1994).
+A number of modeling approaches can be used
+when taking spatial dependence into account and
+location-specific covariates and error terms (random
+effects) can be introduced to describe geographical differences in the mean of the outcome. On the one hand,
+multilevel models can be employed to analyse correlation in malariometric indices nested within larger
+units, e.g. persons within a household or households
+within a village (Matthys et al., 2006b; Vanwambeke
+et al., 2006; Baragatti et al., 2009), while, on the other,
+geostatistical spatial models (Diggle and Tawn, 1998),
+or conditional and simultaneously autoregressive
+models (Cressie, 1993), incorporate explicitly spatial
+correlation as a function of distance or neighbour
+structure of data. They allow assessment of disease
+determinants in the presence of spatial correlation, as
+well as smoothing and prediction. Spatial models can
+be formulated within the framework of generalised
+linear mixed models (GLMM) (Kleinschmidt et al.,
+2001) but the model fit is complicated when the number of parameters is large (Gemperli and Vounatsou,
+2004; Gosoniu et al., 2006). However, GLMM spatial
+models have been applied in malaria mapping using
+Bayesian formulations to overcome parameter estimation through Markov chain Monte Carlo (MCMC)
+
+simulation. Predictions at unsampled locations are
+enabled by Bayesian kriging based on geostatistical
+regression models. Indeed, Bayesian models are
+increasingly used for mapping of malaria and tropical
+diseases in general (Steinmann et al., 2007; Silué et al.,
+2008; Raso et al., 2009; Haque et al., 2010; Riedel et
+al., 2010). Appropriate software, such as OpenBUGS
+(http://www.openbugs.info/w/) is available for fitting
+spatial Bayesian regressions. Several techniques have
+been used, such as Fourier analysis to assess seasonality (Hay et al., 2006), autoregressive integrated moving average (ARIMA) (Abeku et al., 2002), or derivatives of the former (ARIMAX) (Wangdi et al., 2010),
+can be applied to estimate temporal patterns and
+obtain short-term forecasts. It should be noted that
+some results can be produced using methods such as
+fuzzy logic (Snow et al., 1998) or neural networks
+(Kiang et al., 2006).
+In classical statistics, accuracy can be measured in
+several ways. The model assessment refers to estimation of the precision of the model, and it expresses
+how well the model fits the data. In classical statistics,
+this precision is provided by the standard error
+(Atkinson and Graham, 2006). In this context,
+Bayesian modeling has the great advantage of being
+capable to estimate the parameters and the predictions
+as posterior distributions rather than as single values
+(Brooker, 2007). Hence, for each predicted observation, the upper and lower Bayesian credible limits are
+known, permitting the creation of maps with the prediction error. To compare model-based predictions
+with the “real” values, measurements of the agreement can be given by overall accuracy, sensitivity and
+specificity, positive and negative predictive values,
+area under the receiver operating characteristics
+(ROC) curve or the correlation coefficient. When
+there is no “gold standard” but only two sets of values, Kappa statistics can estimate the level of agreement, taking into account agreement obtained by
+chance only. In Bayesian statistics, the predictive ability of models can be assessed using a Bayesian “pvalue” analogue calculated from the predictive, posterior distribution (Gosoniu et al., 2006). A list of accuracy metrics has been provided by Rogers (2006).
+RS and malaria
+The growing availability and precision of remotely
+sensed data has encouraged their use in the study of
+several infectious diseases (Thomson et al., 1997; Hay
+et al., 1998; Kitron, 2000; Randolph and Rogers,
+2000). With regard to malaria, remotely sensed envi-
+
+V. Machault et al. - Geospatial Health 5(2), 2011, pp. 151-168
+
+ronmental data can be linked to a wide range of malariometric indices, i.e. larval and vector densities, aggressiveness, EIR, parasite prevalence and malaria incidence as it will be showed in the following examples.
+Breeding sites
+The launch of the Landsat-1 satellite in 1972
+marked the start of malaria risk mapping. The data
+are increasingly accurate as shown in Thailand where
+remotely sensed data delivered environmental data as
+reliable as those collected on the ground
+(Vanwambeke et al., 2007). Sometimes, the mapping
+of breeding sites relies on prior knowledge of the environments favourable for the larval development and
+the risk is deducted from the mapping of those ecosystems. For example, in Burkina Faso, potential highrisk and low-risk malaria areas at the village level were
+predicted using 2.5 m resolution SPOT-5 imagery. The
+potential breeding sites were mapped following a
+supervised classification and malaria risk levels were
+deducted from the presence of breeding sites in the
+surroundings of each village (Dambach et al., 2009).
+Mapping can also be attempted on the basis of collected entomological field data, and associations have
+been found between the presence of larval habitats and
+the results of image classifications at a range of different spatial resolutions (Rejmankova et al., 1998;
+Sithiprasasna et al., 2005a; Mushinzimana et al.,
+2006; Stoops et al., 2008; Mutuku et al., 2009). In
+addition, RS can also bring knowledge about breeding
+habitats, e.g. in Thailand, where differences in habitat
+preferences of An. minimus A and C were characterised using remotely sensed ecological data
+(Rongnoparut et al., 2005).
+An interesting application of the mapping of larval
+habitats was undertaken in South Korea around two
+military camps, using a decision support system
+(Claborn et al., 2002). Retrieval of larval habitats in
+need of pesticide treatment was achieved by the processing of Landsat images, the derived cost was calculated and compared with the cost of providing antimalarial chemoprophylaxis to the individuals allowing
+the choice between the two control methods.
+Another methodology, also applied in South Korea,
+relied on photo-interpretation of Landsat and Ikonos
+images for the mapping of rice fields and other potential breeding sites for An. sinseni around two military
+camps. In this case, some pools were better detected
+with high-resolution Ikonos images (1 m resolution),
+even if no SWIR band was available (Masuoka et al.,
+2003). An example from the Kenyan highlands, which
+
+157
+
+represents a very heterogenic ecosystem, is of interest
+in this connection, since the photo-interpretation of
+Ikonos images allowed the detection of 41% of the
+water collections, whereas the Landsat images (30 m
+resolution) did not provide any useful information
+(Mushinzimana et al., 2006). Indeed, the authors of
+this study stated that object detection is feasible only
+when the object size is at least 1.5 times larger than the
+pixel size. In this work, visual detection results could
+have been coupled with statistical results to improve
+the detection rate. Sometimes, classification methods
+provide better results than photo-interpretation
+(Mutuku et al., 2009).
+In addition to optical satellite images, radar imagery
+has also been exploited for the mapping of breeding
+sites, taking advantage of radar superior capacity to
+detect water and humidity, overcoming acquisition
+problems caused by cloud cover. In Mali, temporal
+profiles of rice fields, provided by eight ERS-2 SAR
+images (12.5 m resolution), highlighted the relationship between radar images and the development of rice
+plants, which in turn is coupled with Anopheles larval
+density (Diuk-Wasser et al., 2006). Other studies have
+focused on temporal predictions. One of the first
+papers published in the field of vector diseases and
+remote sensing was a study done in California, USA,
+where the most productive An. freeboni rice fields
+were mapped 2 months before larval density peaked
+(Wood et al., 1991). Predictors included extensive vegetation at the beginning of the season (measured by a
+Landsat image) and livestock proximity, measured by
+mapping the pastures using IR aerial photography.
+Vector density
+The densities of larvae and adult mosquitoes are
+closely related. Indeed maps of larval habitats can be
+exploited for the prediction of vector densities as in
+Belize, where An. albimanus larval habitats are often
+located where water and sparse vegetation meet, and
+where these habitats have been mapped using the classification of a 20 m resolution SPOT image
+(Rejmankova et al., 1995). In the same country, the
+indoor presence of An. pseudopunctipennis was predicted by processing the SPOT image together with
+topographic maps from which the presence of rice
+fields, their distance from houses, the difference of elevation, and the presence of forest between fields and
+houses were extracted (Roberts et al., 1996). In both
+these studies, the predictions were validated thanks to
+mosquito ground collections. In Camargue, a marshy
+area in the south of France, larval- and adult-stage
+
+158
+
+V. Machault et al. - Geospatial Health 5(2), 2011, pp. 151-168
+
+An. hyrcanus were mapped using a Landsat image.
+Each pixel of the resulting map contained the probability of the presence of larvae depending on biotope,
+distance to the first rice field and larvicide intervention
+(Tran et al., 2008). Here, the flight range was not predefined but rather deducted from research on the best
+correlation between ground-measured adult densities
+and larval probabilities in a range of buffers of different sizes. The vector density mapping can lead to
+applications such as the definition of areas that require
+indoor insecticide spraying (Rakotomanana et al.,
+2007). A reverse approach consists of measuring adult
+mosquito densities to define the ecosystems most
+favourable for larval development. In Mexico, a
+Landsat image allowed identification of ecosystems
+associated with adult An. albimanus densities around
+40 villages (Beck et al., 1994).
+RS also produce information on the distribution of
+Anopheles species or molecular forms such as in Mali
+where the presence of the Mopti form of An. gambiae
+s.s. has been correlated with low rainfall either in the
+study month, or in the previous month (Tourre et al.,
+1994), or with low NDVI values (Thomson et al.,
+1997). Also in Mali, Bayesian modeling made it possible to produce maps of the spatial distribution of
+An. gambiae s.s. and An. arabiensis (Sogoba et al.,
+2007) or of chromosomal forms of An. gambiae
+(Sogoba et al., 2008), based on climatic and environmental factors (rainfall, minimum and maximum temperature, NDVI, soil, water storage index, distance to
+water bodies and suitability to transmission). On a
+larger scale, satellite imaging has been used to predict
+the distribution of five of the six An. gambiae complex
+species that are responsible for much of the malaria
+transmission in Africa (Rogers et al., 2002).
+EIR and parasite prevalence
+Scientists have investigated the associations between
+ecosystems and Plasmodium EIR. In Kenya, An. gambiae and An. funestus aggressiveness and EIR have
+been predicted using a model based on land cover, soil
+type, soil moisture, surface-water availability and a
+combination of multiple weather parameters (Patz et
+al., 1998). In The Gambia, An. gambiae s.l. EIR was
+estimated in villages using breeding site areas and distances mapped using Landsat images (Bogh et al.,
+2007). In the same country, a model was fitted using
+the EIR in villages and a map of breeding sites issued
+from a classification of a SPOT image (20 m resolution). Extrapolation of the model allowed the prediction of transmission levels in other villages (Thomas
+
+and Lindsay, 2000). Here, parasite prevalence in the
+villages correlated with the EIR. Nevertheless, whereas EIR can be linearly linked to larval and adult densities, the relationship between vector populations and
+the incidence or prevalence of malaria depends not
+only on transmission levels but also on other factors
+such as the use of anti-vectorial devices, the acquired
+immunity or access to antimalarial drugs (Rogers et
+al., 2002).
+Despite this non-linear relationship, some studies
+aimed to define parasite prevalence levels from the
+presence of breeding sites or vector densities, or to
+define malaria cases from geo-climatic indicators. In
+Thailand, in a study based on Ikonos data, no association was found between the presence of malaria in
+houses and the distance to streams (Sithiprasasna et
+al., 2005b), while in another study based on aerial and
+satellite photographs in a Cambodian village
+(Cambodia Reconnaissance Survey Digital Data,
+Ministry of Public Works and Transportation,
+Kingdom of Cambodia), increased distance to the forest was clearly protective (Incardona et al., 2007). In
+The Gambia, children parasite prevalence was predicted in 65 villages using a set of explanatory variables,
+i.e. age, impregnated bednets and NDVI included as
+proxy for the length of the transmission season. The
+fitted model allowed a prediction of the effects of
+changes in bednet use on transmission (Thomson et
+al., 1999). The MARA/ARMA project materialised
+out of the need for malaria risk maps on the scale of
+the entire continent (Snow et al., 1996). More recently, the mapping malaria project (MAP) was born with
+the objective of gathering worldwide parasite prevalence data and making them freely available on the
+Internet (http://www.map.ox.ac.uk/) (Guerra et al.,
+2007). A model of the spatial limits and endemicity
+levels of P. falciparum and P. vivax was constructed
+from available data linked with temperature and
+humidity information (Guerra et al., 2008). In West
+and Central Africa, P. falciparum prevalence maps
+have been completed based on MARA/ARMA field
+data and a seasonality model based on the NDVI, temperature and rainfall (Gemperli et al., 2006a). In Mali,
+a prevalence risk map was based on the distance to
+water, mean NDVI during the rainy season, the lowest
+temperature during the 3 months preceding the rainy
+season, and the number of months with rainfall
+exceeding 60 mm (Kleinschmidt et al., 2000). In
+Kenya, Uganda and Tanzania, predictions of the parasite prevalence were based on temperature, rainfall,
+humidity, NDVI, altitude and corroborated historical
+maps (Omumbo et al., 2002). Later, these maps were
+
+V. Machault et al. - Geospatial Health 5(2), 2011, pp. 151-168
+
+further improved by adding human density, urbanization data, presence of water collections and ecological,
+environmental data (Omumbo et al., 2005). In
+Afghanistan, a 8-km resolution P. vivax prevalence
+map was created using NDVI and LST (Brooker et al.,
+2006).
+Another application of risk maps is to evaluate the
+risk of re-emergence of malaria in countries where it
+has been eliminated. In a rice field region of Spain,
+remotely sensed ecological and climatic features,
+together with other malariometric variables, were
+found to be associated with the possible risk of transmission (Sainz-Elipe et al., 2010) and a similar situation has been reported in Portugal (Capinha et al.,
+2009). In the south of France, An. hyrcanus larval and
+adult stages were mapped using remote sensing
+imagery as part of a research project on the risk of
+malaria re-emergence (Tran et al., 2008).
+Mathematical epidemiological models overcome difficulties in the comparability of non-standardised and
+non-overlapping surveys in the field of malaria mapping (Gemperli et al., 2006b). In those models,
+remotely sensed data can be included as it has been
+done in Mali where the NDVI was included in a temporal model of transmission to forecast the evolution
+of a malaria epidemic (Gaudart et al., 2009).
+
+159
+
+bers by only 8.9% (Adimi et al., 2010). In Kenya, a
+NDVI higher than 0.35-0.40 in a given month resulted in hospital admissions due to severe malaria in the
+following month that surpassed 5% of the total annual number of admissions (Hay et al., 1998). In
+Burundi, a model including NDVI, ground temperature, amount of rainfall and number of malaria cases
+in a given month accurately predicted the malaria incidence for the following month (Gomez-Elipe et al.,
+2007). An EWS in Eritrea, based on rainfall forecasts,
+could predict the monthly clinical malaria incidence with a lead time of 2-3 months (Ceccato et al.,
+2007). On the scale of the African continent, an EWS,
+relying on the association between epidemics and
+decade-level rainfall anomalies for malaria epidemics
+has been developed and is available on the Internet
+(http://iridl.ldeo.columbia.edu/maproom/.Health/.Reg
+ional/.Africa/.Malaria/.MEWS/) (Grover-Kopec et al.,
+2005). Thus, weather should be considered in the
+development of malaria EWS (Teklehaimanot et al.,
+2004). Nevertheless, morbidity and mortality models
+should be interpreted with care because of the difficulty of modeling the acquired immunity among human
+population, which moderates the link between environment and malaria transmission.
+Detection of changes
+
+Morbidity and mortality
+Environmental and climatic indicators have been
+used in models explaining malaria morbidity and mortality or in models attempting to predict outbreaks.
+For example, remotely sensed temperature and vegetation indexes, were shown to be correlated with the
+number of malaria cases admitted to hospitals in
+Bangladesh by calculating NDVI and surface temperature as deviations from their minimum and maximum
+values to take into account meteorological fluctuations rather than long-term climatic variables
+(Rahman et al., 2006). A French military mission to
+sub-Saharan Africa, representing a short-term exposure for non-immune individuals, showed that a NDVI
+higher than 0.35 was a major risk factor for clinical
+malaria and the relative weight of this indicator surpassed that of age and chemoprophylaxis compliance
+(Machault et al., 2008). In Afghanistan, an autoregressive model accounting for malariometric indices
+(i.e. infection during 1 month depending on the infections during the previous month), showed that NDVI
+and LST are capable of predicting the average total
+number of cases for the following 6 months. As it
+turned out, the prediction exceeded the actual num-
+
+Image processing allows the detection of environmental changes over time that can be associated with
+a new, increased or decreased malaria risk. Such an
+association between ecological changes and the presence of An. arabiensis larval habitats has been shown
+in a Kenyan village (Jacob et al., 2007). Indeed, the
+proportion of water collections was higher in areas
+that had undergone environmental changes between
+1988 and 2005, especially in lands that became fallow.
+In urban settings, land cover changes have also been
+associated with breeding sites. In two Kenyan cities,
+multi-spectral thermal imager (MTI; http://www.globalsecurity.org/space/systems/mti.htm) images recorded
+at 14-years interval showed that presence, abundance
+and spatial distribution of larval habitats were related
+to urbanization (Jacob et al., 2003). An. arabiensis
+aggressiveness, explored over a decade-long time scale
+in Dakar, and built-up areas predicted and mapped
+using the classification of two SPOT images of 2.5 m
+and 20 m resolution, highlighted the benefits of urbanization as the proportion of the population at higher
+risk for malaria transmission greatly decreased
+(Machault et al., 2010). In Paraguay, mapping of land
+cover changes, particularly from forest to non-forest
+
+160
+
+V. Machault et al. - Geospatial Health 5(2), 2011, pp. 151-168
+
+areas, were evaluated using time series of the NDVI
+derived from the Global Inventory Modeling and
+Mapping Studies (GIMMS) (http://gcmd.nasa.gov/
+records/GCMD_GLCF_GIMMS.html) and showed an
+association with malaria case rates (Wayant et al.,
+2010).
+Urban malaria mapping
+Urbanization, currently increasing so fast that near
+60% of the world’s population will live in cities by
+2030 (Nations, 2003), has a considerable impact on
+the composition of the vector system and malaria
+transmission dynamics (Antonio-Nkondjio et al.,
+2005). Many studies have reported the existence of
+malaria transmission in urban areas, even if levels are
+usually lower than those in peri-urban and rural
+places (Robert et al., 2003; Keiser et al., 2004). The
+epidemiology of malaria in cities is specific, and
+urban malaria is considered an emerging health problem of major importance in Africa (Donnelly et al.,
+2005). The urban disease burden, as well as its spatiotemporal distribution, is closely related to the
+degree and type of urbanization, the density of the
+human population, vector control measures, access to
+health care (Robert et al., 2003; Wang et al., 2005a)
+and adaptation of the vector to new or polluted
+breeding sites (Chinery, 1984; Sattler et al., 2005;
+Awolola et al., 2007; Omlin et al., 2007). Blood meal
+sources are abundant in cities so the dispersion of the
+vectors is low resulting in urban transmission dynamics being primarily driven by proximity of breeding
+sites (Trape et al., 1992; Staedke et al., 2003). The
+malaria risk is heterogeneous over small distances,
+and transmission can vary among different districts of
+the same city, as shown in Brazzaville (Trape and
+Zoulani, 1987) and Dakar (Machault et al., 2009).
+The consequence of this situation is that effective control can be expected from environmental management, including vegetation clearance, modification of
+river boundaries, draining swamps and insecticide
+treatment of open water bodies.
+Urban breeding sites are usually small and difficult
+to locate but direct identification of breeding sites in
+Dar es Salaam, Tanzania, using aerial photos facilitated larval control (Castro et al., 2004). Other work has
+not been as successful, e.g. in Malindi and Kisumu,
+Kenya, photo-interpretation based on 5 m and 20 m
+resolution images from MTI, even when undertaken
+by an experienced operator, could only detect 6% of
+the breeding habitats (Jacob et al., 2005). The growing availability of higher resolution images will likely
+
+improve outcomes. On the other hand, environmental
+proxies can also be of interest for malaria mapping in
+urban settings as shown by a re-sampling of the NDVI
+at 270 x 270 m in the same Kenyan cities, that could
+be correlated with a low density of dwellings and a
+high presence of Anopheles breeding sites (Eisele et al.,
+2003). In Ouagadougou, Burkina Faso, a high prevalence of malaria antibodies and a high prevalence of
+infection among children were associated with urban
+environmental data indicating unplanned and sparsely
+built-up areas (Baragatti et al., 2009).
+The importance of urban agricultural activity on
+malaria has been reported in several African countries
+where irrigation has led to the emergence of larval
+habitats (Afrane et al., 2004; Matthys et al., 2006a)
+and higher malaria prevalence (Klinkenberg et al.,
+2005; Wang et al., 2005b). Irrigated vegetable fields
+near a French military camp in Abidjan have been suggested as the source of the unexpected high number of
+adult Anopheles found there (Girod et al., 2006). In
+Antananarivo, the capital city of Madagascar, the rice
+field surface area, together with altitude, temperature,
+rainfall and population density, were investigated as
+potential risk factors for confirmed malaria cases
+(Rakotomanana et al., 2010). In other cities, such as
+Malindi in Kenya, no relationship was found between
+household-level urban agriculture practices and the
+distribution of water bodies (Keating et al., 2004).
+Indeed, market gardens likely provide resting sites to
+Anopheles rather than increase the number of breeding sites, as was previously demonstrated in Ghana
+(Klinkenberg et al., 2008). Mapping of urban agricultural areas is one of the key elements in malaria risk
+mapping in cities.
+Malaria mapping and risk
+Risk, hazard and vulnerability
+RS has been exploited to generate population grids,
+a key tool for providing information on populations at
+risk for the disease. Indeed, malaria occurs only where
+and when an infected competent vector meets a
+human sensitive population. A recent review has
+focused on the use of global population distribution
+data for estimating malaria morbidity and mortality
+(Balk et al., 2006).
+Clear identification, characterisation and classification of urban ecotypes is sometimes weak, impeding
+the evaluation of actual malaria burden (Siri et al.,
+2008) but work is being done to map and model
+human urban populations using RS (Tatem and Hay,
+
+V. Machault et al. - Geospatial Health 5(2), 2011, pp. 151-168
+
+2004). The definition of an urban area is not standardised and finding accurate global maps of urban
+settings can be problematic. Radar, optical or the US
+Air Force Defense Meteorological Satellite Program
+(DMSP) night-light imagery has been exploited,
+including complex geo-statistical analysis (Tatem and
+Hay, 2004). Even if quantitative interpretations may
+be open to criticism due to the diffusion of light into
+neighbouring pixels (Hay, 2005), it has been used in
+the Global Rural Urban Mapping Project (GRUMP), a
+large population mapping initiative, which has been
+shown to match up with descriptions of urban settings
+all over the world (Tatem et al., 2008). On a national
+scale (in Kenya), semi-automated mapping of urban
+areas with images at middle spatial resolution have
+been shown to provide satisfactory results (Tatem et
+al., 2005). However, this type of global source could
+fail to be linked to malariometric indicators, especially where population densities are low (Tatem et al.,
+2008). On the local scale, an operational tool for rapid
+urban mapping based on the joint use of radar and
+optical sensors has shown to delineate urban zones
+better than isolated radar or optical images (Corbane
+et al., 2008). Unsupervised and supervised pixel-based
+classifications of a Landsat 7 image have provided
+accurate estimates of population density in census
+areas of Besançon, France (Viel and Tran, 2009).
+Finally, the detection of changes and quantification of
+urbanization growth have also been undertaken using
+radar and optical images in Douala, Cameroon
+(Onana et al., 2005).
+The risk areas should be defined as the areas where
+hazard and vulnerability overlap. Hazard represents
+the “potential risk”, e.g., the vector distribution, and
+vulnerability relates to the distribution, sensitivity and
+exposure of human populations. Some studies have
+taken into account the superimposition of potential
+risk and vulnerability to estimate risk. In Kenya,
+RADARSAT-1 (25 m resolution) images allowed mapping of the areas favourable to the presence of anopheline vector breeding sites that also intersected with
+human populated areas. Risk zones were defined as
+the overlapping surface of those two areas (Kaya et al.,
+2002). In Dakar, the non-populated areas, mapped
+using SPOT images (2.5 m and 20 m resolution) were
+masked when predicting malaria risk (Machault et al.,
+2010). Indeed, as it is known that the peak of anopheline aggressiveness occurs in the middle of the night in
+Dakar (Machault et al., 2009) and because evening
+and night activities are expected to take place mainly
+in or around dwellings, areas without infrastructure
+were excluded from predictions. On a worldwide
+
+161
+
+scale, a recent study provided a map of the global spatial extent of P. vivax malaria, together with estimates
+of the human population at risk of any level of transmission (Guerra et al., 2010).
+Limitations
+In the field of spatial modeling and risk mapping,
+care must be taken to ensure the validity of the results.
+In addition to the usual requirement to validate any
+model and to take care in extrapolating the models,
+which should not exceed their intrinsic possibilities,
+specific issues need to be addressed with geospatial
+modeling. The basic requirement is to attain the objective of collecting appropriate field data but it is
+adamant that the mechanisms of the associations
+between environmental data and each step of the
+transmission cycle are fully understood. The choice of
+satellite images must not only be driven by logistical
+constraints. Images have to be specifically selected
+depending on the scales of the biological phenomenon
+under study. As reported in some studies, an analysis
+of scale and spatial resolution needs to be undertaken
+(Atkinson and Graham, 2006). Very high resolution
+images could be considered as the best choice, but
+depending on the topic, other types of images may
+lead to identical or even better results (Hay, 2005). In
+addition, images that are contemporary to the field
+work undertaken are not always available. The consequences of any distortion between the times of collection of remotely sensed data and ground data must be
+analysed and discussed. Remotely sensed environmental indicators can be proxies for ground conditions.
+Nevertheless, their capability of approximating field
+data must always be discussed, depending on the location, climate or topography. Finally, malaria interventions have to be known and taken into account as they
+can confound the relationship between environment
+and disease, as in the recent malaria indicator survey
+data for Zambia or Angola (Gosoniu et al., 2010;
+Riedel et al., 2010), where it was found that no relationship was observed between remotely sensed data
+and malaria risk.
+Conclusions
+RS has become an all-important tool for evaluating
+malaria burden, modeling malaria spatiotemporal distribution, and planning malaria control. The key issue
+is to implement operational systems that facilitate realtime monitoring of human health. Risk maps could
+become dynamic if the temporal association between
+
+V. Machault et al. - Geospatial Health 5(2), 2011, pp. 151-168
+
+162
+
+the determinants of malaria transmission and the environmental and climatic factors is clearly understood
+and if continuous remotely sensed data or meteorological forecasting is available. In this case, EWS can
+be set up to anticipate epidemics. Of course, this
+process can be completed only if the biology of the
+vectors and the epidemiology of the disease in the
+studied area are very well known.
+
+Malar J 8, 13.
+Barros AP, Joshi R, Putkonen J, Burbank DW, 2000. A study of
+the 1999 monsoon rainfall in a mountainous region in central
+Nepal using TRMM products and rain gauge observations.
+Geophys Res Lett 27, 3683-3686.
+Bayoh MN, Lindsay SW, 2003. Effect of temperature on the
+development of the aquatic stages of Anopheles gambiae sensu
+stricto (Diptera: Culicidae). Bull Entomol Res 93, 375-381.
+Beck LR, Lobitz BM, Wood BL, 2000. Remote sensing and
+human health: new sensors and new opportunities. Emerg
+
+Acknowledgements
+
+Infect Dis 6, 217-226.
+V. Machault received financial support from the Direction
+
+Beck LR, Rodriguez MH, Dister SW, Rodriguez AD,
+
+d’Objectif
+
+Rejmankova E, Ulloa A, Meza RA, Roberts DR, Paris JF,
+
+n°07CO402) and the Centre National d’Etudes Spatiales
+
+Spanner MA, Washino RK, Hacker C, Legters LJ, 1994.
+
+(CNES). We thank Dr. Antonio Güell and Murielle Lafaye,
+
+Remote sensing as a landscape epidemiologic tool to identify
+
+director and head of tele-epidemiology applications, respective-
+
+villages at high risk for malaria transmission. Am J Trop Med
+
+ly, at the Applications and Valorisation Office at CNES, for sup-
+
+Hyg 51, 271-280.
+
+Générale
+
+de
+
+l’Armement
+
+(DGA
+
+-
+
+Contrat
+
+porting this work. We warmly acknowledge the reviewers for
+their significant contributions in improving this paper.
+
+Beck LR, Rodriguez MH, Dister SW, Rodriguez AD, Washino
+RK, Roberts DR, Spanner MA, 1997. Assessment of a remote
+sensing-based model for predicting malaria transmission risk
+
+References
+
+in villages of Chiapas, Mexico. Am J Trop Med Hyg 56, 99106.
+
+Abeku TA, de Vlas SJ, Borsboom G, Teklehaimanot A, Kebede
+
+Bergquist NR, 2001. Vector-borne parasitic diseases: new trends
+
+A, Olana D, van Oortmarssen GJ, Habbema JD, 2002.
+
+in data collection and risk assessment. Acta Trop 79, 13-20.
+
+Forecasting malaria incidence from historical morbidity pat-
+
+Beugnet F, Chalvet-Monfray K, Loukos H, 2009. FleaTickRisk:
+
+terns in epidemic-prone areas of Ethiopia: a simple seasonal
+
+a meteorological model developed to monitor and predict the
+
+adjustment method performs best. Trop Med Int Health 7,
+
+activity and density of three tick species and the cat flea in
+
+851-857.
+
+Europe. Geospat Health 4, 97-113.
+
+Adimi F, Soebiyanto RP, Safi N, Kiang R, 2010. Towards malar-
+
+Bogh C, Lindsay SW, Clarke SE, Dean A, Jawara M, Pinder M,
+
+ia risk prediction in Afghanistan using remote sensing. Malar
+
+Thomas CJ, 2007. High spatial resolution mapping of malar-
+
+J 9, 125.
+
+ia transmission risk in The Gambia, West Africa, using
+
+Afrane YA, Klinkenberg E, Drechsel P, Owusu-Daaku K, Garms
+R, Kruppa T, 2004. Does irrigated urban agriculture influence
+the transmission of malaria in the city of Kumasi, Ghana?
+Acta Trop 89, 125-134.
+
+Landsat TM satellite imagery. Am J Trop Med Hyg 76, 875881.
+Britch SC, Linthicum KJ, Anyamba A, Tucker CJ, Pak EW,
+Maloney FA, Cobb K, Stanwix E, Humphries J, Spring A,
+
+Antonio-Nkondjio C, Simard F, Awono-Ambene P, Ngassam P,
+
+Pagac B, Miller M, 2008. Satellite vegetation index data as a
+
+Toto JC, Tchuinkam T, Fontenille D, 2005. Malaria vectors
+
+tool to forecast population dynamics of medically important
+
+and urbanization in the equatorial forest region of south
+
+mosquitoes at military installations in the continental United
+
+Cameroon. Trans R Soc Trop Med Hyg 99, 347-354.
+
+States. Military Med 173, 677-683.
+
+Atkinson PM, Graham AJ, 2006. Issues of scale and uncertain-
+
+Brooker S, 2007. Spatial epidemiology of human schistosomia-
+
+ty in the global remote sensing of disease. Adv Parasitol 62,
+
+sis in Africa: risk models, transmission dynamics and control.
+
+79-118.
+
+Trans R Soc Trop Med Hyg 101, 1-8.
+
+Awolola TS, Oduola AO, Obansa JB, Chukwurar NJ,
+
+Brooker S, Leslie T, Kolaczinski K, Mohsen E, Mehboob N,
+
+Unyimadu JP, 2007. Anopheles gambiae s.s. breeding in pol-
+
+Saleheen S, Khudonazarov J, Freeman T, Clements A,
+
+luted water bodies in urban Lagos, southwestern Nigeria. J
+
+Rowland M, Kolaczinski J, 2006. Spatial epidemiology of
+
+Vector Borne Dis 44, 241-244.
+
+Plasmodium vivax, Afghanistan. Emerg Infect Dis 12, 1600-
+
+Balk DL, Deichmann U, Yetman G, Pozzi F, Hay SI, Nelson A,
+2006. Determining global population distribution: methods,
+applications and data. Adv Parasitol 62, 119-156.
+
+1602.
+Capinha C, Gomes E, Reis E, Rocha J, Sousa CA, do Rosario
+VE, Almeida AP, 2009. Present habitat suitability for
+
+Baragatti M, Fournet F, Henry MC, Assi S, Ouedraogo H,
+
+Anopheles atroparvus (Diptera, Culicidae) and its coincidence
+
+Rogier C, Salem G, 2009. Social and environmental malaria
+
+with former malaria areas in mainland Portugal. Geospat
+
+risk factors in urban areas of Ouagadougou, Burkina Faso.
+
+Health 3, 177-187.
+
+V. Machault et al. - Geospatial Health 5(2), 2011, pp. 151-168
+Carter R, Mendis KN, Roberts D, 2000. Spatial targeting of
+interventions against malaria. Bull World Health Organ 78,
+
+163
+
+John Wiley and Sons, New York, USA.
+Cresswell MP, Morse AP, Thomson MC, Connor SJ, 1999.
+Estimating surface air temperatures, from Meteosat land sur-
+
+1401-1411.
+Castro CM, Yamagata Y, Mtasiwa D, Tanner M, Utzinger J,
+Keiser J, Singer BH, 2004. Integrated urban malaria control: a
+case study in Dar es Salaam, Tanzania. Am J Trop Med Hyg
+
+face temperatures, using an empirical solar zenith angle model.
+Int J Remote Sens 20, 1125-1132
+Dambach P, Sie A, Lacaux JP, Vignolles C, Machault V,
+Sauerborn R, 2009. Using high spatial resolution remote sens-
+
+71, 103-117.
+Ceccato P, Connor S, Jeanne I, Thomson M, 2005. Application
+of geographical information systems and remote sensing technologies for assessing and monitoring malaria risk.
+
+ing for risk mapping of malaria occurrence in the Nouna district, Burkina Faso. Glob Health Action 2.
+De Meyer M, Robertson MP, Mansell MW, Ekesi S, Tsuruta K,
+Mwaiko W, Vayssieres JF, Peterson AT, 2010. Ecological niche
+
+Parassitologia 47, 81-96.
+Ceccato P, Ghebremeskel T, Jaiteh M, Graves PM, Levy M,
+
+and potential geographic distribution of the invasive fruit fly
+
+Ghebreselassie S, Ogbamariam A, Barnston AG, Bell M, del
+
+Bactrocera invadens (Diptera, Tephritidae). Bull Entomol Res
+
+Corral J, Connor SJ, Fesseha I, Brantly EP, Thomson MC,
+
+100, 35-48.
+
+2007. Malaria stratification, climate, and epidemic early
+
+Diggle P, Tawn J, 1998. Model-based geostatistics. Appl Stat 47,
+299-350.
+
+warning in Eritrea. Am J Trop Med Hyg 77, 61-68.
+Chamaille L, Tran A, Meunier A, Bourdoiseau G, Ready P,
+
+Diuk-Wasser MA, Dolo G, Bagayoko M, Sogoba N, Toure MB,
+
+Dedet JP, 2010. Environmental risk mapping of canine leish-
+
+Moghaddam M, Manoukis N, Rian S, Traore SF, Taylor CE,
+
+maniasis in France. Parasit Vectors 3, 31.
+
+2006. Patterns of irrigated rice growth and malaria vector
+
+Charlwood JD, Alecrim WA, 1989. Capture-recapture studies
+with the South American malaria vector Anopheles darlingi,
+
+breeding in Mali using multi-temporal ERS-2 synthetic aperture radar. Int J Remote Sens 27, 535-548.
+Donnelly MJ, McCall PJ, Lengeler C, Bates I, D’Alessandro U,
+
+Root. Ann Trop Med Parasitol 83, 569-576.
+Chinery WA, 1984. Effects of ecological changes on the malar-
+
+Barnish G, Konradsen F, Klinkenberg E, Townson H, Trape JF,
+
+ia vectors Anopheles funestus and the Anopheles gambiae
+
+Hastings IM, Mutero C, 2005. Malaria and urbanization in
+
+complex of mosquitoes in Accra, Ghana. J Trop Med Hyg 87,
+
+sub-Saharan Africa. Malar J 4, 12.
+Dugdale G, Hardy S, Milford JR, 1991. Daily catchment rain-
+
+75-81.
+Claborn DM, Masuoka PM, Klein TA, Hooper T, Lee A, Andre
+
+fall estimated from Meteosat. Hydrol Proce 5, 261-270.
+
+RG, 2002. A cost comparison of two malaria control methods
+
+Eisele TP, Keating J, Swalm C, Mbogo CM, Githeko AK, Regens
+
+in Kyunggi province, Republic of Korea, using remote sensing
+
+JL, Githure JI, Andrews L, Beier JC, 2003. Linking field-based
+
+and geographic information systems. Am J Trop Med Hyg 66,
+
+ecological data with remotely sensed data using a geographic
+
+680-685.
+
+information system in two malaria endemic urban areas of
+
+Cline BL, 1970. New eyes for epidemiologists: aeriel photography and other remote sensing techniques. Am J Epidemiol 92,
+
+Kenya. Malar J 2, 44.
+Ernst KC, Lindblade KA, Koech D, Sumba PO, Kuwuor DO,
+John CC, Wilson ML, 2009. Environmental, socio-demo-
+
+85-89.
+Coetzee M, Craig M, le Sueur D, 2000. Distribution of African
+
+graphic and behavioural determinants of malaria risk in the
+
+malaria mosquitoes belonging to the Anopheles gambiae com-
+
+western Kenyan highlands: a case-control study. Trop Med Int
+Health 14, 1258-1265.
+
+plex. Parasitol Today 16, 74-77.
+Colombi A, De Michele C, Pepe M, Rampini A, Rossi S, 2007.
+
+Gao BC, 1996. NDWI - a normalized difference water index for
+
+Estimation of daily mean air temperature from MODIS land
+
+remote sensing of vegetation liquid water from space. Remote
+
+surface
+
+temperature
+
+data
+
+in
+
+Alpine
+
+areas.
+
+EARSeL
+
+Sens Env 58, 257-266.
+Gaudart J, Toure O, Dessay N, Dicko AL, Ranque S, Forest L,
+
+eProceedings 6, 38-46.
+Connor S, Flasse S, Ferryman A, Thomson M, 1997. The con-
+
+Demongeot J, Doumbo OK, 2009. Modelling malaria inci-
+
+tribution of satellite derived information to malaria stratifica-
+
+dence with environmental dependency in a locality of
+
+tion,
+
+monitoring
+
+and
+
+early
+
+warning.
+
+Bull
+
+WHO,
+
+WHO/MAL/97.1079, 33.
+Corbane C, Faure F, Baghdadi N, Villeneuve N, Petit M, 2008.
+Rapid urban mapping using SAR/optical imagery synergy.
+Sensors 8, 7125-7143.
+
+Sudanese savannah area, Mali. Malar J 8, 61.
+Geary RC, 1954. The contiguity ratio and statistical mapping.
+Incorp Statist 5, 115-145.
+Gemperli A, Vounatsou P, 2004. Fitting generalized linear mixed
+models for point referenced data. JMASM 2, 497-511.
+
+Corcoran P, Winstanley A, Mooney P, 2010. Segmentation per-
+
+Gemperli A, Sogoba N, Fondjo E, Mabaso M, Bagayoko M,
+
+formance evaluation for object-based remotely sensed image
+
+Briët OJT, Anderegg D, Liebe J, Smith T, Vounatsou P, 2006a.
+
+analysis. Int J Remote Sens 31, 617-645.
+
+Mapping malaria transmission in West and Central Africa.
+
+Cressie NA, 1993. Statistics for spatial data. Revised edition.
+
+Trop Med Int Health 11, 1032-1046.
+
+164
+
+V. Machault et al. - Geospatial Health 5(2), 2011, pp. 151-168
+
+Gemperli A, Vounatsou P, Sogoba N, Smith T, 2006b. Malaria
+mapping using transmission models: application to survey
+data from Mali. Am J Epidemiol 163, 289-297.
+Gill CA, 1923. The prediction of malaria epidemics. Ind J Med
+Res 10, 1136-1143.
+
+Health 7, 518-525.
+Han WS, Burian SJ, Shepherd JM, 2010. Assessment of satellitebased rainfall estimates in urban areas in different geographic
+and climatic regions. Nat Hazards (Online publication date,
+15 August 2010).
+
+Gillies MT, Coetzee M, 1987. A supplement to the anophelinae
+
+Hand LM, Shepherd JM, 2009. An investigation of warm-sea-
+
+of Africa south of the Sahara (Afrotropical region). The South
+
+son spatial rainfall variability in Oklahoma city: possible link-
+
+African Institut for Medical Research No. 55 Johannesburg,
+
+ages to urbanization and prevailing wind. J Appl Meteorol
+
+South Africa.
+
+Climatol 48, 251-269.
+
+Girod R, Orlandi-Pradines E, Rogier C, Pages F, 2006. Malaria
+
+Haque U, Magalhaes RJ, Reid HL, Clements AC, Ahmed SM,
+
+transmission and insecticide resistance of Anopheles gambiae
+
+Islam A, Yamamoto T, Haque R, Glass GE, 2010. Spatial pre-
+
+(Diptera: Culicidae) in the French military camp of Port-
+
+diction of malaria prevalence in an endemic area of
+
+Bouet, Abidjan (Côte d’Ivoire): implications for vector con-
+
+Bangladesh. Malar J 9, 120.
+
+trol. J Med Entomol 43, 1082-1087.
+Gomez-Elipe A, Otero A, van Herp M, Aguirre-Jaime A, 2007.
+
+Hay SI, 2005. Remote sensing of malaria in urban areas: two
+scales, two problems. Am J Trop Med Hyg 72, 655-657.
+
+Forecasting malaria incidence based on monthly case reports
+
+Hay SI, Lennon JJ, 1999. Deriving meteorological variables
+
+and environmental factors in Karuzi, 1997-2003. Malar J 6,
+
+across Africa for the study and control of vector-borne disease:
+
+129.
+
+a comparison of remote sensing and spatial interpolation of
+
+Gosoniu L, Veta AM, Vounatsou P, 2010. Bayesian geostatistical modeling of malaria indicator survey data in Angola. PLoS
+one 5, e9322.
+Gosoniu L, Vounatsou P, Sogoba N, Smith T, 2006. Bayesian
+modelling of geostatistical malaria risk data. Geospat Health
+1, 127-139.
+Green RM, Hay SI, 2002. The potential of pathfinder AVHRR
+
+climate. Trop Med Int Health 4, 58-71.
+Hay SI, Rogers DJ, Toomer JF, Snow RW, 2000. Annual
+Plasmodium falciparum entomological inoculation rates (EIR)
+across Africa: literature survey, Internet access and review.
+Trans R Soc Trop Med Hyg 94, 113-127.
+Hay SI, Snow RW, 2006. The Malaria Atlas Project: developing
+global maps of malaria risk. PLoS Med 3, e473.
+
+data for providing surrogate climatic variables across Africa
+
+Hay SI, Snow RW, Rogers DJ, 1998. Predicting malaria seasons
+
+and Europe for epidemiological applications. Rem Sens
+
+in Kenya using mutitemporal meteorological satellite sensor
+
+Environ 79, 166-175.
+
+data. Trans R Soc Trop Med Hyg 92, 12-20.
+
+Grover-Kopec E, Kawano M, Klaver RW, Blumenthal B,
+
+Hay SI, Tatem AJ, Graham AJ, Goetz SJ, Rogers DJ, 2006.
+
+Ceccato P, Connor SJ, 2005. An online operational rainfall-
+
+Global environmental data for mapping infectious disease dis-
+
+monitoring resource for epidemic malaria early warning systems in Africa. Malar J 4, 6.
+
+tribution. Adv Parasitol 62, 37-77.
+Hayes RO, Maxwell EL, Mitchell CJ, Woodzick TL, 1985.
+
+Gu W, Novak RJ, 2005. Habitat-based modeling of impacts of
+
+Detection, identification, and classification of mosquito larval
+
+mosquito larval interventions on entomological inoculation
+
+habitats using remote sensing scanners in earth-orbiting satel-
+
+rates, incidence, and prevalence of malaria. Am J Trop Med
+Hyg 73, 546-552.
+Guerra CA, Gikandi PW, Tatem AJ, Noor AM, Smith DL, Hay
+SI, Snow RW, 2008. The limits and intensity of Plasmodium
+falciparum transmission: implications for malaria control and
+elimination worldwide. PLoS Med 5, e38.
+Guerra CA, Hay SI, Lucioparedes LS, Gikandi PW, Tatem AJ,
+Noor AM, Snow RW, 2007. Assembling a global database of
+malaria parasite prevalence for the Malaria Atlas Project.
+Malar J 6, 17.
+Guerra CA, Howes RE, Patil AP, Gething PW, Van Boeckel TP,
+
+lites. Bull World Health Organ 63, 361-374.
+Hirzel AH, Hausser J, Chessel D, Perrin N, 2002. Ecologicalniche factor analysis: how to compute habitat-suitability maps
+without absence data? Ecology 83, 2027-2036.
+Incardona S, Vong S, Chiv L, Lim P, Nhem S, Sem R, Khim N,
+Doung S, Mercereau-Puijalon O, Fandeur T, 2007. Large-scale
+malaria survey in Cambodia: novel insights on species distribution and risk factors. Malar J 6, 37.
+Islam MN, Uyeda H, 2007. Use of TRMM in determining the
+climatic characteristics of rainfall over Bangladesh. Rem Sens
+Environ 108, 264-276.
+
+Temperley WH, Kabaria CW, Tatem AJ, H. Manh B, F.
+
+Jacob BG, Muturi E, Halbig P, Mwangangi J, Wanjogu RK,
+
+Elyazar IR, Baird JK, Snow RW, I. HS, 2010. The internation-
+
+Mpanga E, Funes J, Shililu J, Githure J, Regens JL, Novak RJ,
+
+al limits and population at risk of Plasmodium vivax trans-
+
+2007. Environmental abundance of Anopheles (Diptera:
+
+mission in 2009. PLoS Negl Trop Dis 4, e774.
+
+Culicidae) larval habitats on land cover change sites in Karima
+
+Guthmann JP, Llanos-Cuentas A, Palacios A, Hall AJ, 2002.
+Environmental factors as determinants of malaria risk. A
+descriptive study on the northern coast of Peru. Trop Med Int
+
+village, Mwea rice scheme, Kenya. Am J Trop Med Hyg 76,
+73-80.
+Jacob BG, Regens JL, Mbogo CM, Githeko AK, Keating J,
+
+V. Machault et al. - Geospatial Health 5(2), 2011, pp. 151-168
+
+165
+
+Swalm CM, Gunter JT, Githure JI, Beier JC, 2003. Occurrence
+
+Klinkenberg E, McCall P, Wilson MD, Amerasinghe FP,
+
+and distribution of Anopheles (Diptera: Culicidae) larval habi-
+
+Donnelly MJ, 2008. Impact of urban agriculture on malaria
+
+tats on land cover change sites in urban Kisumu and urban
+Malindi, Kenya. J Med Entomol 40, 777-784.
+
+vectors in Accra, Ghana. Malar J 7, 151.
+Lacaux J-P, Tourre Y-M, Vignolles C, Ndione J-A, Lafaye M,
+
+Jacob BG, Regens JL, Mbogo CM, Githeko AK, Swalm CM,
+
+2006. Classification of ponds from high-spatial resolution
+
+Githure JI, Beier JC, 2005. Capabilities of multispectral ther-
+
+remote sensing: application to Rift Valley fever epidemics in
+
+mal data for identification of Anopheles gambiae mosquito
+larval habitats in African urban environments. Int J Remote
+Sens 26, 523-534.
+Jolliffe IT, 1986. Principal Component Analysis. Springer, New
+York, USA, 1986.
+Justice CO, Dugdale G, Townshend JRG, Narracott AS, Kumar
+M, 1991. Synergism between NOAA-AVHRR and Meteosat
+data for studying vegetation development in semi-arid West
+Africa. Int J Remote Sens 12, 1349-1368.
+Kaya S, Pultz TJ, Mbogo CM, Beier JC, Mushinzimana E, 2002.
+The use of radar remote sensing for identifying environmental
+
+Senegal. Rem Sens Environ 106, 66-74.
+Lawpoolsri S, Chavez IF, Yimsamran S, Puangsa-Art S,
+Thanyavanich N, Maneeboonyang W, Chaimungkun W,
+Singhasivanon P, Maguire JH, Hungerford LL, 2010. The
+impact of human reservoir of malaria at a community-level on
+individual malaria occurrence in a low malaria transmission
+setting along the Thai-Myanmar border. Malar J 9, 143.
+Li L, Bian L, Yan G, 2006. An integrated Bayesian modelling
+approach for predicting mosquito larval habitats. In:
+http://wwwucgisorg, Summer papers, 2006 (accessed on
+December 2010).
+
+factors associated with malaria risk in coastal Kenya.
+
+Machault V, Gadiaga L, Vignolles C, Jarjaval F, Bouzid S,
+
+International Geoscience and Remote Sensing Symposium
+
+Sokhna C, Lacaux JP, Trape JF, Rogier C, Pages F, 2009.
+
+(IGARSS ‘02), 24-28 June 2002, Toronto, Canada.
+
+Highly focused anopheline breeding sites and malaria trans-
+
+Keating J, Macintyre K, Mbogo CM, Githure JI, Beier JC, 2004.
+
+mission in Dakar. Malar J 8, 138.
+
+Characterization of potential larval habitats for Anopheles
+
+Machault V, Orlandi-Pradines E, Michel R, Pagès F, Texier G,
+
+mosquitoes in relation to urban land use in Malindi, Kenya.
+
+Pradines B, Fusaï T, Boutin J-P, Rogier C, 2008. Remote sens-
+
+Int J Health Geogr 3, 9.
+
+ing and malaria risk for military personnel in Africa. J Travel
+
+Keiser J, Utzinger J, Castro CM, Smith TA, Tanner M, Singer
+BH, 2004. Urbanization in sub-Saharan Africa and implica-
+
+Med 15, 190-194.
+Machault V, Vignolles C, Pages F, Gadiaga L, Gaye A, Sokhna
+
+tion for malaria control. Am J Trop Med Hyg 71, 118-127.
+
+C, Trape JF, Lacaux JP, Rogier C, 2010. Spatial heterogeneity
+
+Kiang R, Adimi F, Soika V, Nigro J, Singhasivanon P,
+
+and temporal evolution of malaria transmission risk in Dakar,
+
+Sirichaisinthop J, Leemingsawat S, Apiwathnasorn C,
+
+Senegal, according to remotely sensed environmental data.
+
+Looareesuwan S, 2006. Meteorological, environmental remote
+
+Malar J 9, 252.
+
+sensing and neural network analysis of the epidemiology of
+
+Manga L, Fondjo E, Carnevale P, Robert V, 1993. Importance
+
+malaria transmission in Thailand. Geospat Health 1, 71-84.
+
+of low dispersion of Anopheles gambia (Diptera: Culicidae) on
+
+Killeen GF, Knols BG, Gu W, 2003. Taking malaria transmission
+
+malaria transmission in hilly towns in South Cameroon. J Med
+
+out of the bottle: implications of mosquito dispersal for vectorcontrol interventions. Lancet Infect Dis 3, 297-303.
+Kitron U, 2000. Risk maps: transmission and burden of vectorborne diseases. Parasitol Today 16, 324-325.
+Kitron U, Otieno L, Hungerford L, Odulaja A, Brigham W,
+Okello O, Joselyn M, Mohamed-Ahmed M, Cooke E, 1996.
+
+Entomol 30, 936-938.
+MARA/ARMA, 1998. Towards an atlas of malaria risk in
+Africa. First technical report of the MARA/ARMA (Mapping
+Malaria
+
+Risk
+
+in
+
+Africa)
+
+collaboration,
+
+Report,
+
+MARA/ARMA, 771, Umbilo Road, Congella, Durban, South
+Africa.
+
+Spatial analysis of the distribution of tsetse flies in the Lambwe
+
+Masuoka PM, Claborn DM, Andre RG, Nigro J, Gordon SW,
+
+valley, Kenya, using Landsat TM satellite imagery and GIS. J
+
+Klein TA, Kim H-C, 2003. Use of IKONOS and Landsat for
+
+Anim Ecol 65, 371-380.
+
+malaria control in the Republic of Korea. Rem Sens Environ
+
+Kleinschmidt I, Bagayoko M, Clarke GPY, Craig M, Le Sueur D,
+2000. A spatial statistical approach to malaria mapping. Int J
+Epidemiol 29, 355-361.
+
+88, 187-194.
+Matthys B, N’Goran EK, Kone M, Koudou BG, Vounatsou P,
+Cissé G, Tschannen AB, Tanner M, Utzinger J, 2006a. Urban
+
+Kleinschmidt I, Sharp BL, Clarke GP, Curtis B, Fraser C, 2001.
+
+agricultural land use and characterization of mosquito larval
+
+Use of generalized linear mixed models in the spatial analysis
+
+habitats in a medium-sized town of Côte d’Ivoire. J Vector
+
+of small-area malaria incidence rates in Kwazulu Natal, South
+Africa. Am J Epidemiol 153, 1213-1221.
+
+Ecol 31, 319-333.
+Matthys B, Vounatsou P, Raso G, Tschannen AB, Becket EG,
+
+Klinkenberg E, McCall PJ, Hastings IM, Wilson MD,
+
+Gosoniu L, Cissé G, Tanner M, N’Goran EK, Utzinger J,
+
+Amerasinghe FP, Donnelly MJ, 2005. Malaria and irrigated
+
+2006b. Urban farming and malaria risk factors in a medium-
+
+crops, Accra, Ghana. Emerg Infect Dis 11, 1290-1293.
+
+sized town in Côte d’Ivoire. Am J Trop Med Hyg 75, 1223-
+
+166
+
+V. Machault et al. - Geospatial Health 5(2), 2011, pp. 151-168
+
+1231.
+
+Duchemin JB, Ratovonjato J, Ariey F, Rudant JP, Jeanne I,
+
+McFeeters SK, 1996. The use of the normalised difference water
+
+2007. Determining areas that require indoor insecticide spray-
+
+index (NDWI) in the delineation of open water features. Int J
+
+ing using multi criteria evaluation, a decision-support tool for
+
+Remote Sens 17, 1425–1432.
+
+malaria vector control programmes in the central highlands of
+
+Moran PA, 1950. Notes on continuous stochastic phenomena.
+Biometrika 37, 17-23.
+
+Madagascar. Int J Health Geogr 6, 2.
+Rakotomanana
+
+F,
+
+Ratovonjato
+
+J,
+
+Randremanana
+
+RV,
+
+Mouchet J, Carnevale P, Coosemans M, Julvez J, Manguin S,
+
+Randrianasolo L, Raherinjafy R, Rudant JP, Richard V, 2010.
+
+Richard-Lenoble D, Sircoulon J, 2004. Biodiversity of malaria
+
+Geographical and environmental approaches to urban malar-
+
+in the world, John Libbey Eurotext, 428 p.
+
+ia in Antananarivo (Madagascar). BMC Infect Dis 10, 173.
+
+Mushinzimana E, Munga S, Minakawa N, Li L, Feng C-C,
+
+Randolph SE, Rogers DJ, 2000. Donnees satellites et maladies
+
+Biang L, Kitron U, Schmidt C, Beck L, Zhou G, Githeko AK,
+
+transmises par vecteurs la creation de cartes de prediction du
+
+Yan G, 2006. Landscape determinants and remote sensing of
+anopheline mosquito larval habitats in the western Kenya
+highlands. Malar J 5, 13.
+Mutuku FM, Bayoh MN, Hightower AW, Vulule JM, Gimnig
+JE, Mueke JM, Amimo FA, Walker ED, 2009. A supervised
+
+risque. Bull Soc Pathol Exot 93, 207.
+Raso G, Silué KD, Vounatsou P, Singer BH, Yapi A, Tanner M,
+Utzinger J, N’Goran EK, 2009. Spatial risk profiling of
+Plasmodium falciparum parasitaemia in a high endemicity
+area in Côte d’Ivoire. Malar J 8, 252.
+
+land cover classification of a western Kenya lowland endemic
+
+Rejmankova E, Pope KO, Roberts DR, Lege MG, Andre R,
+
+for human malaria: associations of land cover with larval
+
+Greico J, Alonzo Y, 1998. Characterization and detection of
+
+Anopheles habitats. Int J Health Geogr 8, 19.
+
+Anopheles
+
+Noor AM, Alegana VA, Gething PW, Tatem AJ, Snow RW,
+2008. Using remotely sensed night-time light as a proxy for
+poverty in Africa. Popul Health Metr 6, 5.
+
+vestitipennis
+
+and
+
+Anopheles
+
+punctimacula
+
+(Diptera: Culicidae) larval habitats in Belize with field survey
+and SPOT satellite imagery. J Vector Ecol 23, 74-88.
+Rejmankova E, Roberts DR, Pawley A, Manguin S, Polanco J,
+
+Omlin FX, Carlson JC, Ogbunugafor CB, Hassanali A, 2007.
+
+1995. Predictions of adult Anopheles albimanus densities in
+
+Anopheles gambiae exploits the treehole ecosystem in western
+
+villages based on distances to remotely sensed larval habitats.
+
+Kenya: a new urban malaria risk? Am J Trop Med Hyg 77,
+
+Am J Trop Med Hyg 53, 482-488.
+
+264-269.
+
+Riedel N, Vounatsou P, Miller JM, Gosoniu L, Chizema-
+
+Omumbo JA, Hay SI, Goetz SJ, Snow RW, Rogers DJ, 2002.
+
+Kawesha E, Mukonka V, Steketee RW, 2010. Geographical
+
+Updating historical maps of transmission intensity in East
+
+patterns and predictors of malaria risk in Zambia: Bayesian
+
+Africa usong remote sensing. Photogram Eng Remote Sens 68,
+
+geostatistical modelling of the 2006 Zambia national malaria
+
+161-166.
+
+indicator survey (ZMIS). Malar J 9, 37.
+
+Omumbo JA, Hay SI, Snow RW, 2005. Modelling malaria risk
+
+Robert V, Le Goff G, Toto JC, Mulder L, Fondjo E, Manga L,
+
+in East Africa at high-spatial resolution. Trop Med Int Health
+
+Carnevale P, 1993. Anthropophilic mosquitoes and malaria
+
+10, 557-566.
+
+transmission at Edea, Cameroon. Trop Med Parasitol 44,
+
+Onana VDP, Rudant J-P, Etouna J, Wade S, 2005. Dynamique
+
+14-18.
+
+urbaine à l’aide d’images RSO de ERS et HRV de SPOT, et son
+
+Robert V, Macintyre K, Keating J, Trape JF, Duchemin JB, Beier
+
+impact dans les facteurs d’aggravation des risques d’inonda-
+
+JC, 2003. Malaria transmission in urban sub-saharan Africa.
+
+tion en milieu urbain: cas de la ville de Douala (Cameroun).
+
+Am J Trop Med Hyg 68, 169-176.
+
+Teledetection 5, 19-32.
+
+Roberts DR, Paris JF, Manguin S, Harbach RE, Woodruff R,
+
+Patz JA, Daszak P, Tabor GM, Aguirre AA, Pearl M, Epstein J,
+
+Rejmankova E, Polanco J, Wullschleger B, Legters LJ, 1996.
+
+Wolfe ND, Kilpatrick AM, Foufopoulos J, Molyneux D,
+
+Predictions of malaria vector distribution in Belize based on
+
+Bradley DJ, 2004. Unhealthy landscapes: policy recommenda-
+
+multispectral satellite data. Am J Trop Med Hyg 54, 304-308.
+
+tions on land use change and infectious disease emergence.
+
+Rogers DJ, 2006. Models for vectors and vector-borne diseases.
+
+Environ Health Perspect 112, 1092-1098.
+
+Adv Parasitol 62, 1-35.
+
+Patz JA, Strzepek K, Lele S, Hedden M, Greene S, Noden B, Hay
+
+Rogers DJ, Randolph SE, Snow RW, Hay SI, 2002. Satellite
+
+SI, Kalkstein L, Beier JC, 1998. Predicting key malaria trans-
+
+imagery in the study and forecast of malaria. Nature 415, 710-
+
+mission factors, biting and entomological inoculation rates,
+using modelled soil moisture in Kenya. Trop Med Int Health
+3, 818-827.
+
+715.
+Rongnoparut P, Ugsang DM, Baimai V, Honda K, Sithiprasasna
+R, 2005. Use of a remote sensing-based geographic informa-
+
+Rahman A, Kogan F, Roytman L, 2006. Analysis of malaria
+
+tion system in the characterizing spatial patterns for
+
+cases in Bangladesh with remote sensing data. Am J Trop Med
+
+Anopheles minimus A and C breeding habitats in western
+
+Hyg 74, 17-19.
+
+Thailand. Southeast Asian J Trop Med Public Health 36,
+
+Rakotomanana F, Randremanana RV, Rabarijaona LP,
+
+1145-1152.
+
+V. Machault et al. - Geospatial Health 5(2), 2011, pp. 151-168
+
+167
+
+Rouse JW, Hass RH, Schell JA, Deering DW, 1973. Monitoring
+
+Sogoba N, Vounatsou P, Bagayoko MM, Doumbia S, Dolo G,
+
+vegetation systems in the Great Plains with ERTS. Third ERTS
+
+Gosoniu L, Traore SF, Tourre YT, Smith T, 2007. The spatial
+distribution of Anopheles gambiae sensu stricto and An. ara-
+
+Symposium, NASA SP 351, 309-317.
+Sabatinelli G, Rossi P, Belli A, 1986. Dispersion of Anopheles
+gambiae s.l. in an urban zone of Ouagadougou (Burkina
+
+biensis (Diptera: Culicidae) in Mali. Geospat Health 1, 213222.
+Staedke SG, Nottingham EW, Cox J, Kamya MR, Rosenthal PJ,
+
+Faso). Parassitologia 28, 33-39.
+Sainz-Elipe S, Latorre JM, Escosa R, Masia M, Fuentes MV,
+
+Dorsey G, 2003. Short report: proximity to mosquito breeding
+
+Mas-Coma S, Bargues MD, 2010. Malaria resurgence risk in
+
+sites as a risk factor for clinical malaria episodes in an urban
+
+southern Europe: climate assessment in an historically endem-
+
+cohort of Ugandan children. Am J Trop Med Hyg 69, 244-246.
+
+ic area of rice fields at the Mediterranean shore of Spain.
+
+Steinmann P, Zhou XN, Matthys B, Li YL, Li HJ, Chen SR,
+Yang Z, Fan W, Jia TW, Vounatsou P, Utzinger J, 2007. Spatial
+
+Malar J 9, 221.
+Sarma PK, Lahkar BP, Ghosh S, Rabha A, Das JP, Nath NK,
+Dey S, Brahma N, 2008. Land use and land cover change and
+
+risk profiling of Schistosoma japonicum in Eryuan county,
+Yunnan province, China. Geospat Health 2, 59-73.
+
+future implication analysis in Manas National Park, India
+
+Stoops CA, Gionar YR, Shinta, Sismadi P, Rachmat A, Elyazar
+
+using multi-temporal satellite data. Current Science 95,
+
+IF, Sukowati S, 2008. Remotely-sensed land use patterns and
+
+223-227.
+
+the presence of Anopheles larvae (Diptera: Culicidae) in
+
+Sattler MA, Mtasiwa D, Kiama M, Premji Z, Tanner M, Killeen
+GF, Lengeler C, 2005. Habitat characterization and spatial distribution of Anopheles sp. mosquito larvae in Dar es Salaam
+
+Sukabumi, West Java, Indonesia. J Vector Ecol 33, 30-39.
+Sullivan D, 2010. Uncertainty in mapping malaria epidemiology: implications for control. Epidemiol Rev 32, 175-187.
+Tatem AJ, Guerra CA, Kabaria CW, Noor AM, Hay SI, 2008.
+
+(Tanzania) during an extended dry period. Malar J 4, 4.
+Sharma RR, Samarkoon L, Hazarika M, Kafle TP, 2007.
+
+Human population, urban settlement patterns and their
+
+Applicability of tropical rainfall measuring mission to predict
+
+impact on Plasmodium falciparum malaria endemicity. Malar
+J 7, 218.
+
+floods on the Bagmati River. J Hydrol Meteorol 4, 1-15.
+Silué KD, Raso G, Yapi A, Vounatsou P, Tanner M, N’Goran
+
+Tatem AJ, Hay SI, 2004. Measuring urbanization pattern and
+
+EK, Utzinger J, 2008. Spatially-explicit risk profiling of
+
+extent for malaria research: a review of remote sensing
+
+Plasmodium falciparum infections at a small scale: a geosta-
+
+approaches. J Urban Health 81, 363-376.
+Tatem AJ, Noor AM, Hay SI, 2005. Assessing the accuracy of
+
+tistical modelling approach. Malar J 7, 111.
+Siri JG, Lindblade KA, Rosen DH, Onyango B, Vulule J,
+Slutsker L, Wilson ML, 2008. Quantitative urban classification for malaria epidemiology in sub-Saharan Africa. Malar J
+
+satellite derived global and national urban maps in Kenya.
+Rem Sens Environ 96, 87-97.
+Teklehaimanot HD, Schwartz J, Teklehaimanot A, Lipsitch M,
+2004. Weather-based prediction of Plasmodium falciparum
+
+7, 34.
+Sithiprasasna R, Lee W-J, Ugsang D-M, Linthicum K-J, 2005a.
+
+malaria in epidemic-prone regions of Ethiopia II. Weather-based
+
+Identification and characterization of larval and adult anophe-
+
+prediction systems perform comparably to early detection sys-
+
+line mosquito habitats in the Republic of Korea: potential use
+
+tems in identifying times for interventions. Malar J 3, 44.
+
+of remotely sensed data to estimate mosquito distributions. Int
+
+Thomas CJ, Lindsay SW, 2000. Local-scale variation in malaria
+infection amongst rural Gambian children estimated by satel-
+
+J Health Geogr 4, 17.
+JW,
+
+lite remote sensing. Trans R Soc Trop Med Hyg 94, 159-163.
+
+Shinghasivanon P, 2005b. Ikonos-derived malaria transmisi-
+
+Thomson M, Connor S, 2000. Environmental information sys-
+
+son risk in northwestern Thailand. Southeast Asian J Trop
+
+tems for the control of arthropod vectors of disease. Med Vet
+
+Sithiprasasna
+
+R,
+
+Ugsang
+
+DM,
+
+Honda
+
+K,
+
+Jones
+
+Med Public Health 36, 14-22.
+Snow RW, Gouws E, Omumbo J, Rapuoda B, Craig MH,
+Tanser FC, le Sueur D, Ouma J, 1998. Models to predict the
+
+Entomol 14, 227-244.
+Thomson M, Connor S, Milligan P, Flasse S, 1997. Mapping
+malaria risk in Africa. Parasitol Today 13, 313-318.
+
+intensity of Plasmodium falciparum transmission: applications
+
+Thomson MC, Connor SJ, D’Alessandro U, Rowlingson B,
+
+to the burden of disease in Kenya. Trans R Soc Trop Med Hyg
+
+Diggle P, Cresswell M, Greenwood B, 1999. Predicting malar-
+
+92, 601-606.
+
+ia infection in Gambian children from satellite data and bed
+
+Snow RW, Marsh K, le Sueur D, 1996. The need for maps of
+transmission intensity to guide malaria control in Africa.
+Parasitol Today 12, 455-457.
+Sogoba N, Vounatsou P, Bagayoko MM, Doumbia S, Dolo G,
+Gosoniu L, Traore SF, Smith TA, Tourre YT, 2008. Spatial distribution of the chromosomal forms of Anopheles gambiae in
+Mali. Malar J 7, 205.
+
+net use surveys: the importance of spatial correlation in the
+interpretation of results. Am J Trop Med Hyg 61, 2-8.
+Thomson MC, Connor SJ, Milligan PJM, Flasse SP, 1996. The
+ecology of malaria - as seen from Earth-observation satellites.
+Ann Trop Med Parasitol 90, 243-264.
+Tourre YT, Petrarca V, Traoré SF, Coulibaly A, Maïga HM,
+Sankaré O, Sow M, Coluzzi M, 1994. Ecological genetic stud-
+
+168
+
+V. Machault et al. - Geospatial Health 5(2), 2011, pp. 151-168
+
+ies in the chromosomal form Mopti of Anopheles gambiae
+s.str. in Mali, West Africa. Genetica 94, 213-223.
+
+Walter SD, 1994. A simple test for spatial pattern in regional
+health data. Stat Med 13, 1037-1044.
+
+Tran A, Poncon N, Toty C, Linard C, Guis H, Ferre JB, Lo Seen
+
+Wang SJ, Lengeler C, Smith TA, Vounatsou P, Cisse G, Diallo
+
+D, Roger F, de la Rocque S, Fontenille D, Baldet T, 2008.
+
+DA, Akogbeto M, Mtasiwa D, Teklehaimanot A, Tanner M,
+
+Using remote sensing to map larval and adult populations of
+
+2005a. Rapid urban malaria appraisal (RUMA) in sub-
+
+Anopheles hyrcanus (Diptera: Culicidae) a potential malaria
+vector in southern France. Int J Health Geogr 7, 9.
+
+Saharan Africa. Malar J 4, 40.
+Wang SJ, Lengeler C, Smith TA, Vounatsou P, Diadie DA,
+
+Trape JF, Lefebvre-Zante E, Legros F, Ndiaye G, Bouganali H,
+
+Pritroipa X, Convelbo N, Kientga M, Tanner M, 2005b.
+
+Druilhe P, Salem G, 1992. Vector density gradients and the
+
+Rapid urban malaria appraisal (RUMA) I: epidemiology of
+
+epidemiology of urban malaria in Dakar, Senegal. Am J Trop
+Med Hyg 47, 181-189.
+
+urban malaria in Ouagadougou. Malar J 4, 43.
+Wangdi K, Singhasivanon P, Silawan T, Lawpoolsri S, White NJ,
+
+Trape JF, Zoulani A, 1987. Malaria and urbanization in central
+
+Kaewkungwal J, 2010. Development of temporal modelling
+
+Africa: the example of Brazzaville. Part II: Results of entomo-
+
+for forecasting and prediction of malaria infections using time-
+
+logical surveys and epidemiological analysis. Trans R Soc Trop
+
+series and ARIMAX analyses: a case study in endemic districts
+
+Med Hyg 81 (Suppl 2), 10-18.
+
+of Bhutan. Malar J 9, 251.
+
+Tucker CJ, 1979. Red and photographic infrared linear combi-
+
+Wayant NM, Maldonado D, Rojas de Arias A, Cousino B,
+
+nations for monitoring vegetation. Remote Sens Environ 8,
+
+Goodin DG, 2010. Correlation between normalized difference
+
+127-150.
+
+vegetation index and malaria in a subtropical rain forest
+
+United Nations, 2003. Word urbanization prospects : the 2007
+revision. Population Division of the Department of Economic
+and Social Affairs of the United Nations Secretariat, New
+York, USA.
+Vancutsem C, Ceccato P, Dinku T, Connor SJ, 2010. Evaluation
+of MODIS land surface temperature data to estimate air temperature in different ecosystems over Africa. Rem Sens
+Environ 114, 449-465.
+
+undergoing rapid anthropogenic alteration. Geospat Health 4,
+179-190.
+WHO, 1955. Eighth World Health Assembly (Mexico, D.F., 1027 May 1955). Official records of the World Health
+Organization. N° 63. World Health Organization, Geneva,
+Switzerland, 236-240.
+WHO, 2010. World Malaria Report 2010. World Health
+Organization, Geneva, Switzerland.
+
+Vanwambeke SO, Somboon P, Harbach RE, Isenstadt M,
+
+Wold S, Ruhe A, Wold H, Dunn WJ, 1984. The collinearity
+
+Lambin EF, Walton C, Butlin RK, 2007. Lanscape and land
+
+problem in linear regression. The partial least squares (PLS)
+
+cover factors influence the presence of Aedes and Anopheles
+
+approach to generalized inverses. SIAM J Sci Stat Comput 5,
+
+larvae. J Med Entomol 44, 133-144.
+
+735-743.
+
+Vanwambeke SO, van Benthem BH, Khantikul N, Burghoorn-
+
+Wood BL, Washino RK, Beck L, Hibbard K, Pitcairn M,
+
+Maas C, Panart K, Oskam L, Lambin EF, Somboon P, 2006.
+
+Roberts D, Rejmankova E, Paris J, Hacker C, Salute J, Sebesta
+
+Multi-level analyses of spatial and temporal determinants for
+
+P, Legters L, 1991. Distinguishing high and low anopheline-
+
+dengue infection. Int J Health Geogr 5, 5.
+
+producing rice fields using remote sensing and GIS technolo-
+
+Viel JF, Tran A, 2009. Estimating denominators: satellite-based
+population estimates at a fine spatial resolution in a European
+urban area. Epidemiology 20, 214-222.
+Vignolles C, Lacaux JP, Tourre YM, Bigeard G, Ndione JA,
+
+gies. Prev Vet Med 11, 277-288.
+Xu H, 2006. Modification of normalised difference water index
+(NDWI) to enhance open water features in remotely sensed
+imagery. Int J Remote Sens 27, 3015-3033.
+
+Lafaye M, 2009. Rift Valley fever in a zone potentially occu-
+
+Zhang X, Feng X, Jiang H, 2010. Object-oriented method for
+
+pied by Aedes vexans in Senegal: dynamics and risk mapping.
+
+urban vegetation mapping using IKONOS imagery. Int J
+
+Geospat Health 3, 211-220.
+
+Remote Sens 31, 177-196.
+
+

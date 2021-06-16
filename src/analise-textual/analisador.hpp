@@ -21,7 +21,7 @@ private:
 	std::vector<std::pair<std::string, int>> ranking;
 	std::unordered_map<unsigned char, int> frequencias;
 
-	Dicionario processar(std::string, Dicionario);
+	Dicionario processar(fs::path, Dicionario);
 	void analisar_cada_texto();
 	void analisar_todos_textos();
 	void escrever_linha(std::fstream&, Dicionario);
@@ -38,19 +38,19 @@ public:
 	void print(int i);
 	void print_geral();
 	void exportar_dados();
-	void inserir_texto(std::string);
+	void inserir_texto(fs::path);
 	std::unordered_map<unsigned char, int> get_frequencias();
 };
 
 // --------------------------- MÉTODOS PRIVADOS ---------------------------
 
-inline Dicionario Analisador::processar(std::string caminho_arquivo, Dicionario dicionario) {
+inline Dicionario Analisador::processar(fs::path caminho, Dicionario dicionario) {
 
     std::ifstream arquivo;
     std::string s;
-	bool catalogado = this->catalogo.buscar(caminho_arquivo);
+	bool catalogado = this->catalogo.buscar(caminho);
 
-    arquivo.open(caminho_arquivo);
+    arquivo.open(caminho);
 	
 	// para cada linha no arquivo
     while (std::getline(arquivo, s)) {
@@ -95,10 +95,9 @@ inline Dicionario Analisador::processar(std::string caminho_arquivo, Dicionario 
 inline void Analisador::analisar_cada_texto() {
 
 	for (int i = 0; i < 30; i++) {
-		std::string nome_arquivo = this->catalogo.get_nome(i);
-		Dicionario d(nome_arquivo);
+		Dicionario d(this->catalogo.get_caminho(i));
 
-		d = processar(this->catalogo.get_nome(i), d);
+		d = processar(this->catalogo.get_caminho(i), d);
 		this->vec_dic.push_back(d);
     }
 }
@@ -106,7 +105,7 @@ inline void Analisador::analisar_cada_texto() {
 inline void Analisador::analisar_todos_textos() {
 
 	for (int i = 0; i < 30; i++) {
-        this->dic = processar(this->catalogo.get_nome(i), this->dic);
+        this->dic = processar(this->catalogo.get_caminho(i), this->dic);
     }
 }
 
@@ -156,13 +155,17 @@ inline void Analisador::exportar_dados() {
 	fcontagem.close();
 }
 
-inline void Analisador::inserir_texto(std::string caminho_arquivo) {
-	Dicionario d;
+inline void Analisador::inserir_texto(fs::path caminho) {
+	Dicionario d(caminho);
 	std::fstream fcontagem;
 
 	fcontagem.open("../resultados/contagem_comuns.csv", std::ios::out | std::ios::app);
 	
-	d = processar(caminho_arquivo, d);
+	d = processar(caminho, d);
+
+	// for (auto i : d.get_mapa()) {
+	// 	std::cout << i.first << " : " << i.second << '\n';
+	// }
 
 	escrever_linha(fcontagem, d);
 
@@ -171,7 +174,7 @@ inline void Analisador::inserir_texto(std::string caminho_arquivo) {
 
 inline void Analisador::escrever_linha(std::fstream &fcontagem, Dicionario d) {
 	int n = 0;
-	fcontagem << d.get_nome_arquivo().substr(24) << ", ";
+	fcontagem << d.get_caminho().filename() << ", ";
 
 	std::vector<std::pair<std::string, int>>::const_iterator it;
 	for (it = this->ranking.begin(); it != this->ranking.end(); it++) {

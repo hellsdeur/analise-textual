@@ -54,7 +54,6 @@ inline std::string Catalogo::get_nome(int i) {
 inline bool Catalogo::buscar(std::string caminho) {
 	for (int i = 0; i < MAX_N; i++) {
 		if (this->nomes_arquivos[i] == caminho) {
-			std::cout << this->nomes_arquivos[i] << " = " << caminho << '\n';
 			return true;
 		}
 	}

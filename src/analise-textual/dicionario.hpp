@@ -1,12 +1,15 @@
 #include <string>
+#include <experimental/filesystem>
 #include <unordered_map>
 #include <algorithm>
 #include <utility>
 #include <vector>
 
+namespace fs = std::experimental::filesystem;
+
 class Dicionario {
 	private:
-		std::string nome_arquivo;
+		fs::path caminho;
 		std::unordered_map<std::string, int> mapa;
 	
 	public:
@@ -14,12 +17,12 @@ class Dicionario {
 		Dicionario() {}
 
 		// construtor para os dicionários individuais
-		Dicionario(std::string nome_arquivo) {
-			this->nome_arquivo = nome_arquivo;
+		Dicionario(fs::path caminho) {
+			this->caminho = caminho;
 		}
 
 		void inserir(std::string);
-		std::string get_nome_arquivo();
+		fs::path get_caminho();
 		std::unordered_map<std::string, int> get_mapa();
 		std::vector<std::pair<std::string, int>> rankear();
 };
@@ -38,8 +41,8 @@ inline void Dicionario::inserir(std::string palavra) {
 		this->mapa[palavra]++;
 }
 
-inline std::string Dicionario::get_nome_arquivo() {
-	return this->nome_arquivo;
+inline fs::path Dicionario::get_caminho() {
+	return this->caminho;
 }
 
 inline std::unordered_map<std::string, int> Dicionario::get_mapa() {

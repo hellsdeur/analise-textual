@@ -1,17 +1,17 @@
 #include <string>
-#include <experimental/filesystem>
+#include <filesystem>
 #include <unordered_map>
 #include <algorithm>
 #include <utility>
 #include <vector>
 
-namespace fs = std::experimental::filesystem;
+namespace fs = std::filesystem;
 
 class Dicionario {
 	private:
 		fs::path caminho;
 		std::unordered_map<std::string, int> mapa;
-	
+
 	public:
 		// construtor default, para o dicionário geral
 		Dicionario() {}

@@ -13,6 +13,6 @@ int main() {
 	// std::unordered_map<unsigned char, int> f =  analisador.get_frequencias();
 
 	// for (auto i : f) std::cout << i.first << " : " << i.second << '\n';
-	
+
 	analisador.inserir_texto("../recursos/textos_alternativos/alt1.txt");
 }

@@ -1,7 +1,7 @@
-#include <experimental/filesystem>
+#include <filesystem>
 #include <algorithm>
 
-namespace fs = std::experimental::filesystem;
+namespace fs = std::filesystem;
 
 class Catalogo {
 private:
@@ -19,7 +19,7 @@ public:
 
 	Catalogo() {}
 
-	std::string get_caminho(int);
+	fs::path get_caminho(int);
 	bool buscar(fs::path);
 };
 
@@ -29,10 +29,10 @@ inline void Catalogo::preencher_caminhos_arquivos() {
 			this->caminhos_arquivos.push_back(p.path());
 			n++;
 		}
-	}	
+	}
 }
 
-inline std::string Catalogo::get_caminho(int i) {
+inline fs::path Catalogo::get_caminho(int i) {
 	return this->caminhos_arquivos[i];
 }
 

@@ -1,68 +1,100 @@
-#include "../estruturas-de-dados/minheap.hpp"
+#include <iostream>
 #include <unordered_map>
+#include <queue>
 
-#define MAX_ALTURA 100
+class No {
+public:
+	unsigned char dado;
+	unsigned int freq;
+	No* esq;
+	No* dir;
+
+	No(unsigned char, unsigned int);
+};
+
+inline No::No(unsigned char dado, unsigned int freq) {
+	this->dado = dado;
+	this->freq = freq;
+	this->esq = this->dir = nullptr;
+}
+
+// ----------------------------------------------------------------------------
+
+class Compare {
+public:
+	bool operator()(No* a, No* b) {
+		return a->freq > b->freq;
+	}
+};
+
+// ----------------------------------------------------------------------------
+
+#define MAX_ALTURA 1000
 
 class Huffman {
 private:
-	No criar_huffman(std::unordered_map<unsigned char, unsigned int>);
-	int arr[MAX_ALTURA];
-	int top;
+	std::priority_queue<No*, std::vector<No*>, Compare> pq;
 
-	void print_arr(int [], int n);
-	void print_codes(No, int [], int);
+	No* construir();
+	void print_codes(No* raiz, int [], int);
 
 public:
-	No raiz;
+	No* raiz;
 
 	Huffman(std::unordered_map<unsigned char, unsigned int>);
 	void print();
 };
 
 inline Huffman::Huffman(std::unordered_map<unsigned char, unsigned int> mapa_freq) {
-	this->raiz = criar_huffman(mapa_freq);
-	this->top = 0;
+	std::unordered_map<unsigned char, unsigned int>::const_iterator it;
+
+	for (it = mapa_freq.begin(); it != mapa_freq.end(); it++) {
+		No* novo = new No((*it).first, (*it).second);
+		pq.push(novo);
+	}
+
+	this->raiz = construir();
 }
 
-inline No Huffman::criar_huffman(std::unordered_map<unsigned char, unsigned int> mapa_freq) {
-	MinHeap* minheap = new MinHeap(mapa_freq);
+inline No* Huffman::construir() {
+	while (pq.size() != 1) {
+		No* esq = pq.top();
+		pq.pop();
 
-	while (!minheap->heap_unitario()) {
-		No esq = minheap->extrair_min();
-		No dir = minheap->extrair_min();
-		No top('$', esq.freq + dir.freq);
+		No* dir = pq.top();
+		pq.pop();
 		
-		top.esq = &esq;
-		top.dir = &dir;
+		No* no = new No('$', esq->freq + dir->freq);
 
-		minheap->inserir(top);
+		no->esq = esq;
+		no->dir = dir;
+
+		pq.push(no);
 	}
-	return minheap->extrair_min();	
+	return pq.top();
 }
 
-inline void Huffman::print_arr(int arr[], int n) {
-	for (int i = 0; i < n; i++)
-		std::cout << arr[i];
-	std::cout << '\n';
-}
-
-inline void Huffman::print_codes(No raiz, int arr[], int top) {
-	if (raiz.esq) {
+inline void Huffman::print_codes(No* raiz, int arr[], int top) {
+	if (raiz->esq) {
 		arr[top] = 0;
-		print_codes(*raiz.esq, arr, top + 1);
+		print_codes(raiz->esq, arr, top + 1);
 	}
 
-	if (raiz.dir) {
+	if (raiz->dir) {
 		arr[top] = 1;
-		print_codes(*raiz.dir, arr, top + 1);
+		print_codes(raiz->dir, arr, top + 1);
 	}
 
-	if (raiz.folha()) {
-		std::cout << raiz.dado << ": ";
-		print_arr(arr, top);
+	if (!raiz->esq && !raiz->dir) {
+		std::cout << raiz->dado << " ";
+
+		for (int i = 0; i < top; i++)
+			std::cout << arr[i];
+		std::cout << '\n';
 	}
 }
 
 inline void Huffman::print() {
-	print_codes(this->raiz, this->arr, this->top);
+	int arr[MAX_ALTURA], top = 0;
+	print_codes(this->raiz, arr, top);
 }

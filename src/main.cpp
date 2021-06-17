@@ -1,7 +1,7 @@
 #include <iostream>
 #include "analise-textual/analisador.hpp"
 #include <unordered_map>
-#include "compressao/huffman.hpp"
+#include "compressao/huffman2.hpp"
 
 int main() {
 

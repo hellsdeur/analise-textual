@@ -1,6 +1,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <queue>
+#include <fstream>
 
 class No {
 public:
@@ -34,13 +35,15 @@ public:
 class Huffman {
 private:
 	std::priority_queue<No*, std::vector<No*>, Compare> pq;
+	std::unordered_map<unsigned char, std::string> codigos;
 
 	No* construir();
-	void print_codes(No* raiz, int [], int);
+	void gerar_codigos(No* raiz, int [], int);
 
 public:
 	No* raiz;
 
+	Huffman() {}
 	Huffman(std::unordered_map<unsigned char, unsigned int>);
 	void print();
 };
@@ -54,6 +57,8 @@ inline Huffman::Huffman(std::unordered_map<unsigned char, unsigned int> mapa_fre
 	}
 
 	this->raiz = construir();
+	int arr[MAX_ALTURA], top = 0;
+	gerar_codigos(this->raiz, arr, top);
 }
 
 inline No* Huffman::construir() {
@@ -74,27 +79,31 @@ inline No* Huffman::construir() {
 	return pq.top();
 }
 
-inline void Huffman::print_codes(No* raiz, int arr[], int top) {
+inline void Huffman::gerar_codigos(No* raiz, int arr[], int top) {
 	if (raiz->esq) {
 		arr[top] = 0;
-		print_codes(raiz->esq, arr, top + 1);
+		gerar_codigos(raiz->esq, arr, top + 1);
 	}
 
 	if (raiz->dir) {
 		arr[top] = 1;
-		print_codes(raiz->dir, arr, top + 1);
+		gerar_codigos(raiz->dir, arr, top + 1);
 	}
 
 	if (!raiz->esq && !raiz->dir) {
-		std::cout << raiz->dado << " ";
+		std::string s;
 
 		for (int i = 0; i < top; i++)
-			std::cout << arr[i];
-		std::cout << '\n';
+			s += std::to_string(arr[i]);
+		
+		this->codigos.insert(std::make_pair(raiz->dado, s));
 	}
 }
 
 inline void Huffman::print() {
-	int arr[MAX_ALTURA], top = 0;
-	print_codes(this->raiz, arr, top);
+	std::unordered_map<unsigned char, std::string>::const_iterator it;
+	
+	for (it = this->codigos.begin(); it != this->codigos.end(); it++) {
+		std::cout << (*it).first << " : " << (*it).second << '\n';
+	}
 }

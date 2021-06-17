@@ -21,6 +21,7 @@ public:
 
 	fs::path get_caminho(int);
 	bool buscar(fs::path);
+	int tamanho();
 };
 
 inline void Catalogo::preencher_caminhos_arquivos() {
@@ -41,4 +42,8 @@ inline bool Catalogo::buscar(fs::path arquivo) {
 		return true;
 	}
 	return false;
+}
+
+inline int Catalogo::tamanho() {
+	return this->n;
 }

@@ -19,7 +19,6 @@ private:
 	Dicionario dic;						// dic geral, todas as pal
 	std::vector<Dicionario> vec_dic;	// vetor de dics, pal de cada texto
 	std::vector<std::pair<std::string, int>> ranking;
-	std::unordered_map<unsigned char, unsigned int> frequencias;
 
 	Dicionario processar(fs::path, Dicionario);
 	void analisar_cada_texto();
@@ -39,7 +38,6 @@ public:
 	void print_geral();
 	void exportar_dados();
 	void inserir_texto(fs::path);
-	std::unordered_map<unsigned char, unsigned int> get_frequencias();
 };
 
 // --------------------------- MÉTODOS PRIVADOS ---------------------------
@@ -48,24 +46,11 @@ inline Dicionario Analisador::processar(fs::path caminho, Dicionario dicionario)
 
     std::ifstream arquivo;
     std::string s;
-	bool catalogado = this->catalogo.buscar(caminho);
 
     arquivo.open(caminho);
 	
 	// para cada linha no arquivo
     while (std::getline(arquivo, s)) {
-		// se catalogado, registra cada unsigned char no umap de frequencias
-		if (catalogado) {
-			std::unordered_map<unsigned char, unsigned int>::const_iterator it_umap;
-			for (int i = 0; i < s.size(); i++) {
-				it_umap = this->frequencias.find(s[i]);
-
-				if (it_umap == this->frequencias.end())
-					this->frequencias.insert(std::make_pair(s[i], 1));
-				else
-					this->frequencias[s[i]]++;
-			}
-		}
     	// aplica regex para quebrar palavras por espaços
 		std::regex r(R"([a-zA-Z_]+(?:['_-][a-zA-Z_]+)*)");
 		std::sregex_iterator it_re;
@@ -181,8 +166,4 @@ inline void Analisador::escrever_linha(std::fstream &fcontagem, Dicionario d) {
 		n++;
 	}
 	fcontagem << '\n';
-}
-
-inline std::unordered_map<unsigned char, unsigned int> Analisador::get_frequencias() {
-	return this->frequencias;
 }

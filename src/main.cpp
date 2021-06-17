@@ -1,7 +1,7 @@
 #include <iostream>
 #include "analise-textual/analisador.hpp"
 #include <unordered_map>
-#include "compressao/compactador.hpp"
+#include "compressao/huffman.hpp"
 
 int main() {
 
@@ -11,10 +11,11 @@ int main() {
 
 	//analisador.exportar_dados();
 
-	std::unordered_map<unsigned char, int> f =  analisador.get_frequencias();
-	//Huffman huffman(f);
+	std::unordered_map<unsigned char, unsigned int> f =  analisador.get_frequencias();
+	Huffman huffman(f);
+	huffman.print();
 
-	 for (auto i : f) std::cout << i.first << " : " << i.second << '\n';
+	//  for (auto i : f) std::cout << i.first << " : " << i.second << '\n';
 
 	//analisador.inserir_texto("../recursos/textos_alternativos/alt1.txt");
 }

@@ -19,7 +19,7 @@ private:
 	Dicionario dic;						// dic geral, todas as pal
 	std::vector<Dicionario> vec_dic;	// vetor de dics, pal de cada texto
 	std::vector<std::pair<std::string, int>> ranking;
-	std::unordered_map<unsigned char, int> frequencias;
+	std::unordered_map<unsigned char, unsigned int> frequencias;
 
 	Dicionario processar(fs::path, Dicionario);
 	void analisar_cada_texto();
@@ -39,7 +39,7 @@ public:
 	void print_geral();
 	void exportar_dados();
 	void inserir_texto(fs::path);
-	std::unordered_map<unsigned char, int> get_frequencias();
+	std::unordered_map<unsigned char, unsigned int> get_frequencias();
 };
 
 // --------------------------- MÉTODOS PRIVADOS ---------------------------
@@ -56,7 +56,7 @@ inline Dicionario Analisador::processar(fs::path caminho, Dicionario dicionario)
     while (std::getline(arquivo, s)) {
 		// se catalogado, registra cada unsigned char no umap de frequencias
 		if (catalogado) {
-			std::unordered_map<unsigned char, int>::const_iterator it_umap;
+			std::unordered_map<unsigned char, unsigned int>::const_iterator it_umap;
 			for (int i = 0; i < s.size(); i++) {
 				it_umap = this->frequencias.find(s[i]);
 
@@ -183,6 +183,6 @@ inline void Analisador::escrever_linha(std::fstream &fcontagem, Dicionario d) {
 	fcontagem << '\n';
 }
 
-inline std::unordered_map<unsigned char, int> Analisador::get_frequencias() {
+inline std::unordered_map<unsigned char, unsigned int> Analisador::get_frequencias() {
 	return this->frequencias;
 }

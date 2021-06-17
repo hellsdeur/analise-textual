@@ -14,7 +14,7 @@ Seis tarefas a serem executadas neste projeto:
 
 - [x] Testar outros textos nas palavras que classificam para verificar a qual dos grupos encontrados esse novo texto deve pertencer
 
-- [ ] Comprimir textos em um único arquivo
+- [x] Comprimir textos em um único arquivo
 
 - [ ] Realizar buscas no arquivo comprimido
 

@@ -35,13 +35,13 @@ public:
 class Huffman {
 private:
 	std::priority_queue<No*, std::vector<No*>, Compare> pq;
-	std::unordered_map<unsigned char, std::string> codigos;
 
 	No* construir();
 	void gerar_codigos(No* raiz, int [], int);
 
 public:
 	No* raiz;
+	std::unordered_map<unsigned char, std::string> codigos;
 
 	Huffman() {}
 	Huffman(std::unordered_map<unsigned char, unsigned int>);

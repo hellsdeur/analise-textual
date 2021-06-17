@@ -1,6 +1,8 @@
 #include "../analise-textual/catalogo.hpp"
 #include "huffman.hpp"
 #include <vector>
+#include <sstream>
+#include <bitset>
 
 class Compactador {
 private:
@@ -33,17 +35,46 @@ inline void Compactador::preprocessar() {
 		arquivo.open(this->catalogo.get_caminho(i));
 
 		while (std::getline(arquivo, s)) {
-			std::unordered_map<unsigned char, unsigned int>::const_iterator it_umap;
+			std::unordered_map<unsigned char, unsigned int>::const_iterator it;
 
 			for (int i = 0; i < s.size(); i++){
 				this->chars.push_back(s[i]);
 
-				it_umap = this->mapa_freq.find(s[i]);
-				if (it_umap == this->mapa_freq.end())
+				it = this->mapa_freq.find(s[i]);
+				if (it == this->mapa_freq.end())
 					this->mapa_freq.insert(std::make_pair(s[i], 1));
 				else
 					this->mapa_freq[s[i]]++;
 			}
 		}
 	}
+}
+
+
+inline void Compactador::compactar() {
+	std::fstream arquivo;
+	std::string s;
+	std::stringstream sstream;
+
+	for (int i = 0; i < this->chars.size(); i++) {
+		s += this->huffman.codigos[chars[i]];
+	}
+
+	sstream = std::stringstream(s);
+
+	std::remove("../resultados/base_textos.cpt");
+
+	arquivo.open("../resultados/base_textos.cpt", std::ios::out | std::ios::app);
+
+	while(sstream.good()) {
+		std::bitset<8> bits;
+		unsigned char c;
+
+		sstream >> bits;
+		c = char(bits.to_ulong());
+
+		arquivo << c;
+	}
+
+	arquivo.close();
 }

@@ -16,7 +16,7 @@ Seis tarefas a serem executadas neste projeto:
 
 - [x] Comprimir textos em um único arquivo
 
-- [ ] Realizar buscas no arquivo comprimido
+- [x] Realizar buscas no arquivo comprimido
 
 - [ ] Plotar gráfico comparativo de tempo para busca no arquivo comprimido e não-comprimido
 

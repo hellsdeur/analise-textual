@@ -4,20 +4,20 @@
 #include "analise-desempenho/buscador.hpp"
 
 int main() {
-
+	// Tarefa 1 e 2
 	Catalogo catalogo("../recursos/base_textos/");
+	Analisador analisador(catalogo,101);
+	// analisador.exportar_dados();
 
-	// Analisador analisador(catalogo, 101);
+	// Tarefa 3
+	analisador.inserir_texto("../recursos/textos_alternativos/alt1.txt");
 
-
-	//analisador.exportar_dados();
-
+	// Tarefa 4
 	Compactador compactador(catalogo);
-	// compactador.print();
+	compactador.print();
 
+	// Tarefa 5
 	Buscador buscador(catalogo, compactador);
-	// buscador.buscar_comprimido("bankability");
-	// buscador.buscar_nao_comprimido("bankability");
-
-	//analisador.inserir_texto("../recursos/textos_alternativos/alt1.txt");
+	buscador.buscar_comprimido("Lenses");
+	buscador.buscar_nao_comprimido("Lenses");
 }

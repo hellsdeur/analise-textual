@@ -35,7 +35,7 @@ inline Compactador::Compactador(Catalogo catalogo) {
 inline void Compactador::preprocessar() {
 
 	for (int i = 0; i < this->catalogo.tamanho(); i++) {
-		std::ifstream arquivo;
+		std::fstream arquivo;
 		std::string s;
 
 		arquivo.open(this->catalogo.get_caminho(i));
@@ -44,6 +44,7 @@ inline void Compactador::preprocessar() {
 			std::unordered_map<unsigned char, unsigned int>::const_iterator it;
 
 			for (int i = 0; i < s.size(); i++){
+
 				this->chars.push_back(s[i]);
 
 				it = this->mapa_freq.find(s[i]);
@@ -53,6 +54,7 @@ inline void Compactador::preprocessar() {
 					this->mapa_freq[s[i]]++;
 			}
 		}
+		arquivo.close();
 	}
 }
 

@@ -1,3 +1,6 @@
+#ifndef CATALOGO_H
+#define CATALOGO_H
+
 #include <filesystem>
 #include <algorithm>
 
@@ -12,7 +15,7 @@ private:
 
 public:
 	Catalogo(std::string diretorio) {
-		n = 0;
+		this->n = 0;
 		this->diretorio = diretorio;
 		preencher_caminhos_arquivos();
 	}
@@ -28,7 +31,7 @@ inline void Catalogo::preencher_caminhos_arquivos() {
 	for (auto &p : fs::directory_iterator(this->diretorio)) {
 		if (fs::is_regular_file(p.status())) {
 			this->caminhos_arquivos.push_back(p.path());
-			n++;
+			this->n++;
 		}
 	}
 }
@@ -47,3 +50,5 @@ inline bool Catalogo::buscar(fs::path arquivo) {
 inline int Catalogo::tamanho() {
 	return this->n;
 }
+
+#endif

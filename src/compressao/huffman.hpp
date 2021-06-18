@@ -1,3 +1,6 @@
+#ifndef HUFFMAN_H
+#define HUFFMAN_H
+
 #include <iostream>
 #include <unordered_map>
 #include <queue>
@@ -107,3 +110,5 @@ inline void Huffman::print() {
 		std::cout << (*it).first << " : " << (*it).second << '\n';
 	}
 }
+
+#endif

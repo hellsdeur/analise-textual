@@ -1,3 +1,6 @@
+#ifndef ANALISADOR_H
+#define ANALISADOR_H
+
 #include <cstdlib>
 #include <string>
 #include <list>
@@ -167,3 +170,5 @@ inline void Analisador::escrever_linha(std::fstream &fcontagem, Dicionario d) {
 	}
 	fcontagem << '\n';
 }
+
+#endif

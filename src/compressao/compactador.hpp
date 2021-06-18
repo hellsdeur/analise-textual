@@ -1,3 +1,6 @@
+#ifndef COMPACTADOR_H
+#define COMPACTADOR_H
+
 #include "../analise-textual/catalogo.hpp"
 #include "huffman.hpp"
 #include <vector>
@@ -9,13 +12,16 @@ private:
 	Catalogo catalogo;
 	std::vector<unsigned char> chars;
 	std::unordered_map<unsigned char, unsigned int> mapa_freq;
-	Huffman huffman;
 
 	void preprocessar();
 	void compactar();
 
 public:
+	Huffman huffman;
+	std::string binario;
+	Compactador() {}
 	Compactador(Catalogo);
+	void print();
 };
 
 inline Compactador::Compactador(Catalogo catalogo) {
@@ -53,14 +59,14 @@ inline void Compactador::preprocessar() {
 
 inline void Compactador::compactar() {
 	std::fstream arquivo;
-	std::string s;
+	
 	std::stringstream sstream;
 
 	for (int i = 0; i < this->chars.size(); i++) {
-		s += this->huffman.codigos[chars[i]];
+		this->binario += this->huffman.codigos[chars[i]];
 	}
 
-	sstream = std::stringstream(s);
+	sstream = std::stringstream(this->binario);
 
 	std::remove("../resultados/base_textos.cpt");
 
@@ -78,3 +84,11 @@ inline void Compactador::compactar() {
 
 	arquivo.close();
 }
+
+inline void Compactador::print() {
+	for (auto i : this->huffman.codigos) {
+		std::cout << i.first << " : " << i.second << '\n';
+	}
+}
+
+#endif

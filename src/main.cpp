@@ -1,6 +1,7 @@
 #include <iostream>
-// #include "analise-textual/analisador.hpp"
+#include "analise-textual/analisador.hpp"
 #include "compressao/compactador.hpp"
+#include "analise-desempenho/buscador.hpp"
 
 int main() {
 
@@ -8,16 +9,15 @@ int main() {
 
 	// Analisador analisador(catalogo, 101);
 
+
 	//analisador.exportar_dados();
 
 	Compactador compactador(catalogo);
+	// compactador.print();
 
-	// std::fstream kkk;
-	// kkk.open("zzz.txt", std::ios::out | std::ios::app);
-	// for (auto i : f) {
-	// 	kkk << i.first << " : " << i.second << '\n';
-	// }
-	// kkk.close();
+	Buscador buscador(catalogo, compactador);
+	// buscador.buscar_comprimido("bankability");
+	// buscador.buscar_nao_comprimido("bankability");
 
 	//analisador.inserir_texto("../recursos/textos_alternativos/alt1.txt");
 }
